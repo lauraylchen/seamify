@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_28_222647) do
+ActiveRecord::Schema.define(version: 2022_02_28_223516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "order_items", force: :cascade do |t|
+    t.bigint "order_id", null: false
+    t.bigint "seamstress_service_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["seamstress_service_id"], name: "index_order_items_on_seamstress_service_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "client_id", null: false
+    t.datetime "drop_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_orders_on_client_id"
+  end
+
+  create_table "seamstress_services", force: :cascade do |t|
+    t.bigint "service_id", null: false
+    t.bigint "seamstress_id", null: false
+    t.float "price"
+    t.float "estimated_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["seamstress_id"], name: "index_seamstress_services_on_seamstress_id"
+    t.index ["service_id"], name: "index_seamstress_services_on_service_id"
+  end
 
   create_table "services", force: :cascade do |t|
     t.string "name"
@@ -42,4 +70,9 @@ ActiveRecord::Schema.define(version: 2022_02_28_222647) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "seamstress_services"
+  add_foreign_key "orders", "users", column: "client_id"
+  add_foreign_key "seamstress_services", "services"
+  add_foreign_key "seamstress_services", "users", column: "seamstress_id"
 end
