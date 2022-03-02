@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :orders
   has_many :seamstress_services
+  has_one_attached :photo
 end
