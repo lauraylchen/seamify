@@ -1,32 +1,32 @@
 .banner {
-    /* Background */
-  background-image: asset-url('Banner.png');
+  /* Background */
+  background-image: asset-url("Banner.png");
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  // padding: 150px 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
   /* Sizing */
-    width: 100vw;
-    height: calc(100vh - 65px);
+  // width: 100vw;
+  height: calc(100vh - 65px);
 
-    h1 {
+  h1 {
     margin: 0;
     padding-top: 90px;
-    font-family: 'Mea Culpa', cursive;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-family: $logo-font, cursive;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     font-size: 150px;
-    color: $cream;
+    color: $seamify-cream;
   }
-    p {
+  p {
     padding-top: 15px;
     font-size: 30px;
-    font-family: "Merriweather";
-    color: $cream;
+    font-family: $body-font;
+    color: $seamify-cream;
   }
 }
 .home-text {
-  color: $brown;
+  color: $seamify-brown;
   font-size: 30px;
 }
