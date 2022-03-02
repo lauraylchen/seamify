@@ -12,7 +12,7 @@ export default class extends Controller {
 
     // mapboxgl.accessToken = 'pk.eyJ1IjoicmF5YWRldmluZm8iLCJhIjoiY2t6aGZiOXhxMDNmNzJ1bnk5b2FybjN5YyJ9.7hpP5II5oALLOQ87RB8eGw';
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoicmF5YWRldmluZm8iLCJhIjoiY2t6aGZjdmQ0NDFjNzJvbXphaGhkajF4NiJ9.yn922XIrK-prv0wPMawfkw'
+    // mapboxgl.accessToken = 'pk.eyJ1IjoicmF5YWRldmluZm8iLCJhIjoiY2t6aGZjdmQ0NDFjNzJvbXphaGhkajF4NiJ9.yn922XIrK-prv0wPMawfkw'
     
     this.map = new mapboxgl.Map({
       container: this.element,
