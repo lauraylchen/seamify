@@ -1,1 +1,23 @@
-// Specific CSS for your home-page
+.banner {
+  background-image: asset-url('Banner.png');
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+    h1 {
+    margin: 0;
+    font-family: 'Mea Culpa', cursive;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 150px;
+    color: $cream;
+  }
+    p {
+    padding-top: 15px;
+    font-size: 3XX0px;
+    font-family: "Merriweather";
+    color: $cream;
+  }
+}
+p {
+  color: $brown;
+  font-size: 36;
+}
