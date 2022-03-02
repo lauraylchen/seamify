@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: $brown;
+  background: $seamify-brown;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,6 +11,6 @@
   width: 40px;
 }
 
-// .navbar-light .navbar-nav .nav-link {
-//   color: $cream;
-// }
+.navbar-light .navbar-nav .nav-link {
+  color: $seamify-cream;
+}

@@ -1,5 +1,8 @@
 .footer {
   margin-top: auto;
+  background-color: $seamify-brown;
+  height: 60px;
+  padding: 20px;
 }
 
 .footer-links {
@@ -8,4 +11,12 @@
 
 .footer-copyright {
   text-align: center;
+  color: $seamify-cream;
+  font-size: 10px;
+}
+
+a {
+  color: $seamify-cream;
+  padding-right: 10px;
+  font-size: 16px;
 }
