@@ -38,7 +38,6 @@ seam2 = User.create(
         we had a lot of customers, I decided to keep the business in the family and
         to this day at 82 years old, I still fix and make suits and wedding dresses for the elite.",
   address: "5505 Boul. Saint-Laurent #2000, Montréal, QC H2T 1S6",
-#   5505 Boul. Saint-Laurent #2000, Montréal, QC H2T 1S6
   email: 'seam2@gmail.com',
   password: '123456',
   seamstress: true
