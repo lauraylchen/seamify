@@ -13,4 +13,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    @clothing = Service.clothing
+    @repairs = Service.repairs
+    @materials = Service.materials
+  end
+
 end
