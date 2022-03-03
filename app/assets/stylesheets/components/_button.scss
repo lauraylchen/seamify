@@ -1,0 +1,23 @@
+.seamify-button {
+  background: #d63900;
+  border-radius: 7px;
+  box-shadow: 2px 2px #4a261e;
+  width: 280px;
+  height: 80px;
+  color: #f4e5cf;
+  display: inline-block;
+  font-family: $body-font, sans-serif;
+  text-align: center;
+}
+
+a:hover {
+  background: #f4e5cf;
+  border-radius: 7px;
+  box-shadow: 0 2px #4a261e;
+  width: 280px;
+  height: 80px;
+  color: #d63900;
+  display: inline-block;
+  font-family: $body-font, sans-serif;
+  text-align: center;
+}
