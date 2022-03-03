@@ -1,0 +1,20 @@
+.searchbar-container {
+  margin-right: 10px;
+  position: relative;
+  .searchbar {
+    background-color: $seamify-cream;
+    height: 40px;
+    border-radius: 8px;
+
+    &::placeholder {
+      color: $seamify-brown;
+    }
+  }
+  i {
+    color: $seamify-brown;
+    position: absolute;
+    right: 15px;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+}

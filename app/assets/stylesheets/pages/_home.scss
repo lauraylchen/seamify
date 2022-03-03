@@ -1,33 +1,26 @@
 .banner {
   /* Background */
-  background-image: asset-url("Banner.png");
+  background-image: asset-url("banner-image-official.png");
   background-color: $seamify-brown;
   background-size: cover;
   background-position: center;
-  // padding: 150px 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
-  /* Sizing */
-  // width: 100vw;
   height: calc(100vh - 65px);
 
   h1 {
     margin: 0;
+    margin-bottom: 10px;
     padding-top: 90px;
-    font-family: $logo-font, cursive;
+    font-family: $logo-font;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    font-size: 150px;
+    font-size: 140px;
     color: $seamify-cream;
   }
   p {
-    padding-top: 15px;
+    padding: 15px 0;
     font-size: 30px;
     font-family: $body-font;
     color: $seamify-cream;
   }
-}
-.home-text {
-  color: $seamify-brown;
-  font-size: 30px;
 }
