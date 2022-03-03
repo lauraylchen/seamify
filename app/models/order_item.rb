@@ -1,4 +1,4 @@
 class OrderItem < ApplicationRecord
   belongs_to :order
-  belongs_to :seamstress_service
+  belongs_to :service
 end
