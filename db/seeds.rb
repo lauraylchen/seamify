@@ -100,8 +100,8 @@ service2 = Service.new(
   repair: repairs[1],
   material: materials[0],
   description: "5 buttons maximum",
-  price: 10,
-  estimated_time: 0.2
+  price: 20,
+  estimated_time: 1
 )
 service2.seamstress = seam1
 service2.save
