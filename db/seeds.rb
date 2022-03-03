@@ -13,6 +13,8 @@ client = User.create(
   email: 'client@gmail.com',
   password: '123456'
 )
+client_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645738596/profile/isabelle.jpg')
+client.photo.attach(io: client_file, filename: 'isabelle.jpg', content_type: 'image/jpg')
 puts client.first_name
 
 seam1 = User.create(
@@ -26,7 +28,7 @@ seam1 = User.create(
   password: '123456',
   seamstress: true
 )
-seam1_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645853245/animals/seamstresses/rey.jpg')
+seam1_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645853245/seamstresses/rey.jpg')
 seam1.photo.attach(io: seam1_file, filename: 'rey.jpg', content_type: 'image/jpg')
 puts seam1.first_name
 
@@ -41,7 +43,7 @@ seam2 = User.create(
   password: '123456',
   seamstress: true
 )
-seam2_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645846668/animals/seamstresses/giuseppe.jpg')
+seam2_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645846668/seamstresses/giuseppe.jpg')
 seam2.photo.attach(io: seam2_file, filename: 'giuseppe.jpg', content_type: 'image/jpg')
 puts seam2.first_name
 
@@ -57,7 +59,7 @@ seam3 = User.create(
   password: '123456',
   seamstress: true
 )
-seam3_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645852094/animals/seamstresses/andrea.jpg')
+seam3_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645852094/seamstresses/andrea.jpg')
 seam3.photo.attach(io: seam3_file, filename: 'andrea.jpg', content_type: 'image/jpg')
 puts seam3.first_name
 
@@ -72,7 +74,7 @@ seam4 = User.create(
   password: '123456',
   seamstress: true
 )
-seam4_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645846471/animals/seamstresses/yolanda.jpg')
+seam4_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645846471/seamstresses/yolanda.jpg')
 seam4.photo.attach(io: seam4_file, filename: 'yolanda.jpg', content_type: 'image/jpg')
 puts seam4.first_name
 
@@ -88,11 +90,13 @@ service1 = Service.new(
   clothing: clothings[0],
   repair: repairs[0],
   material: materials[0],
+  description: "Doing drop off need to take about 30mins",
   price: 200,
   estimated_time: 3
 )
 service1.seamstress = seam1
 service1.save
+puts service1.name
 
 service2 = Service.new(
   name: "#{materials[0]} #{clothings[0]} - #{repairs[1]}",
@@ -105,6 +109,7 @@ service2 = Service.new(
 )
 service2.seamstress = seam1
 service2.save
+puts service2.name
 
 # Orders
 puts "Creating Orders..."
@@ -114,7 +119,7 @@ order1.client = client
 order1.seamstress = seam1
 order1.save
 
-order2 = Order.new
-order2.client = client
-order2.seamstress = seam1
-order2.save
+# Order Item
+order_item1 = OrderItem.new
+order_item1.service = service1
+order_item1.order = order1
