@@ -1,22 +1,23 @@
 .footer {
-  margin-top: auto;
   background-color: $seamify-brown;
   height: 60px;
+  width: 100%;
   padding: 20px;
+  text-align: center;
 }
 
 .footer-links {
-  text-align: center;
+  a {
+    color: $seamify-cream;
+    padding: 0 10px;
+    font-size: 16px;
+    &:hover {
+      color: $seamify-red;
+    }
+  }
 }
 
 .footer-copyright {
-  text-align: center;
   color: $seamify-cream;
   font-size: 10px;
-}
-
-a {
-  color: $seamify-cream;
-  padding-right: 10px;
-  font-size: 16px;
 }

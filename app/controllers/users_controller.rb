@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
-  def index
-    @users = User.all.where(seamstress: true)
+  skip_before_action :authenticate_user!, only: %i[index]
 
+  def index
+    if params[:query].present?
+      @users = User.near(params[:query], 10)
+    else
+      @users = User.all.where(seamstress: true)
+    end
+        
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @users.geocoded.map do |user|
       {

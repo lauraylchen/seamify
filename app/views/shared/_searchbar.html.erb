@@ -1,0 +1,10 @@
+<%= form_tag users_path, method: :get do %>
+  <div class="searchbar-container">
+    <i class="fas fa-search"></i>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control searchbar",
+      placeholder: "Search Near You"
+    %>
+  </div>
+<% end %>
