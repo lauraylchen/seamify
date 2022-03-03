@@ -1,0 +1,45 @@
+.seamstress-card {
+    background-size: cover;
+    background-position: center;
+    border-radius: 1px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  
+    display: grid;
+  
+    height: min-content;
+  
+    grid-template-columns: 1fr 1fr;  
+  
+    margin-top: 8px;
+  }
+
+
+.seamstress-card-left {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.seamstress-card img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: -12px;
+    margin-left: 12px;
+}
+
+#bio {
+    font-size: 12px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+#sname {
+    text-align: left;
+    font-size: 24px;
+    margin: 8px 0px 8px 12px;
+}
