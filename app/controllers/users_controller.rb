@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     else
       @users = User.all.where(seamstress: true)
     end
-        
+
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @users.geocoded.map do |user|
       {
@@ -19,4 +19,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    # unless params[:clothings].nil?
+    @search = Service.new
+    @clothings = Service.clothings
+    @repairs = Service.repairs
+    @materials = Service.materials
+    # end
+  end
 end

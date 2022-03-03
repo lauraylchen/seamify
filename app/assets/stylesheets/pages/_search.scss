@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  font-size: 16px;
+
+    .clothings, .repairs, .materials {
+      padding: 10px;
+      align-items: center;
+    }
+  }
+
+  .search-btn {
+    background-color: $seamify-red;
+    color: $seamify-white;
+    margin-left: 210px;
+  }
+
+.search-cards-container {
+  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background-color: $seamify-cream;
+  // border: 2px solid red;
+}

@@ -1,0 +1,32 @@
+<div class="container">
+  <%= form_with url:"/search", method: :get do |form| %>
+  <div class="search-cards-container">
+    <% @clothings.each do |clothing| %>
+      <div class="clothings">
+      <%= form.label clothing, clothing %>
+      <%= check_box_tag "clothings[]", clothing %>
+      </div>
+    <% end %>
+    </div>
+    <%# <br> %>
+    <div class="search-cards-container">
+    <% @repairs.each do |repair| %>
+      <div class= "repairs">
+      <%= form.label repair, repair %>
+      <%= check_box_tag "repairs[]", repair %>
+      </div>
+    <% end %>
+    </div>
+    <%# <br> %>
+    <div class="search-cards-container">
+    <% @materials.each do |material| %>
+      <div class= "materials">
+      <%= form.label material, material %>
+      <%= check_box_tag "materials[]", material %>
+      </div>
+    <% end %>
+    </div>
+    <%# <br> %>
+      <%= form.submit "Find a Seamstress near you...", class: "search-btn"%>
+  <% end %>
+</div>
