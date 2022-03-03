@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_03_042837) do
+ActiveRecord::Schema.define(version: 2022_03_03_043058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,17 +62,6 @@ ActiveRecord::Schema.define(version: 2022_03_03_042837) do
     t.index ["seamstress_id"], name: "index_orders_on_seamstress_id"
   end
 
-  create_table "seamstress_services", force: :cascade do |t|
-    t.bigint "service_id", null: false
-    t.bigint "seamstress_id", null: false
-    t.float "price"
-    t.float "estimated_time"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["seamstress_id"], name: "index_seamstress_services_on_seamstress_id"
-    t.index ["service_id"], name: "index_seamstress_services_on_service_id"
-  end
-
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.string "clothing"
@@ -108,6 +97,4 @@ ActiveRecord::Schema.define(version: 2022_03_03_042837) do
   add_foreign_key "order_items", "services"
   add_foreign_key "orders", "users", column: "client_id"
   add_foreign_key "orders", "users", column: "seamstress_id"
-  add_foreign_key "seamstress_services", "services"
-  add_foreign_key "seamstress_services", "users", column: "seamstress_id"
 end
