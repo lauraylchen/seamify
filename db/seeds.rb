@@ -23,7 +23,7 @@ seam1 = User.create(
   bio: "I studied fashion design in Tokyo then I move to Montreal.
         Then I started to make wedding dresses and specialized in it.
         I put all of my efforts in the details and hopefully I can make YOUR wedding dress.",
-  address: "2900 Edouard Montpetit Blvd, Montreal",
+  address: "25 Av. Fairmount Ouest Montreal QC H2T 2L9",
   email: 'seam1@gmail.com',
   password: '123456',
   seamstress: true
@@ -38,7 +38,7 @@ seam2 = User.create(
   bio: "I started working with my fatther in Little Italy and
         we had a lot of customers, I decided to keep the business in the family and
         to this day at 82 years old, I still fix and make suits and wedding dresses for the elite.",
-  address: "5505 Boul. Saint-Laurent #2000, Montréal, QC H2T 1S6",
+  address: "206 Rue Bernard Ouest Montreal QC H2T 2K4",
   email: 'seam2@gmail.com',
   password: '123456',
   seamstress: true
@@ -54,7 +54,7 @@ seam3 = User.create(
         and noticed right away how learning to sew has became helpful to me and others.
         I've worked for Gucci then decided to retire early and help my community instead.
         I offer high quality repairs at a reasonable price.",
-  address: "4237 Henri Julien Ave, Montreal, Quebec H2W 1E5",
+  address: "4524 Boul. Saint-Laurent Montreal QC H2T 1R4",
   email: 'seam3@gmail.com',
   password: '123456',
   seamstress: true
@@ -69,7 +69,7 @@ seam4 = User.create(
   bio: "I am from Portugal and came here to work in the fashion industry, I specialize in leather and
         suede alterations as my mother was a shoe maker back in Portugal.
         For me, fixing leather and suede is a second nature.",
-  address: "750 Av. Outremont, Outremont, QC H2V 3N3",
+  address: "4631 Boul. Saint-Laurent Montreal QC H2T 1R2",
   email: 'seam4@gmail.com',
   password: '123456',
   seamstress: true
