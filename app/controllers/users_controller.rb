@@ -14,9 +14,11 @@ class UsersController < ApplicationController
   end
 
   def search
-    @clothing = Service.clothing
+    # unless params[:clothings].nil?
+    @search = Service.new
+    @clothings = Service.clothings
     @repairs = Service.repairs
     @materials = Service.materials
+    # end
   end
-
 end
