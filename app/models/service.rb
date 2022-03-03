@@ -1,3 +1,3 @@
 class Service < ApplicationRecord
-  has_many :seamstress_services
+  belongs_to :seamstress, class_name: "User"
 end

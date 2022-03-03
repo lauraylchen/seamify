@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :orders
-  has_many :seamstress_services
+  has_many :services
 
   geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?   
+  after_validation :geocode, if: :will_save_change_to_address?
   has_one_attached :photo
 end
