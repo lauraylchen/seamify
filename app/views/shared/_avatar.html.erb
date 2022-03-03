@@ -1,0 +1,5 @@
+<% if current_user.photo.attached? %>
+    <%= cl_image_tag current_user.photo.key, width: 300, class: "avatar dropdown-toggle", crop: :scale, id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+<% else %>
+    <%= image_tag 'yarn_marker.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+<% end %>
