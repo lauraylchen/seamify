@@ -15,4 +15,11 @@
 @import "pages/index";
 @import "components/map";
 
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
 
+#content-wrap {
+  padding-bottom: 60px;
+}
