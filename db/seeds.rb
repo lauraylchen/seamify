@@ -88,11 +88,23 @@ service1 = Service.new(
   clothing: clothings[0],
   repair: repairs[0],
   material: materials[0],
-  price: 0.00,
-  estimated_time: 0
+  price: 200,
+  estimated_time: 3
 )
 service1.seamstress = seam1
 service1.save
+
+service2 = Service.new(
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[1]}",
+  clothing: clothings[0],
+  repair: repairs[1],
+  material: materials[0],
+  description: "5 buttons maximum",
+  price: 10,
+  estimated_time: 0.2
+)
+service2.seamstress = seam1
+service2.save
 
 # Orders
 puts "Creating Orders..."
