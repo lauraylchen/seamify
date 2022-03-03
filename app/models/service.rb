@@ -12,4 +12,5 @@ class Service < ApplicationRecord
   def self.materials
     return ["chiffron", "cotton", "crepe", "denim", "lace", "linen", "leather", "polyester","satin", "silk", "suede", "nylon"]
   end
+  belongs_to :seamstress, class_name: "User"
 end

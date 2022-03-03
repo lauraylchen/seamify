@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_02_230509) do
+ActiveRecord::Schema.define(version: 2022_03_03_140238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,11 +45,11 @@ ActiveRecord::Schema.define(version: 2022_03_02_230509) do
 
   create_table "order_items", force: :cascade do |t|
     t.bigint "order_id", null: false
-    t.bigint "seamstress_service_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "service_id", null: false
     t.index ["order_id"], name: "index_order_items_on_order_id"
-    t.index ["seamstress_service_id"], name: "index_order_items_on_seamstress_service_id"
+    t.index ["service_id"], name: "index_order_items_on_service_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -58,19 +58,9 @@ ActiveRecord::Schema.define(version: 2022_03_02_230509) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "seamstress_id", null: false
+    t.boolean "confirmed", default: false
     t.index ["client_id"], name: "index_orders_on_client_id"
     t.index ["seamstress_id"], name: "index_orders_on_seamstress_id"
-  end
-
-  create_table "seamstress_services", force: :cascade do |t|
-    t.bigint "service_id", null: false
-    t.bigint "seamstress_id", null: false
-    t.float "price"
-    t.float "estimated_time"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["seamstress_id"], name: "index_seamstress_services_on_seamstress_id"
-    t.index ["service_id"], name: "index_seamstress_services_on_service_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -81,6 +71,10 @@ ActiveRecord::Schema.define(version: 2022_03_02_230509) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "price"
+    t.float "estimated_time"
+    t.bigint "seamstress_id", null: false
+    t.index ["seamstress_id"], name: "index_services_on_seamstress_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -103,9 +97,8 @@ ActiveRecord::Schema.define(version: 2022_03_02_230509) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "order_items", "orders"
-  add_foreign_key "order_items", "seamstress_services"
+  add_foreign_key "order_items", "services"
   add_foreign_key "orders", "users", column: "client_id"
   add_foreign_key "orders", "users", column: "seamstress_id"
-  add_foreign_key "seamstress_services", "services"
-  add_foreign_key "seamstress_services", "users", column: "seamstress_id"
+  add_foreign_key "services", "users", column: "seamstress_id"
 end
