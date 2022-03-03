@@ -1,7 +1,6 @@
 puts "Deleting..."
 OrderItem.destroy_all
 Order.destroy_all
-SeamstressService.destroy_all
 Service.destroy_all
 User.destroy_all
 
@@ -76,3 +75,34 @@ seam4 = User.create(
 seam4_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645846471/animals/seamstresses/yolanda.jpg')
 seam4.photo.attach(io: seam4_file, filename: 'yolanda.jpg', content_type: 'image/jpg')
 puts seam4.first_name
+
+# Services
+puts "Creating Services..."
+
+clothings = ['wedding dress', 'suit', 'dress', 'skirt']
+repairs = ['fitting', 'button', 'zipper']
+materials = ['lace', 'suede', 'leather', 'satin']
+
+service1 = Service.new(
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
+  clothing: clothings[0],
+  repair: repairs[0],
+  material: materials[0],
+  price: 0.00,
+  estimated_time: 0
+)
+service1.seamstress = seam1
+service1.save
+
+# Orders
+puts "Creating Orders..."
+
+order1 = Order.new
+order1.client = client
+order1.seamstress = seam1
+order1.save
+
+order2 = Order.new
+order2.client = client
+order2.seamstress = seam1
+order2.save
