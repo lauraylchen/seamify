@@ -1,0 +1,44 @@
+.container-meet-cards {
+  justify-content: space-between;
+  background: $seamify-white;
+  font-family: $body-font;
+  display: flex;
+  flex-direction: row;
+}
+
+.container-meet-cards h3 {
+  font-family: $body-font;
+  color: $seamify-brown;
+}
+
+.meet-card {
+  background: $seamify-cream;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  color: $seamify-brown;
+  font-family: $body-font;
+  height: 400px;
+  width: 300px;
+  justify-content: space-around;
+}
+
+.meet-card img {
+  height: 150px;
+  width: 100%;
+}
+
+.meet-card h3 {
+  font-family: $body-font;
+  font-size: 24px;
+  margin: 0;
+}
+
+.meet-card p {
+  font-family: $body-font;
+  font-size: 12px;
+  margin: 0;
+}
+
+.meet-card-infos {
+  padding: 14px 24px;
+}
