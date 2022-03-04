@@ -65,6 +65,21 @@
   width: 300px;
 }
 
+.order-form {
+  .center-button {
+    text-align: center;
+    padding: 20px 0 ;
+    .seamify-button {
+      font-size: 16px;
+      width: auto;
+      height: auto;
+      box-shadow: 4px 4px 10px $seamify-shadow;
+      border: none;
+
+    }
+  }
+}
+
 // Center card
 .reviews {
   height: 150px;

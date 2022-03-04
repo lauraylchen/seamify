@@ -48,8 +48,8 @@
       </div>
     </div>
 
-    <div class="offers">
-      <div class="card-format">
+    <div class="offers d-flex flex-column">
+      <div class="card-format flex-grow-1 mb-0">
         <div class="services">
           <p><strong>SERVICES</strong></p>
         </div>
@@ -57,17 +57,15 @@
       <div class="card-format">
         <div class="order-form">
           <p><strong>ORDER FORM</strong></p>
-          <% @services = @seamstress.services.map do |service| %>
-            <% [service.name, service.id] %>
-          <% end %>
-          <%= simple_form_for [@seamstress, @order] do |f| %>
-            <%= f.simple_fields_for :order_items do |oi| %>
-              <%= oi.input :service_id, collection: @seamstress.services %>
-              <%#= oi.input :service_id, collection: @seamstress.services %>
+            <%= simple_form_for [@seamstress, @order] do |f| %>
+              <%= f.simple_fields_for :order_items do |oi| %>
+                <%= oi.input :service_id, collection: @seamstress.services %>
+                <%#= oi.input :service_id, collection: @seamstress.services %>
+              <% end %>
+              <div class="center-button">
+                <%= f.submit "Place Order", class: "seamify-button" %>
+              </div>
             <% end %>
-
-            <%= f.submit %>
-          <% end %>
         </div>
       </div>
     </div>
