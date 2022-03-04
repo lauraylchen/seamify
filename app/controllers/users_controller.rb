@@ -9,13 +9,15 @@ class UsersController < ApplicationController
         lat: user.latitude,
         lng: user.longitude,
         info_window: render_to_string(partial: "info_window", locals: { user: user }),
-        image_url: helpers.asset_url("yarn_marker.png")
+        image_url: helpers.asset_url("needle.png")
       }
     end
   end
 
   def show
-    @user = User.find(params[:id])
+    @seamstress = User.find(params[:id])
+    @order = Order.new
+    @order.order_items.build
   end
 
   def search
