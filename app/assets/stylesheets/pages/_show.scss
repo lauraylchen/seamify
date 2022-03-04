@@ -23,7 +23,7 @@
 
 // Left card
 .profile {
-  width: 250px;
+  width: 280px;
   p {
     margin: 0;
   }
@@ -86,4 +86,18 @@
 // Center card
 .reviews {
   height: 150px;
+}
+
+.squared-img {
+  height: 125px;
+  width: 125px;
+}
+
+.squared-img img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
 }
