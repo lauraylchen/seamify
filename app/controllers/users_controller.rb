@@ -2,9 +2,7 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
 
   def index
-
     @users = search
-
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @users.geocoded.map do |user|
       {
@@ -14,7 +12,6 @@ class UsersController < ApplicationController
         image_url: helpers.asset_url("needle.png")
       }
     end
-
   end
 
   def show
@@ -26,7 +23,6 @@ class UsersController < ApplicationController
   def search
     # If you start by search bar, only filter by locatiom
     # If you start in start journey, filter by location and services!
-
     # Needed!!!
     @search = Service.new
     @clothings = Service.clothings
@@ -37,14 +33,11 @@ class UsersController < ApplicationController
       users = User.near(params[:query], 10)
     else
       # @users = User.all.where(seamstress: true)
-      @services = Service.where(clothing: params[:clothings], repair: params[:repairs], material: params[:materials] )
+      @services = Service.where(clothing: params[:clothing], repair: params[:repair], material: params[:material])
       ids = @services.pluck(:seamstress_id).uniq
       users = User.where(id: ids)
     end
-    
+
     return users
-
-
-    
   end
 end
