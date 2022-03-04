@@ -1,4 +1,9 @@
 class OrdersController < ApplicationController
+  def show
+    @order = Order.find(params[:id])
+    @seamstress = @order.seamstress
+  end
+
   def create
     @order = Order.new(order_params)
     @seamstress = User.find(params[:user_id])
@@ -14,6 +19,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit()
+    params.require(:order).permit(order_items_attributes: [:service_id])
   end
 end

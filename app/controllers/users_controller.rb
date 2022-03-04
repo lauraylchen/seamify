@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   def show
     @seamstress = User.find(params[:id])
     @order = Order.new
+    @order.order_items.build
   end
 
   def search

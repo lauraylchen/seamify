@@ -8,9 +8,7 @@ Rails.application.routes.draw do
 
   # View all Seamstresses
   resources :users, only: %i[index show] do
-    resources :orders, only: %i[create] do
-      resources :order_items, only: %i[create]
-    end
+    resources :orders, only: %i[create]
   end
 
   resources :orders, only: %i[show]

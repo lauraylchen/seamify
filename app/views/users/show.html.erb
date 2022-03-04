@@ -58,12 +58,16 @@
         <div class="order-form">
           <p><strong>ORDER FORM</strong></p>
           <% @services = @seamstress.services.map do |service| %>
-            <% service.name %>
+            <% [service.name, service.id] %>
           <% end %>
-          <%#= simple_form_for [@seamstress, @order] do |f| %>
-            <%#= f.input :service, collection: @services %>
-            <%#= f.submit %>
-          <%# end %>
+          <%= simple_form_for [@seamstress, @order] do |f| %>
+            <%= f.simple_fields_for :order_items do |oi| %>
+              <%= oi.input :service_id, collection: @seamstress.services %>
+              <%#= oi.input :service_id, collection: @seamstress.services %>
+            <% end %>
+
+            <%= f.submit %>
+          <% end %>
         </div>
       </div>
     </div>
