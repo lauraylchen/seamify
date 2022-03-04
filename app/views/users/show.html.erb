@@ -23,26 +23,36 @@
       </div>
     </div>
 
-    <div class="details">
-      <div class="about card-format">
-        <p><strong>ABOUT <%= @user.first_name.upcase %></strong></p>
-        <p><%= @user.bio %></p>
+    <div class="details d-flex flex-column">
+      <div class="card-format">
+        <div class="about">
+          <p><strong>ABOUT <%= @user.first_name.upcase %></strong></p>
+          <p><%= @user.bio %></p>
+        </div>
       </div>
-      <div class="portfolio card-format">
-        <p><strong>PORTFOLIO</strong></p>
+      <div class="card-format flex-grow-1 my-0">
+        <div class="portfolio">
+          <p><strong>PORTFOLIO</strong></p>
+        </div>
       </div>
-      <div class="reviews card-format">
-        <p><strong>REVIEWS</strong></p>
-        <p>No review yet</p>
+      <div class="card-format">
+        <div class="reviews">
+          <p><strong>REVIEWS</strong></p>
+          <p>No review yet</p>
+        </div>
       </div>
     </div>
 
     <div class="offers">
-      <div class="services card-format">
-        <p><strong>SERVICES</strong></p>
+      <div class="card-format">
+        <div class="services">
+          <p><strong>SERVICES</strong></p>
+        </div>
       </div>
-      <div class="order-form card-format">
-        <p><strong>ORDER FORM</strong></p>
+      <div class="card-format">
+        <div class="order-form">
+          <p><strong>ORDER FORM</strong></p>
+        </div>
       </div>
     </div>
   </div>

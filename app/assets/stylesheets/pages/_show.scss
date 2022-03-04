@@ -17,6 +17,7 @@
   }
 }
 
+// Left card
 .profile {
   width: 250px;
   p {
@@ -53,4 +54,14 @@
     width: auto;
     margin-left: -50px;
   }
+}
+
+// Right card
+.services, .order-form {
+  width: 300px;
+}
+
+// Center card
+.reviews {
+  height: 150px;
 }
