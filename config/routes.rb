@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # View all Seamstresses
-  get '/users', to: 'users#index'
+  resources :users, only: %i[index show]
 
   # Create a new user profile
   # get '/new', to: 'users#new'
