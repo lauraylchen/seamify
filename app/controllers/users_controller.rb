@@ -18,7 +18,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @seamstress = User.find(params[:id])
+    @order = Order.new
+    @order.order_items.build
   end
 
   def search

@@ -123,3 +123,4 @@ order1.save
 order_item1 = OrderItem.new
 order_item1.service = service1
 order_item1.order = order1
+order_item1.save
