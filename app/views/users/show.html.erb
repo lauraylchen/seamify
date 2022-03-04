@@ -59,7 +59,8 @@
           <p><strong>ORDER FORM</strong></p>
             <%= simple_form_for [@seamstress, @order] do |f| %>
               <%= f.simple_fields_for :order_items do |oi| %>
-                <%= oi.input :service_id, collection: @seamstress.services %>
+                <p class="error"><%= "Service #{@message}" if @order.errors.messages.any? %></p>
+                <%= oi.input :service_id, collection: @seamstress.services, required: true %>
                 <%#= oi.input :service_id, collection: @seamstress.services %>
               <% end %>
               <div class="center-button">

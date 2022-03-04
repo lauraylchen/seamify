@@ -17,7 +17,9 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to order_path(@order)
     else
-      render "users/show", remote: true
+      @errors = @order.errors.messages
+      @message = @errors.values.flatten[0]
+      render "users/show"
     end
   end
 
