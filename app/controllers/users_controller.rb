@@ -24,11 +24,33 @@ class UsersController < ApplicationController
   end
 
   def search
-    # unless params[:clothings].nil?
+
     @search = Service.new
     @clothings = Service.clothings
     @repairs = Service.repairs
     @materials = Service.materials
-    # end
+  
+    # If statements allow for search if user does not select anything!
+    if params[:clothings] == nil || params[:clothing] == [] 
+      @services = Service.all
+    else
+      @services = Service.where(clothing: params[:clothings])
+    end
+
+    if params[:repairs] == nil || params[:clothing] == [] 
+      @services = Service.all
+    else
+      @services = Service.where(repair: params[:repairs])
+    end
+
+    if params[:materials] == nil || params[:materials] == [] 
+      @services = Service.all
+    else
+      @services = Service.where(material: params[:materials])
+    end
+    # raise
+    
+    
+  
   end
 end
