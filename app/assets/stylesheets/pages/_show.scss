@@ -1,9 +1,13 @@
 .seamstress-profile {
   display: flex;
-  margin-top: 60px;
   h1 {
     font-size: 36px;
   }
+}
+
+.link-back {
+  color: $seamify-brown;
+  margin-top: 40px;
 }
 
 .card-format {
