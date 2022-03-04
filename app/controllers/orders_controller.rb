@@ -2,6 +2,11 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @seamstress = @order.seamstress
+    @services = @order.order_items.map(&:service)
+    @total = 0
+    @services.each do |s|
+      @total += s.price
+    end
   end
 
   def create
@@ -12,7 +17,7 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to order_path(@order)
     else
-      render "users/show"
+      render "users/show", remote: true
     end
   end
 
