@@ -18,6 +18,7 @@
 }
 
 .meet-card {
+  position: relative;
   background: $seamify-cream;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -44,7 +45,7 @@
 
 .meet-card p {
   font-family: $body-font;
-  font-size: 20px;
+  font-size: 18px;
   margin: 0;
   padding: 10px 20px;
 }
@@ -52,4 +53,10 @@
 .meet-card-infos {
   padding: 14px 24px;
   text-align: left;
+}
+
+.meet-card-button {
+  position: absolute;
+  bottom: 40px;
+  left: 115px;
 }
