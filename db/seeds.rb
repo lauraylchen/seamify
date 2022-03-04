@@ -111,8 +111,17 @@ service2.seamstress = seam2
 service2.save
 puts service2.name
 
-service3 = service2
-service3.seamstress = seam2
+service3 = Service.new(
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[1]}",
+  clothing: clothings[0],
+  repair: repairs[1],
+  material: materials[0],
+  description: "5 buttons maximum",
+  price: 20,
+  estimated_time: 1
+)
+
+service3.seamstress = seam3
 service3.save
 puts service3.name
 
