@@ -65,20 +65,24 @@
         <div class="services">
           <p><strong>SERVICES</strong></p>
           <div class="fields">
-            <% @seamstress.services.each do |service| %>
-              <p>clothing:</p>
-              <div class="d-flex">
-                  <p class="pill-shaped"><%= service.clothing %></p>
-              </div>
-              <p>repair:</p>
-              <div class="d-flex">
-                  <p class="pill-shaped"><%= service.repair %></p>
-              </div>
-              <p>material:</p>
-              <div class="d-flex">
-                  <p class="pill-shaped"><%= service.material %></p>
-              </div>
-            <% end %>
+            <p>clothing:</p>
+            <div class="d-flex">
+              <% @seamstress.services.each do |service| %>
+                <p class="pill-shaped"><%= service.clothing %></p>
+              <% end %>
+            </div>
+            <p>repair:</p>
+            <div class="d-flex">
+              <% @seamstress.services.each do |service| %>
+                <p class="pill-shaped"><%= service.repair %></p>
+              <% end %>
+            </div>
+            <p>material:</p>
+            <div class="d-flex">
+              <% @seamstress.services.each do |service| %>
+                <p class="pill-shaped"><%= service.material %></p>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
