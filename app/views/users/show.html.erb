@@ -1,1 +1,49 @@
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<div class="container">
+  <div class="seamstress-profile">
+    <div class="card-format">
+      <div class="profile">
+        <div class="round-profile">
+          <%= cl_image_tag @user.photo.key %>
+        </div>
+        <h1><%= @user.first_name %></h1>
+        <h1><%= @user.last_name %></h1>
+        <div class ="d-flex stars">
+          <% 5.times do%>
+              <i class="fas fa-star"></i>
+          <%end%>
+        </div>
+        <div class="text-profile">
+          <p><i class="fas fa-trophy"></i> Hired 38 times</p>
+          <p><i class="far fa-comment-dots"></i> Responds within a day</p>
+          <p><i class="far fa-clock"></i> Turn around time: 3-4 days</p>
+        </div>
+        <div class="center-button">
+          <%= link_to "Contact #{@user.first_name}", user_path(@user), class: "seamify-button" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="details">
+      <div class="about card-format">
+        <p><strong>ABOUT <%= @user.first_name.upcase %></strong></p>
+        <p><%= @user.bio %></p>
+      </div>
+      <div class="portfolio card-format">
+        <p><strong>PORTFOLIO</strong></p>
+      </div>
+      <div class="reviews card-format">
+        <p><strong>REVIEWS</strong></p>
+        <p>No review yet</p>
+      </div>
+    </div>
+
+    <div class="offers">
+      <div class="services card-format">
+        <p><strong>SERVICES</strong></p>
+      </div>
+      <div class="order-form card-format">
+        <p><strong>ORDER FORM</strong></p>
+      </div>
+    </div>
+  </div>
+</div>

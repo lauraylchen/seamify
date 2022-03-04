@@ -1,0 +1,56 @@
+.seamstress-profile {
+  display: flex;
+  margin-top: 60px;
+  h1 {
+    font-size: 36px;
+  }
+}
+
+.card-format {
+  background-color: $seamify-cream;
+  border-radius: 8px;
+  color: $seamify-brown;
+  padding: 20px;
+  margin: 10px 5px;
+  i {
+    color: $seamify-red;
+  }
+}
+
+.profile {
+  width: 250px;
+  p {
+    margin: 0;
+  }
+  .stars {
+    font-size: 1.5rem;
+  }
+  .center-button {
+    text-align: center;
+    padding: 20px 0 ;
+    .seamify-button {
+      font-size: 16px;
+      width: auto;
+      height: auto;
+      box-shadow: 4px 4px 10px $seamify-shadow;
+
+    }
+  }
+}
+
+.text-profile {
+  margin: 20px 0;
+}
+
+.round-profile {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  img {
+    height: 100%;
+    width: auto;
+    margin-left: -50px;
+  }
+}
