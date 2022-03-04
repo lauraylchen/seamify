@@ -1,24 +1,26 @@
 <div class="container">
-  <div class="row justify-content-center">
+  <div class="row justify-content-center my-4">
     <div class="card-format order-summary col-6">
-      <h1 class="h-red bottom-line">Order Summary</h1>
-      <h2>Services:</h2>
-      <% @services.each do |service| %>
-        <div class="d-flex justify-content-between">
-          <p>x1 <%= service.name %></p>
-          <p><%= service.price %>$</p>
+      <div class="p-4">
+        <h1 class="h-red bottom-line">Order Summary</h1>
+        <h2>Services:</h2>
+        <% @services.each do |service| %>
+          <div class="d-flex justify-content-between">
+            <p>x1 <%= service.name %></p>
+            <p><%= service.price %>$</p>
+          </div>
+        <% end %>
+        <div class="d-flex justify-content-between mb-4">
+          <h2>Order Total:</h2>
+          <h2><%= @total %>$</h2>
         </div>
-      <% end %>
-      <div class="d-flex justify-content-between">
-        <h2>Order Total:</h2>
-        <h2><%= @total %>$</h2>
-      </div>
-      <h2 class="bottom-line">Seamstress</h2>
-      <h3><%= @seamstress.first_name %> <%= @seamstress.last_name %></h3>
-      <h2 class="h-red bottom-line">Drop Time</h2>
-      <div class="drop-time d-flex justify-content-between">
-        <p><strong>Contact <%= @seamstress.first_name %> To Confirm Drop Time!</strong></p>
-        <%= link_to "Start Chat", order_path(@order), class:"seamify-button" %>
+        <h2 class="bottom-line">Seamstress</h2>
+        <h3><%= @seamstress.first_name %> <%= @seamstress.last_name %></h3>
+        <h2 class="h-red bottom-line mt-5 mb-3">Drop Time</h2>
+        <div class="drop-time d-flex justify-content-between">
+          <p><strong>Contact <%= @seamstress.first_name %> To Confirm Drop Time!</strong></p>
+          <%= link_to "Start Chat", order_path(@order), class:"seamify-button" %>
+        </div>
       </div>
     </div>
   </div>
