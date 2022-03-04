@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       users = User.near(params[:query], 10)
     else
       # @users = User.all.where(seamstress: true)
-      @services = Service.where(clothing: params[:clothings], repair: params[:repairs], material: params[:materials])
+      @services = Service.where(clothing: params[:clothing], repair: params[:repair], material: params[:material])
       ids = @services.pluck(:seamstress_id).uniq
       users = User.where(id: ids)
     end
