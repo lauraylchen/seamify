@@ -17,3 +17,12 @@
 .navbar-light .navbar-nav .nav-link {
   color: $seamify-cream;
 }
+
+.dropdown-menu {
+  background-color: $seamify-cream;
+  border-radius: 8px;
+  .dropdown-item {
+    color: $seamify-brown;
+    text-align: end;
+  }
+}
