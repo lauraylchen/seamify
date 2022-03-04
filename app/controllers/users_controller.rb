@@ -19,6 +19,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def search
     # unless params[:clothings].nil?
     @search = Service.new
