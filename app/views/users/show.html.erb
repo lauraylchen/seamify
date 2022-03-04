@@ -64,6 +64,22 @@
       <div class="card-format flex-grow-1 mb-0">
         <div class="services">
           <p><strong>SERVICES</strong></p>
+          <div class="fields">
+            <% @seamstress.services.each do |service| %>
+              <p>clothing:</p>
+              <div class="d-flex">
+                  <p class="pill-shaped"><%= service.clothing %></p>
+              </div>
+              <p>repair:</p>
+              <div class="d-flex">
+                  <p class="pill-shaped"><%= service.repair %></p>
+              </div>
+              <p>material:</p>
+              <div class="d-flex">
+                  <p class="pill-shaped"><%= service.material %></p>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
       <div class="card-format">
