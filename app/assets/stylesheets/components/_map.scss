@@ -14,11 +14,6 @@
   box-shadow: none;
 }
 
-#map-position {
-  position: sticky;
-  top: 5vh;
-}
-
 .cards {
   margin-top: 5vh;
 
@@ -48,5 +43,13 @@
 }
 
 .cards-map {
-  height: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.marker.mapboxgl-marker {
+  width: 50px !important;
+  height: 50px !important;
+
 }
