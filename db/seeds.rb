@@ -107,7 +107,7 @@ service2 = Service.new(
   price: 20,
   estimated_time: 1
 )
-service2.seamstress = seam1
+service2.seamstress = seam2
 service2.save
 puts service2.name
 
