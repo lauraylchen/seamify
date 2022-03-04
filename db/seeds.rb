@@ -85,6 +85,8 @@ clothings = ['wedding dress', 'suit', 'dress', 'skirt']
 repairs = ['fitting', 'button', 'zipper']
 materials = ['lace', 'suede', 'leather', 'satin']
 
+
+# Ray's services
 service1 = Service.new(
   name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
   clothing: clothings[0],
@@ -98,6 +100,20 @@ service1.seamstress = seam1
 service1.save
 puts service1.name
 
+service1_2 = Service.new(
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
+  clothing: clothings[0],
+  repair: repairs[0],
+  material: materials[3],
+  description: "Doing drop off need to take about 30mins",
+  price: 200,
+  estimated_time: 3
+)
+service1_2.seamstress = seam1
+service1_2.save
+puts service1_2.name
+
+
 service2 = Service.new(
   name: "#{materials[0]} #{clothings[0]} - #{repairs[1]}",
   clothing: clothings[0],
@@ -110,6 +126,20 @@ service2 = Service.new(
 service2.seamstress = seam2
 service2.save
 puts service2.name
+
+service3 = Service.new(
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
+  clothing: clothings[0],
+  repair: repairs[0],
+  material: materials[0],
+  description: "5 buttons maximum",
+  price: 20,
+  estimated_time: 1
+)
+
+service3.seamstress = seam3
+service3.save
+puts service3.name
 
 # Orders
 puts "Creating Orders..."
