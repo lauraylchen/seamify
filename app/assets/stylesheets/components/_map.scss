@@ -43,6 +43,7 @@
 }
 
 .cards-map {
+  margin-top: 20px;
   height: 100vh;
   position: sticky;
   top: 0;
@@ -51,5 +52,8 @@
 .marker.mapboxgl-marker {
   width: 50px !important;
   height: 50px !important;
+}
 
+#map-position {
+  margin-top: 64px;
 }
