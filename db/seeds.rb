@@ -111,6 +111,11 @@ service2.seamstress = seam2
 service2.save
 puts service2.name
 
+service3 = service2
+service3.seamstress = seam2
+service3.save
+puts service3.name
+
 # Orders
 puts "Creating Orders..."
 
