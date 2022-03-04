@@ -23,7 +23,7 @@
 
 // Left card
 .profile {
-  width: 250px;
+  width: 280px;
   p {
     margin: 0;
   }
@@ -64,6 +64,16 @@
   width: 300px;
 }
 
+.fields p {
+  margin: 5px 0;
+}
+
+.pill-shaped {
+  background-color: $seamify-white;
+  border-radius: 4px;
+  padding: 10px;
+}
+
 .order-form {
   .center-button {
     text-align: center;
@@ -86,4 +96,18 @@
 // Center card
 .reviews {
   height: 150px;
+}
+
+.squared-img {
+  height: 125px;
+  width: 125px;
+}
+
+.squared-img img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
 }
