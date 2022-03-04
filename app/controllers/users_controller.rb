@@ -3,17 +3,8 @@ class UsersController < ApplicationController
 
   def index
 
-    # Location search
-    if params[:query].present?
-      @users = User.near(params[:query], 10)
-    else
-      @users = User.all.where(seamstress: true)
-    end
+    @users = search
 
-    # @users = search
-
-
-    # @users = @users_Array
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @users.geocoded.map do |user|
       {
@@ -41,16 +32,16 @@ class UsersController < ApplicationController
     @materials = Service.materials
 
     if params[:query].present?
-      @users = User.near(params[:query], 10)
+      users = User.near(params[:query], 10)
     else
-      @users = User.all.where(seamstress: true)
+      # @users = User.all.where(seamstress: true)
+      @services = Service.where(clothing: params[:clothings], repair: params[:repairs], material: params[:materials] )
+      ids = @services.pluck(:seamstress_id).uniq
+      users = User.where(id: ids)
     end
     
-    @services = Service.where(clothing: params[:clothings], repair: params[:repairs], material: params[:materials] )
-   
-    test1 = @services.pluck(:seamstress_id).uniq
-    test2 = User.where(id: test1)
-    # raise
+    return users
+
 
     
   end
