@@ -3,7 +3,7 @@ class Service < ApplicationRecord
   belongs_to :seamstress, class_name: "User"
 
   def self.clothings
-    return  ['wedding dress', 'suit', 'dress', 'skirt', "t-shirt", "outerwear", "jeans",  "activewear", "childwear", "swimwear"]
+    return ['wedding dress', 'suit', 'dress', 'skirt', "t-shirt", "outerwear", "jeans",  "activewear", "childwear", "swimwear"]
   end
 
   def self.repairs
