@@ -1,53 +1,54 @@
 .mapboxgl-popup {
-    max-width: 200px;
-  }
-  
-  .mapboxgl-popup-content {
-    text-align: center;
-    font-family: "Open Sans", sans-serif;
-  }
+  max-width: 200px;
+}
 
-  .mapboxgl-ctrl-geocoder {
-    max-width: none;
-    width: 100%;
-    border: 1px solid lightgrey;
-    box-shadow: none;
-  }
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
 
+.mapboxgl-ctrl-geocoder {
+  max-width: none;
+  width: 100%;
+  border: 1px solid lightgrey;
+  box-shadow: none;
+}
 
-  .cards {
-  
-  
-    margin-top: 5vh;
-  
-    display: grid;
-    /* One fr means 1 fraction? Number of fr's sets number of columns
+.cards {
+  margin-top: 5vh;
+
+  display: grid;
+  /* One fr means 1 fraction? Number of fr's sets number of columns
       Can be sized other than fr
       vh means view-port height
       vw means view-port width */
-    grid-template-columns: 1fr;
-  
-    /* Just playing around with the row sizes
+  grid-template-columns: 1fr;
+
+  /* Just playing around with the row sizes
     Images can fill to fit the cards */
-    /* grid-template-rows: 10vh 50vh 10vh 10vh; */
-    grid-gap: 16px;
-  }
-  
-  .cards-container {
-    display: flex;
+  /* grid-template-rows: 10vh 50vh 10vh 10vh; */
+  grid-gap: 16px;
+}
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.cards-container {
+  display: flex;
 
-  }
-  
-  .cards-container .cards {
-    flex-grow: 1;
-    padding: 16px;
-  }
-  
-  .cards-map {
-    height: 100vh;
-    position: sticky;
-    top: 0;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cards-container .cards {
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.cards-map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.marker.mapboxgl-marker {
+  width: 50px !important;
+  height: 50px !important;
+}
