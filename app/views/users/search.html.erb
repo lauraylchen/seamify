@@ -1,32 +1,32 @@
 <div class="container">
   <%= form_with url:"/users", method: :get do |form| %>
-  <div class="search-cards-container">
-    <% @clothings.each do |clothing| %>
-      <div class="clothings">
-      <%= form.label clothing, clothing %>
-      <%= check_box_tag "clothings[]", clothing %>
-      </div>
-    <% end %>
-    </div>
-    <%# <br> %>
+      <%# Clothing Containter %>
     <div class="search-cards-container">
-    <% @repairs.each do |repair| %>
-      <div class= "repairs">
-      <%= form.label repair, repair %>
-      <%= check_box_tag "repairs[]", repair %>
-      </div>
-    <% end %>
+      <% @clothings.each do |clothing| %>
+        <div class="clothings">
+          <%= form.label clothing, clothing %>
+          <%= form.radio_button "clothing", clothing %>
+        </div>
+      <% end %>
     </div>
-    <%# <br> %>
+    <%# reapair container %>
     <div class="search-cards-container">
-    <% @materials.each do |material| %>
-      <div class= "materials">
-      <%= form.label material, material %>
-      <%= check_box_tag "materials[]", material %>
-      </div>
-    <% end %>
+      <% @repairs.each do |repair| %>
+        <div class= "repairs">
+          <%= form.label repair, repair %>
+          <%= form.radio_button "repair", repair %>
+        </div>
+      <% end %>
     </div>
-    <%# <br> %>
+      <%# Materials Container %>
+    <div class="search-cards-container">
+      <% @materials.each do |material| %>
+        <div class= "materials">
+          <%= form.label material, material %>
+          <%= form.radio_button "material", material %>
+        </div>
+      <% end %>
+    </div>
       <%= form.submit "Find a Seamstress near you...", class: "search-btn"%>
   <% end %>
 </div>
