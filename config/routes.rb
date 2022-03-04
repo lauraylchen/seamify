@@ -7,7 +7,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # View all Seamstresses
-  resources :users, only: %i[index show]
+  resources :users, only: %i[index show] do
+    resources :orders, only: %i[create] do
+      resources :order_items, only: %i[create]
+    end
+  end
+
+  resources :orders, only: %i[show]
 
   # Create a new user profile
   # get '/new', to: 'users#new'

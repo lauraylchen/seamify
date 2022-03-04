@@ -6,10 +6,10 @@
     <div class="card-format">
       <div class="profile">
         <div class="round-profile">
-          <%= cl_image_tag @user.photo.key %>
+          <%= cl_image_tag @seamstress.photo.key %>
         </div>
-        <h1><%= @user.first_name %></h1>
-        <h1><%= @user.last_name %></h1>
+        <h1><%= @seamstress.first_name %></h1>
+        <h1><%= @seamstress.last_name %></h1>
         <div class ="d-flex stars">
           <% 5.times do%>
               <i class="fas fa-star"></i>
@@ -21,7 +21,7 @@
           <p><i class="far fa-clock"></i> Turn around time: 3-4 days</p>
         </div>
         <div class="center-button">
-          <%= link_to "Contact #{@user.first_name}", user_path(@user), class: "seamify-button" %>
+          <%= link_to "Contact #{@seamstress.first_name}", user_path(@seamstress), class: "seamify-button" %>
         </div>
       </div>
     </div>
@@ -29,13 +29,15 @@
     <div class="details d-flex flex-column">
       <div class="card-format">
         <div class="about">
-          <p><strong>ABOUT <%= @user.first_name.upcase %></strong></p>
-          <p><%= @user.bio %></p>
+          <p><strong>ABOUT <%= @seamstress.first_name.upcase %></strong></p>
+          <p><%= @seamstress.bio %></p>
         </div>
       </div>
       <div class="card-format flex-grow-1 my-0">
         <div class="portfolio">
           <p><strong>PORTFOLIO</strong></p>
+          <p>
+          </p>
         </div>
       </div>
       <div class="card-format">
@@ -55,6 +57,13 @@
       <div class="card-format">
         <div class="order-form">
           <p><strong>ORDER FORM</strong></p>
+          <% @services = @seamstress.services.map do |service| %>
+            <% service.name %>
+          <% end %>
+          <%#= simple_form_for [@seamstress, @order] do |f| %>
+            <%#= f.input :service, collection: @services %>
+            <%#= f.submit %>
+          <%# end %>
         </div>
       </div>
     </div>
