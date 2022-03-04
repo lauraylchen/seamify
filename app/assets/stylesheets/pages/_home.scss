@@ -1,7 +1,8 @@
 .banner {
   /* Background */
-  background-image: asset-url("banner-image-official.png");
+  background-image: url("banner-image-official.png");
   background-color: $seamify-brown;
+  background-blend-mode: overlay;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
