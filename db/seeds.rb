@@ -35,7 +35,7 @@ puts seam1.first_name
 seam2 = User.create(
   first_name: 'Giuseppe',
   last_name: 'Paccini',
-  bio: "I started working with my fatther in Little Italy and
+  bio: "I started working with my father in Little Italy and
         we had a lot of customers, I decided to keep the business in the family and
         to this day at 82 years old, I still fix and make suits and wedding dresses for the elite.",
   address: "206 Rue Bernard Ouest Montreal QC H2T 2K4",
