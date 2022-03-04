@@ -44,12 +44,16 @@
 
 .meet-card p {
   font-family: $body-font;
-  font-size: 20px;
-  margin: 0;
+  font-size: 18px;
+  margin-bottom: 25px;
   padding: 10px 20px;
 }
 
 .meet-card-infos {
   padding: 14px 24px;
   text-align: left;
+}
+
+.meet-card-button {
+  text-align: center;
 }
