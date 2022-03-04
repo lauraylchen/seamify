@@ -2,11 +2,8 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
 
   def index
-    if params[:query].present?
-      @users = User.near(params[:query], 10)
-    else
-      @users = User.all.where(seamstress: true)
-    end
+
+    @users = search
 
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @users.geocoded.map do |user|
@@ -17,6 +14,7 @@ class UsersController < ApplicationController
         image_url: helpers.asset_url("yarn_marker.png")
       }
     end
+
   end
 
   def show
@@ -24,11 +22,27 @@ class UsersController < ApplicationController
   end
 
   def search
-    # unless params[:clothings].nil?
+    # If you start by search bar, only filter by locatiom
+    # If you start in start journey, filter by location and services!
+
+    # Needed!!!
     @search = Service.new
     @clothings = Service.clothings
     @repairs = Service.repairs
     @materials = Service.materials
-    # end
+
+    if params[:query].present?
+      users = User.near(params[:query], 10)
+    else
+      # @users = User.all.where(seamstress: true)
+      @services = Service.where(clothing: params[:clothings], repair: params[:repairs], material: params[:materials] )
+      ids = @services.pluck(:seamstress_id).uniq
+      users = User.where(id: ids)
+    end
+    
+    return users
+
+
+    
   end
 end
