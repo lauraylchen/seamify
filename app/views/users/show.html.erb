@@ -68,19 +68,19 @@
             <p>clothing:</p>
             <div class="d-flex">
               <% @clothings.uniq.each do |clothing| %>
-                <p class="pill-shaped"><%= clothing %></p>
+                <p class="box-shaped"><%= clothing %></p>
               <% end %>
             </div>
             <p>repair:</p>
             <div class="d-flex">
               <% @repairs.uniq.each do |repair| %>
-                <p class="pill-shaped"><%= repair %></p>
+                <p class="box-shaped"><%= repair %></p>
               <% end %>
             </div>
             <p>material:</p>
             <div class="d-flex">
               <% @materials.uniq.each do |material| %>
-                <p class="pill-shaped"><%= material %></p>
+                <p class="box-shaped"><%= material %></p>
               <% end %>
             </div>
           </div>
