@@ -23,7 +23,20 @@ class OrdersController < ApplicationController
     end
   end
 
+  def update
+    @order = Order.find(params[:id])
+    if @order.update(drop_time_params)
+      redirect_to order_path(@order)
+    else
+      render :show
+    end
+  end
+
   private
+
+  def drop_time_params
+    params.require(:order).permit(:drop_time)
+  end
 
   def order_params
     params.require(:order).permit(order_items_attributes: [:service_id])

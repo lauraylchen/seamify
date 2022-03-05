@@ -19,8 +19,11 @@
           <h3><%= @seamstress.first_name %> <%= @seamstress.last_name %></h3>
           <h2 class="h-red bottom-line mt-5 mb-3">Drop Time</h2>
           <div class="drop-time d-flex justify-content-between">
-            <% if @seamstress = current_user %>
-
+            <% if @seamstress == current_user %>
+              <%= simple_form_for @order do |f| %>
+                <%= f.input :drop_time, required: true %>
+                <%= f.submit "Confirm Order", class: "seamify-button" %>
+              <% end %>
             <% else %>
               <p><strong>Contact <%= @seamstress.first_name %> To Confirm Drop Time!</strong></p>
               <%= link_to "Start Chat", order_path(@order), class:"seamify-button" %>
