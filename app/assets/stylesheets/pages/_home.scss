@@ -1,6 +1,6 @@
 .banner {
   /* Background */
-  background-image: url("banner-image-official.png");
+  background-image: url("vintage-light.png");
   background-color: $seamify-brown;
   background-blend-mode: overlay;
   background-size: cover;
@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: calc(100vh - 65px);
-  opacity: 0.9;
+  // opacity: 0.9;
 
   h1 {
     margin: 0;
