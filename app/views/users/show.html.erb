@@ -1,5 +1,5 @@
 <div class="container">
-  <%= link_to users_path do%>
+  <%= link_to request.referer.present? ? request.referer : users_path do%>
     <p class="link-back"><i class="fas fa-arrow-left"></i> BACK TO MAP</p>
   <% end %>
   <div class="seamstress-profile">
