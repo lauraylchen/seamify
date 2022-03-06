@@ -2,7 +2,19 @@ class OrdersController < ApplicationController
   
   def index
     # Show all orders for the current user
-    @orders = Order.find(current_user.id)
+    # Returns an array of orders for the user
+    @orders = Order.where(client_id: current_user.id)
+
+    # Returns an array of order ids
+    order_ids = @orders.pluck(:id).uniq
+
+    # Searches the order items for a matching id, returns an array of order item_label_class
+    # for all orders. 
+    @order_items = OrderItem.where(order_id: order_ids)
+
+    service_ids = @order_items.pluck(:id).uniq
+    @services = Service.where(id: service_ids)
+    # raise
   end
   
   def show

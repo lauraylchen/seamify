@@ -1,2 +1,14 @@
-<h1>All Orders For <%= current_user %></h1>
-<p> <%= @orders %> </p>
+<h1>All Orders For <%= current_user.id %></h1>
+
+<% if @orders != nil %>
+    <p> Total Orders: <%= @orders.size%> </p>
+    <% @orders.each do |order| %>
+        <p> Seamstress: <%= order.seamstress.first_name %> </p>
+        <p> Created At: <%= order.created_at %> </p>
+        <p> Service: <%= @services.where(id: order.seamstress_id)[0].name%></p>
+    <% end %>
+
+<% else %>
+   <p> No Orders for current client </p> 
+<% end %>
+
