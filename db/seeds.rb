@@ -7,15 +7,25 @@ User.destroy_all
 # Users
 puts "Creating Users..."
 
-client = User.create(
+client1 = User.create(
   first_name: 'Isabelle',
   last_name: 'Vallerand',
-  email: 'client@gmail.com',
+  email: 'client1@gmail.com',
   password: '123456'
 )
-client_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645738596/profile/isabelle.jpg')
-client.photo.attach(io: client_file, filename: 'isabelle.jpg', content_type: 'image/jpg')
-puts client.first_name
+client1_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645738596/profile/isabelle.jpg')
+client1.photo.attach(io: client1_file, filename: 'isabelle.jpg', content_type: 'image/jpg')
+puts client1.first_name
+
+client2 = User.create(
+  first_name: 'Cameron',
+  last_name: 'Woolf',
+  email: 'client2@gmail.com',
+  password: '123456'
+)
+client2_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645738592/profile/cameron.jpg')
+client2.photo.attach(io: client2_file, filename: 'cameron.jpg', content_type: 'image/jpg')
+puts client2.first_name
 
 seam1 = User.create(
   first_name: 'Rey',
@@ -78,13 +88,67 @@ seam4_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v164584
 seam4.photo.attach(io: seam4_file, filename: 'yolanda.jpg', content_type: 'image/jpg')
 puts seam4.first_name
 
+seam5 = User.create(
+  first_name: 'Jenny',
+  last_name: 'Sun',
+  bio: "I am a stylist for celebrities but I also like to repair clothes
+  because I want to help people keeping their emotional value piece of clothing.",
+  address: "7700 Boulevard Decarie Montreal QC H4P 2H4",
+  email: 'seam5@gmail.com',
+  password: '123456',
+  seamstress: true
+)
+seam5_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645853113/seamstresses/jenny.jpg')
+seam5.photo.attach(io: seam5_file, filename: 'jenny.jpg', content_type: 'image/jpg')
+puts seam5.first_name
+
+seam6 = User.create(
+  first_name: 'Aldo',
+  last_name: 'Amato',
+  bio: "I use to make three-piece suits for important businessmen,
+  now that I'm retired, I only alter or repair three-piece suits.",
+  address: "378 Av. Victoria Westmount QC H3Z 2N4",
+  email: 'seam6@gmail.com',
+  password: '123456',
+  seamstress: true
+)
+seam6_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645854121/seamstresses/aldo.jpg')
+seam6.photo.attach(io: seam6_file, filename: 'aldo.jpg', content_type: 'image/jpg')
+puts seam6.first_name
+
+seam7 = User.create(
+  first_name: 'Joe',
+  last_name: 'Miller',
+  bio: "I come from a family that made aprons for butchers and blacksmiths, I specialize in leather and mesh.",
+  address: "11885 Blvd. Laurentien Montreal Quebec H4J 2R5",
+  email: 'seam7@gmail.com',
+  password: '123456',
+  seamstress: true
+)
+seam7_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645853994/seamstresses/joe.jpg')
+seam7.photo.attach(io: seam7_file, filename: 'joe.jpg', content_type: 'image/jpg')
+puts seam7.first_name
+
+seam8 = User.create(
+  first_name: 'Erin',
+  last_name: 'McCall',
+  bio: "I have a theater producer background,
+  therefore I am making costumes for plays now but I can fix anything on any type of garment.",
+  address: "1701 Rue Saint-Denis Montreal QC H2X 3K4",
+  email: 'seam8@gmail.com',
+  password: '123456',
+  seamstress: true
+)
+seam8_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645855389/seamstresses/erin.jpg')
+seam8.photo.attach(io: seam8_file, filename: 'erin.jpg', content_type: 'image/jpg')
+puts seam8.first_name
+
 # Services
 puts "Creating Services..."
 
 clothings = ['wedding dress', 'suit', 'dress', 'skirt']
 repairs = ['fitting', 'button', 'zipper']
 materials = ['lace', 'suede', 'leather', 'satin']
-
 
 # Ray's services
 service1 = Service.new(
@@ -100,7 +164,7 @@ service1.seamstress = seam1
 service1.save
 puts service1.name
 
-service = Service.new(
+service2 = Service.new(
   name: "#{materials[3]} #{clothings[0]} - #{repairs[0]}",
   clothing: clothings[0],
   repair: repairs[0],
@@ -109,12 +173,11 @@ service = Service.new(
   price: 200,
   estimated_time: 3
 )
-service.seamstress = seam1
-service.save
-puts service.name
+service2.seamstress = seam1
+service2.save
+puts service2.name
 
-
-service2 = Service.new(
+service3 = Service.new(
   name: "#{materials[0]} #{clothings[0]} - #{repairs[1]}",
   clothing: clothings[0],
   repair: repairs[1],
@@ -123,34 +186,83 @@ service2 = Service.new(
   price: 20,
   estimated_time: 1
 )
-service2.seamstress = seam2
-service2.save
-puts service2.name
 
-service3 = Service.new(
-  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
+service3.seamstress = seam1
+service3.save
+puts service3.name
+
+# Other services
+service4 = Service.new(
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[1]}",
   clothing: clothings[0],
-  repair: repairs[0],
+  repair: repairs[1],
   material: materials[0],
   description: "5 buttons maximum",
   price: 20,
   estimated_time: 1
 )
+service4.seamstress = seam2
+service4.save
+puts service4.name
 
-service3.seamstress = seam3
-service3.save
-puts service3.name
+service5 = Service.new(
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[1]}",
+  clothing: clothings[0],
+  repair: repairs[1],
+  material: materials[0],
+  description: "5 buttons maximum",
+  price: 15,
+  estimated_time: 1
+)
+
+service5.seamstress = seam3
+service5.save
+puts service5.name
 
 # Orders
 puts "Creating Orders..."
 
 order1 = Order.new
-order1.client = client
+order1.client = client1
 order1.seamstress = seam1
 order1.save
+
+order2 = Order.new
+order2.client = client1
+order2.seamstress = seam2
+order2.drop_time = DateTime.now
+order2.confirmed = true
+order2.save
+
+order3 = Order.new
+order3.client = client2
+order3.seamstress = seam1
+order3.save
+
+order4 = Order.new
+order4.client = client2
+order4.seamstress = seam3
+order4.drop_time = DateTime.now
+order4.confirmed = true
+order4.save
 
 # Order Item
 order_item1 = OrderItem.new
 order_item1.service = service1
 order_item1.order = order1
 order_item1.save
+
+order_item2 = OrderItem.new
+order_item2.service = service4
+order_item2.order = order2
+order_item2.save
+
+order_item3 = OrderItem.new
+order_item3.service = service3
+order_item3.order = order3
+order_item3.save
+
+order_item4 = OrderItem.new
+order_item4.service = service5
+order_item4.order = order4
+order_item4.save
