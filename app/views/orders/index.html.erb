@@ -3,7 +3,7 @@
 <% if @orders != nil %>
     <p> Total Orders: <%= @orders.size%> </p>
     <% @orders.reverse.each do |order| %>
-        <p> Order Id: <%= order.id %>
+        <p> <%= link_to "Order Id: ", order_path(order) %> <%= order.id %>
         <p> Seamstress: <%= order.seamstress.first_name %> </p>
         <p> Created At: <%= order.created_at %> </p>
         <% @order_items.where(order_id: order.id).each do |order_item|%>
