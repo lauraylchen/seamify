@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :orders, only: %i[create]
   end
 
-  resources :orders, only: %i[show]
+  resources :orders, only: %i[show update]
 
   # Create a new user profile
   # get '/new', to: 'users#new'
