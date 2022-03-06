@@ -1,4 +1,10 @@
 class OrdersController < ApplicationController
+  
+  def index
+    # Show all orders for the current user
+    @orders = Order.find(current_user.id)
+  end
+  
   def show
     @order = Order.find(params[:id])
     @seamstress = @order.seamstress
