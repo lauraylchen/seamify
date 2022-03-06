@@ -144,6 +144,7 @@ puts service3.name
 # Orders
 puts "Creating Orders..."
 
+# Order 1
 order1 = Order.new
 order1.client = client
 order1.seamstress = seam1
@@ -154,3 +155,16 @@ order_item1 = OrderItem.new
 order_item1.service = service1
 order_item1.order = order1
 order_item1.save
+puts order_item1.service.name
+
+# Order 2
+order2 = Order.new
+order2.client = client
+order2.seamstress = seam1
+order2.save
+
+order_item2 = OrderItem.new
+order_item2.service = service2
+order_item2.order = order2
+order_item2.save
+puts order_item2.service.name

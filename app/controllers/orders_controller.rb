@@ -11,9 +11,7 @@ class OrdersController < ApplicationController
     # Searches the order items for a matching id, returns an array of order item_label_class
     # for all orders. 
     @order_items = OrderItem.where(order_id: order_ids)
-
-    service_ids = @order_items.pluck(:id).uniq
-    @services = Service.where(id: service_ids)
+    @services = Service.all
     # raise
   end
   
