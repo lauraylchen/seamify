@@ -4,13 +4,7 @@ class OrdersController < ApplicationController
     # Show all orders for the current user
     # Returns an array of orders for the user
     @orders = Order.where(client_id: current_user.id)
-
-    # Returns an array of order ids
-    order_ids = @orders.pluck(:id).uniq
-
-    # Searches the order items for a matching id, returns an array of order item_label_class
-    # for all orders. 
-    @order_items = OrderItem.where(order_id: order_ids)
+    @order_items = OrderItem.all
     @services = Service.all
     # raise
   end

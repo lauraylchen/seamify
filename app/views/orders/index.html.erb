@@ -1,9 +1,9 @@
-<h1>All Orders For <%= current_user.id %></h1>
+<h1>All Orders For <%= current_user.first_name %></h1>
 
 <% if @orders != nil %>
     <p> Total Orders: <%= @orders.size%> </p>
-    <% @orders.each do |order| %>
-        <p> <%= order.id %>
+    <% @orders.reverse.each do |order| %>
+        <p> Order Id: <%= order.id %>
         <p> Seamstress: <%= order.seamstress.first_name %> </p>
         <p> Created At: <%= order.created_at %> </p>
         <% @order_items.where(order_id: order.id).each do |order_item|%>

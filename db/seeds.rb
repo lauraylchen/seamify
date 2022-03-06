@@ -87,7 +87,7 @@ materials = ['lace', 'suede', 'leather', 'satin']
 
 
 # Ray's services
-service1 = Service.new(
+service = Service.new(
   name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
   clothing: clothings[0],
   repair: repairs[0],
@@ -96,29 +96,29 @@ service1 = Service.new(
   price: 200,
   estimated_time: 3
 )
-service1.seamstress = seam1
-service1.save
-puts service1.name
-
-service = Service.new(
-  name: "#{materials[3]} #{clothings[0]} - #{repairs[0]}",
-  clothing: clothings[0],
-  repair: repairs[0],
-  material: materials[3],
-  description: "Doing drop off need to take about 30mins",
-  price: 200,
-  estimated_time: 3
-)
 service.seamstress = seam1
 service.save
 puts service.name
 
+service1 = Service.new(
+  name: "#{materials[1]} #{clothings[1]} - #{repairs[1]}",
+  clothing: clothings[1],
+  repair: repairs[1],
+  material: materials[1],
+  description: "Doing drop off need to take about 30mins",
+  price: 200,
+  estimated_time: 3
+)
+service1.seamstress = seam1
+service1.save
+puts service1.name
+
 
 service2 = Service.new(
-  name: "#{materials[0]} #{clothings[0]} - #{repairs[1]}",
-  clothing: clothings[0],
-  repair: repairs[1],
-  material: materials[0],
+  name: "#{materials[2]} #{clothings[3]} - #{repairs[2]}",
+  clothing: clothings[3],
+  repair: repairs[2],
+  material: materials[2],
   description: "5 buttons maximum",
   price: 20,
   estimated_time: 1
@@ -128,10 +128,10 @@ service2.save
 puts service2.name
 
 service3 = Service.new(
-  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
-  clothing: clothings[0],
-  repair: repairs[0],
-  material: materials[0],
+  name: "#{materials[3]} #{clothings[3]} - #{repairs[3]}",
+  clothing: clothings[3],
+  repair: repairs[3],
+  material: materials[3],
   description: "5 buttons maximum",
   price: 20,
   estimated_time: 1
