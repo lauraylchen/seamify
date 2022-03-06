@@ -1,5 +1,5 @@
 <div class="container">
-  <%= link_to users_path do%>
+  <%= link_to request.referer.present? ? request.referer : users_path do%>
     <p class="link-back"><i class="fas fa-arrow-left"></i> BACK TO MAP</p>
   <% end %>
   <div class="seamstress-profile">
@@ -67,20 +67,20 @@
           <div class="fields">
             <p>clothing:</p>
             <div class="d-flex">
-              <% @seamstress.services.each do |service| %>
-                <p class="pill-shaped"><%= service.clothing %></p>
+              <% @clothings.uniq.each do |clothing| %>
+                <p class="box-shaped"><%= clothing %></p>
               <% end %>
             </div>
             <p>repair:</p>
             <div class="d-flex">
-              <% @seamstress.services.each do |service| %>
-                <p class="pill-shaped"><%= service.repair %></p>
+              <% @repairs.uniq.each do |repair| %>
+                <p class="box-shaped"><%= repair %></p>
               <% end %>
             </div>
             <p>material:</p>
             <div class="d-flex">
-              <% @seamstress.services.each do |service| %>
-                <p class="pill-shaped"><%= service.material %></p>
+              <% @materials.uniq.each do |material| %>
+                <p class="box-shaped"><%= material %></p>
               <% end %>
             </div>
           </div>

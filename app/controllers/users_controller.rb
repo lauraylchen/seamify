@@ -16,6 +16,11 @@ class UsersController < ApplicationController
 
   def show
     @seamstress = User.find(params[:id])
+    services = @seamstress.services
+    @clothings = services.map(&:clothing)
+    @repairs = services.map(&:repair)
+    @materials = services.map(&:material)
+    # Order Form
     @order = Order.new
     @order.order_items.build
   end
