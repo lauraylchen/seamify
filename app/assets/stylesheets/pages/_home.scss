@@ -1,8 +1,6 @@
 .banner {
   /* Background */
-  background-image: url("banner-color.png");
-  background-color: $seamify-brown;
-  background-blend-mode: overlay;
+  background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url("banner-color.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
