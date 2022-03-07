@@ -2,22 +2,22 @@
   <p class="login-sign" align="center">Sign in</p>
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <div class="login-username " align="center">
+  <div class = "login-form" align="center">
+
       <%= f.input :email,
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
-    <div >
-
-    </div class="login-password"  align="center">
+   
       <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-      <div class= "login-submit" align="center"> 
+   
+    <div class= "login-submit" align="center"> 
         <%= f.button :submit, "Log in" %>
-      </div>
     </div>
+  </div>  
 
 
   <% end %>

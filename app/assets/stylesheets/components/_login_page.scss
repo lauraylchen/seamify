@@ -18,19 +18,15 @@
     margin-bottom: 20px;
 }
 
-.login-username {
+.login-form {
 width: 76%;
-color: rgb(38, 50, 56);
 font-weight: 700;
 font-size: 14px;
 letter-spacing: 1px;
-background: rgba(136, 126, 126, 0.04);
 padding: 10px 20px;
-border: none;
-border-radius: 20px;
-outline: none;
+border: .5px solid $seamify-brown;
+border-radius: 10px;
 box-sizing: border-box;
-border: 2px solid rgba(0, 0, 0, 0.02);
 margin-bottom: 50px;
 margin-left: 46px;
 text-align: center;
@@ -76,6 +72,7 @@ font-family: 'Ubuntu', sans-serif;
     // margin-left: 35%;
     font-size: 13px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    margin-bottom: 15px;
 }
 
 .login-forgot {
