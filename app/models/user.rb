@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :orders_as_seamstress, class_name: "Order", foreign_key: :seamstress_id
   has_many :services, class_name: "Service", foreign_key: :seamstress_id
 
+  has_many :conversations_as_client, class_name: "Conversation", foreign_key: :client_id
+  has_many :conversations_as_seamstress, class_name: "Conversation", foreign_key: :seamstress_id
+  has_many :messages, class_name: "Message", foreign_key: :sender_id
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   has_one_attached :photo
