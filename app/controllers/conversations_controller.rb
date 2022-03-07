@@ -1,6 +1,7 @@
 class ConversationsController < ApplicationController
   def show
     @conversation = Conversation.find(params[:id])
+    @seamstress = @conversation.seamstress
   end
 
   def contact
