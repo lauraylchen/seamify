@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Messages</h1>
+
+  <% if @conversations.nil? %>
+    <h2>No conversations yet.</h2>
+  <% else %>
+    <% @conversations.each do |conversation| %>
+      <div class="card-format">
+        <%= link_to conversation_path(conversation) do %>
+          <h3 class="p-0 m-0"><%= conversation.seamstress.first_name %> <%= conversation.seamstress.last_name %></h3>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
