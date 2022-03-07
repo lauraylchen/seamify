@@ -1,25 +1,100 @@
 .container {
   position: relative;
   font-size: 16px;
-
-    .clothings, .repairs, .materials {
-      padding: 10px;
-      align-items: center;
+    h5 {
+      margin-top: 30px;
+      margin-bottom: 25px;
     }
   }
+
+.clothing-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.clothing-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.clothings {
+  label {
+    display: block;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 150px;
+    font-size: 16px;
+    margin-left: 12px;
+    margin-bottom: 8px;
+    text-align: center;
+    padding: 100px 25px 10px;
+    border-radius: 8px;
+    background-color: $seamify-cream;
+  }
+}
+.repair-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.repair-selector, label[for="material"] {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 24px;
+  border-radius: 50rem;
+  padding: 10px 25px;
+  background-color: $seamify-cream;
+  color: $seamify-brown;
+  // margin-right: 0.6rem;
+  margin-bottom: 8px;
+}
+// input[type="checkbox"]:checked {
+//   background-color: $seamify-red;
+//   color: white;
+// }
+.repair-wrapper {
+  display: grid;
+  // justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  // flex-wrap: wrap;
+}
+
+.repair-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.repairs {
+  label {
+    display: block;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 150px;
+    font-size: 16px;
+    margin-left: 12px;
+    margin-bottom: 8px;
+    text-align: center;
+    padding: 100px 25px 10px;
+    border-radius: 8px;
+    background-color: $seamify-cream;
+  }
+}
+
+.materials {
+  display: inline-block;
+}
+.material-container {
+  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
 
   .search-btn {
     background-color: $seamify-red;
     color: $seamify-white;
     width: 30%;
+    margin-top: 30px;;
     margin-left: 35%;
     margin-right: 35%;
   }
-
-.search-cards-container {
-  margin-bottom: 15px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  background-color: $seamify-cream;
-  // border: 2px solid red;
-}

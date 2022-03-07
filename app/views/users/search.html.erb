@@ -1,32 +1,36 @@
 <div class="container">
   <%= form_with url:"/users", method: :get do |form| %>
       <%# Clothing Containter %>
-    <div class="search-cards-container">
+          <h5>Type Of Clothing:</h5>
+      <div class="clothing-wrapper">
       <% @clothings.each do |clothing| %>
         <div class="clothings">
           <%= form.label clothing, clothing %>
-          <%= form.radio_button "clothing", clothing %>
+          <%= form.radio_button "clothing", clothing, class:"clothing-selector" %>
         </div>
       <% end %>
     </div>
     <%# reapair container %>
-    <div class="search-cards-container">
+    <h5>Type of alteration or repair:</h5>
+    <div class="repair-wrapper">
       <% @repairs.each do |repair| %>
         <div class= "repairs">
           <%= form.label repair, repair %>
-          <%= form.radio_button "repair", repair %>
+          <%= form.check_box repair, class:"repair-selector" %>
         </div>
       <% end %>
     </div>
       <%# Materials Container %>
-    <div class="search-cards-container">
+      <h5>Type of material:</h5>
+    <div class="material-container">
       <% @materials.each do |material| %>
         <div class= "materials">
-          <%= form.label material, material %>
-          <%= form.radio_button "material", material %>
+          <%= form.label material, material, for:"material" %>
+          <%= form.check_box material, class:"repair-selector", id:" material"%>
         </div>
       <% end %>
     </div>
       <%= form.submit "Find a Seamstress near you...", class: "search-btn"%>
   <% end %>
+  </div>
 </div>
