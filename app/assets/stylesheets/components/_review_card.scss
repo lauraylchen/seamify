@@ -5,7 +5,6 @@
   padding: 10px 15px;
   position: relative;
 }
-
 .review-title {
   font-size: 12px;
   margin-bottom: 10px;
@@ -19,8 +18,9 @@
   width: 50px;
   height: 50px;
   position: absolute;
-  top: -20px;
+  top: 5px;
   right: 5px;
+  z-index: 8;
 }
 
 .review-img img {
@@ -35,11 +35,17 @@
 .review-text {
   line-height: 1.7;
   font-size: 12px;
+  padding-right: 35px;
 }
 
 .date {
   font-size: 12px;
   position: absolute;
   bottom: 0;
-  right: 20px;
+  right: 30px;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: $seamify-red !important;
+  margin-top: 10px;
 }
