@@ -13,9 +13,12 @@ Rails.application.routes.draw do
 
   resources :orders, only: %i[show update]
 
-
   # A user can view all their current orders
-  get '/my-orders', to: 'orders#index',  as: 'my_orders'
+  get '/my-orders', to: 'orders#index', as: 'my_orders'
+
+  # Conversation
+  resources :conversations, only: %i[show]
+  get '/contact/:seamstress_id', to: 'conversations#contact', as: 'contact'
 
   # Create a new user profile
   # get '/new', to: 'users#new'
