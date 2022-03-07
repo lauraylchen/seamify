@@ -1,19 +1,17 @@
 <div class="container">
 <h1>My Orders</h1>
 <table class = "order-table">
-      <tr>
+    <tr>
         <th>Order #:</th>
         <th>Drop Time</th>
         <th>Seamstress</th>
         <th>Total Price</th>
         <th> View Order</th>
-      </tr>
-      <tr>
-
-
-    <% if @orders != nil %>
-    <% @orders.reverse.each do |order| %> 
-
+    </tr>
+      
+    <tr>
+        <% if @orders != nil %> 
+        <% @orders.reverse.each do |order| %>     
         <td class="td"><%= order.id %></td>
         <td> 
             <% if order.drop_time == nil || order.drop_time == []%>
@@ -21,15 +19,14 @@
             <% else %>
             <%= order.drop_time %>
             <% end %>
-        
         </td>
-
+        
         <td>
             <%= link_to user_path(order.seamstress) do %> 
             <%= order.seamstress.first_name %> <%= order.seamstress.last_name %>
             <% end %>
         </td>
-        
+
         <td>
             <% order.order_items.each do |order_item|%>
             <p> Total Price: <%= order_item.service.price%></p>
@@ -37,13 +34,12 @@
         </td>
 
         <td> <%= link_to "View Order ", order_path(order), class: "seamify-button" %></td>
-      </tr>
-    
+    </tr>
     <% end %>
 
     <% else %>
         <p> No Orders for current client </p> 
     <% end %>
-
 </table>
+
 </div>
