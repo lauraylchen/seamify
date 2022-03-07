@@ -25,7 +25,7 @@
     <div class="material-container">
       <% @materials.each do |material| %>
         <div class= "materials">
-          <%= form.label material, material, for:"material" %>
+          <%= form.label material, material %>
           <%= form.radio_button "material", material, class:"material-selector", id:"material"%>
         </div>
       <% end %>

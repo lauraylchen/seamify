@@ -42,7 +42,6 @@ class UsersController < ApplicationController
       ids = @services.pluck(:seamstress_id).uniq
       users = User.where(id: ids)
     end
-
     return users
   end
 end

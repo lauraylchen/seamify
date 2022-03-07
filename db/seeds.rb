@@ -146,9 +146,9 @@ puts seam8.first_name
 # Services
 puts "Creating Services..."
 
-clothings = ['wedding dress', 'suit', 'dress', 'skirt']
-repairs = ['fitting', 'button', 'zipper']
-materials = ['lace', 'suede', 'leather', 'satin']
+clothings = ['Wedding Dress', 'Suit', 'Dress', 'Skirt']
+repairs = ['Fitting', 'Button', 'Zipper']
+materials = ['Lace', 'Suede', 'Leather', 'Satin']
 
 # Ray's services
 service1 = Service.new(
@@ -266,4 +266,3 @@ order_item4 = OrderItem.new
 order_item4.service = service5
 order_item4.order = order4
 order_item4.save
-
