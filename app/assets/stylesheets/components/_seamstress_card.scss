@@ -1,5 +1,4 @@
 .seamstress-index{
-  margin-top: 70px;
   margin-right: 20px;
   height:100vh;
   overflow:scroll;
@@ -41,18 +40,21 @@
 }
 
 .seamstress-cards-container {
-  // display: flex;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-
-.seamstress-cards-container h5 {
-  // display: flex;
-  margin-top:12px;
+.results-display {
+  display: flex;
+  margin-top: 54px;
+  padding-bottom: 12px;
 
 }
 
+.results-display h5 {
+  display: inline-block;
+  align-self: flex-end;
+}
 
 .seamstress-cards-container .cards {
   flex-grow: 1;
