@@ -1,6 +1,10 @@
 class ConversationsController < ApplicationController
   def index
-    @conversations = Conversation.where(client_id: current_user.id)
+    if current_user.seamstress
+      @conversations = Conversation.where(seamstress_id: current_user.id)
+    else
+      @conversations = Conversation.where(client_id: current_user.id)
+    end
   end
 
   def show
