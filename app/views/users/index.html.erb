@@ -1,23 +1,25 @@
 <div class = "container">
 
   <div class="seamstress-cards-container">
-    <div class="seamstress-index">
 
+  <div>
       <% if @users == nil || @users == [] %>
-        <p> No seamstress found near <%= params[:query]%> </p>
+        <h5> No seamstress found near <%= params[:query]%> </h5>
       <% else %>  
-        <p> Found <%= @users.size %> seamstress near you! </p>
+        <h5> Found <%= @users.size %> seamstress near you! </h5>    
+      <% end %>  
+    
+    <div class="seamstress-index">  
         <% @users.each do |user|%>
           <%= render "shared/seamstress_card", user: user %>
         <%end%>
-      <% end %>  
-    </div>
-
-    <%# <div class="cards-map"> %>
-      <div id="map-position" style="width: 100%; height: 85vh;"
-        data-controller="mapbox"
-        data-mapbox-markers-value="<%= @markers.to_json %>"
-        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    <%# </div> %>
+    </div>  
+  </div>  
+  
+  <div id="map-position" style="width: 100%; height: 85vh;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
+
 </div>

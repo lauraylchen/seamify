@@ -40,39 +40,23 @@
   margin-left: 12px;
 }
 
-.cards {
-  margin-top: 5vh;
-
-  display: grid;
-  /* One fr means 1 fraction? Number of fr's sets number of columns
-      Can be sized other than fr
-      vh means view-port height
-      vw means view-port width */
-  grid-template-columns: 1fr;
-
-  /* Just playing around with the row sizes
-    Images can fill to fit the cards */
-  /* grid-template-rows: 10vh 50vh 10vh 10vh; */
-  grid-gap: 16px;
-}
-
 .seamstress-cards-container {
   // display: flex;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
+
+.seamstress-cards-container h5 {
+  // display: flex;
+  margin-top:12px;
+
+}
+
+
 .seamstress-cards-container .cards {
   flex-grow: 1;
   padding: 16px;
-}
-
-.cards-map {
-  margin-top: 20px;
-  height: 100vh;
-  position: sticky;
-  top: 0;
 }
 
 #bio {
