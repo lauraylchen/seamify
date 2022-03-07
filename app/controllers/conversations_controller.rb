@@ -1,4 +1,8 @@
 class ConversationsController < ApplicationController
+  def index
+    @conversations = Conversation.where(client_id: current_user.id)
+  end
+
   def show
     @conversation = Conversation.find(params[:id])
     @seamstress = @conversation.seamstress
