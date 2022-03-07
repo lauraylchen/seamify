@@ -1,10 +1,13 @@
 <div class="container">
+<h1> Tell us about your items</h1>
+<br>
   <%= form_with url:"/users", method: :get do |form| %>
       <%# Clothing Containter %>
           <h5>Type Of Clothing:</h5>
       <div class="clothing-wrapper">
       <% @clothings.each do |clothing| %>
         <div class="clothings">
+          <%= image_tag("#{clothing}.png", class:"clothing-icons") %>
           <%= form.radio_button "clothing", clothing, class: "clothing-selector" %>
           <%= form.label clothing, for:"clothing_#{clothing.underscore.gsub(/( )/, "_")}" %>
         </div>
