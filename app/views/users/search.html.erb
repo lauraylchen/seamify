@@ -15,6 +15,7 @@
     <div class="repair-wrapper">
       <% @repairs.each do |repair| %>
         <div class= "repairs">
+          <%= image_tag("#{repair}.png", class:"repair-icons") %>
           <%= form.radio_button "repair", repair, class:"repair-selector" %>
           <%= form.label repair, repair, for:"repair_#{repair.underscore.gsub(/ /, "_")}"  %>
         </div>
