@@ -2,11 +2,8 @@ class OrdersController < ApplicationController
   
   def index
     # Show all orders for the current user
-    # Returns an array of orders for the user
     @orders = Order.where(client_id: current_user.id)
-    @order_items = OrderItem.all
-    @services = Service.all
-    # raise
+    
   end
   
   def show

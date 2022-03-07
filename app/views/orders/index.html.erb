@@ -3,14 +3,21 @@
 <% if @orders != nil %>
     <p> Total Orders: <%= @orders.size%> </p>
     <% @orders.reverse.each do |order| %>
-        <p> <%= link_to "Order Id: ", order_path(order) %> <%= order.id %>
-        <p> Seamstress: <%= order.seamstress.first_name %> </p>
-        <p> Created At: <%= order.created_at %> </p>
-        <% @order_items.where(order_id: order.id).each do |order_item|%>
-            <p> Service: <%= @services.find(order_item.service_id).name%></p>
-        <%end%>
-    <% end %>
+        <p> Order Id: <%= order.id %> </p>
+        <p> Seamstress: <%= link_to user_path(order.seamstress) do %> 
+            <%= order.seamstress.first_name %> <%= order.seamstress.last_name %>
+            <% end %>
+        </p>
+        <p> Drop Time: <%= order.drop_time %> </p>
 
+        <% order.order_items.each do |order_item|%>
+            <p> Total Price: <%= order_item.service.price%></p>
+        <%end%>
+
+        <%= link_to "View Order ", order_path(order), class: "seamify-button" %>
+        
+    <% end %>
+    
 <% else %>
    <p> No Orders for current client </p> 
 <% end %>
