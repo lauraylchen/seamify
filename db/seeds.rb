@@ -120,7 +120,7 @@ seam7 = User.create(
   first_name: 'Joe',
   last_name: 'Miller',
   bio: "I come from a family that made aprons for butchers and blacksmiths, I specialize in leather and mesh.",
-  address: "11885 Blvd. Laurentien Montreal Quebec H4J 2R5",
+  address: "11885 Blvd. Laurentien Montreal QC H4J 2R5",
   email: 'seam7@gmail.com',
   password: '123456',
   seamstress: true
