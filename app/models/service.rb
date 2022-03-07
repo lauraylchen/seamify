@@ -3,14 +3,14 @@ class Service < ApplicationRecord
   belongs_to :seamstress, class_name: "User"
 
   def self.clothings
-    return ['wedding dress', 'suit', 'dress', 'skirt', "t-shirt", "outerwear", "jeans", "activewear", "childwear", "swimwear"]
+    return ['Wedding Dress', 'Suit', 'Dress', 'Skirt', "Shirt", "Outerwear", "Jeans", "Activewear", "Childwear", "Swimwear"]
   end
 
   def self.repairs
-    return ['fitting', 'button', 'zipper', "hemming", "elastic", "patching"]
+    return ['Fitting', 'Button', 'Zipper', "Hemming", "Elastic", "Patching"]
   end
 
   def self.materials
-    return ['lace', 'suede', 'leather', 'satin', "chiffron", "cotton", "crepe", "denim", "linen", "polyester"]
+    return ['Lace', 'Suede', 'Leather', 'Satin', "Chiffon", "Cotton", "Crêpe", "Denim", "Linen", "Polyester"]
   end
 end

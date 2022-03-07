@@ -1,25 +1,150 @@
 .container {
   position: relative;
   font-size: 16px;
-
-    .clothings, .repairs, .materials {
-      padding: 10px;
-      align-items: center;
+    h1.search-header {
+      font-size: 30px;
+      margin-top: 70px;
+      text-align: left;
+    }
+    h5.search-sub {
+      margin-top: 30px;
+      margin-bottom: 25px;
     }
   }
+//#Clothing
+.clothing-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
 
-  .search-btn {
-    background-color: $seamify-red;
-    color: $seamify-white;
-    width: 30%;
-    margin-left: 35%;
-    margin-right: 35%;
+.clothing-selector {
+  position: absolute;
+  transform: scale(0);
+}
+.clothing-selector:checked + label {
+  background-color: $seamify-red;
+  color: $seamify-white;
+  box-shadow: 10px 5px 5px $seamify-brown;
+}
+
+.clothings {
+  label {
+    display: block;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 150px;
+    font-size: 16px;
+    margin-left: 12px;
+    margin-bottom: 8px;
+    text-align: center;
+    padding: 100px 15px 10px;
+    border-radius: 8px;
+    background-color: $seamify-cream;
+    }
+}
+.clothing-icons {
+    width: 150px;
+    margin-left: 9px;
+    padding: 40px 50px;
+    position: absolute;
+    pointer-events: none;
+}
+//#Repairs
+.repair-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.repair-selector {
+  position: absolute;
+  transform: scale(0);
+}
+.repairs {
+  label {
+    display: block;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 150px;
+    font-size: 16px;
+    margin-left: 12px;
+    margin-bottom: 8px;
+    text-align: center;
+    padding: 100px 25px 10px;
+    border-radius: 8px;
+    background-color: $seamify-cream;
   }
-
-.search-cards-container {
+}
+.repair-selector:checked + label {
+  background-color: $seamify-red;
+  color: $seamify-white;
+  box-shadow: 10px 5px 5px $seamify-brown;
+}
+.repair-icons {
+    width: 150px;
+    margin-left: 9px;
+    padding: 40px 50px;
+    position: absolute;
+    pointer-events: none;
+}
+//#Material//
+.material-container {
   margin-bottom: 15px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  background-color: $seamify-cream;
-  // border: 2px solid red;
+}
+
+.materials {
+  display: inline-block;
+}
+.material-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.materials {
+    label {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 50rem;
+    padding: 10px 25px;
+    background-color: $seamify-cream;
+    color: $seamify-brown;
+    margin-bottom: 8px;
+  }
+}
+.material-selector:checked + label {
+  background-color: $seamify-red;
+  color: $seamify-white;
+  box-shadow: 10px 5px 5px $seamify-brown;
+}
+
+// Search Button//
+  .search-btn {
+    background-color: $seamify-cream;
+    color: $seamify-brown;
+    width: auto;
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    background-clip: padding-box;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-sizing: border-box;
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.25;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    touch-action: manipulation;
+    &:hover {
+      background-color: $seamify-red;
+      color: $seamify-white;
+      box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+      transform: translateY(-1px);
+    }
 }

@@ -120,7 +120,7 @@ seam7 = User.create(
   first_name: 'Joe',
   last_name: 'Miller',
   bio: "I come from a family that made aprons for butchers and blacksmiths, I specialize in leather and mesh.",
-  address: "11885 Blvd. Laurentien Montreal Quebec H4J 2R5",
+  address: "11885 Blvd. Laurentien Montreal QC H4J 2R5",
   email: 'seam7@gmail.com',
   password: '123456',
   seamstress: true
@@ -146,9 +146,9 @@ puts seam8.first_name
 # Services
 puts "Creating Services..."
 
-clothings = ['wedding dress', 'suit', 'dress', 'skirt']
-repairs = ['fitting', 'button', 'zipper']
-materials = ['lace', 'suede', 'leather', 'satin']
+clothings = ['Wedding Dress', 'Suit', 'Dress', 'Skirt']
+repairs = ['Fitting', 'Button', 'Zipper']
+materials = ['Lace', 'Suede', 'Leather', 'Satin']
 
 # Ray's services
 service1 = Service.new(
@@ -266,4 +266,3 @@ order_item4 = OrderItem.new
 order_item4.service = service5
 order_item4.order = order4
 order_item4.save
-

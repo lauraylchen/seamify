@@ -1,32 +1,40 @@
 <div class="container">
-  <%= form_with url:"/users", method: :get do |form| %>
-      <%# Clothing Containter %>
-    <div class="search-cards-container">
-      <% @clothings.each do |clothing| %>
-        <div class="clothings">
-          <%= form.label clothing, clothing %>
-          <%= form.radio_button "clothing", clothing %>
+    <h1 class="search-header"> Tell us about your items</h1>
+    <br>
+    <%= form_with url:"/users", method: :get do |form| %>
+        <%# Clothing Containter %>
+        <h5 class="search-sub">Type Of Clothing:</h5>
+        <div class="clothing-wrapper">
+          <% @clothings.each do |clothing| %>
+            <div class="clothings">
+              <%= image_tag("#{clothing}.png", class:"clothing-icons") %>
+              <%= form.radio_button "clothing", clothing, class: "clothing-selector" %>
+              <%= form.label clothing, for:"clothing_#{clothing.underscore.gsub(/( )/, "_")}" %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
-    <%# reapair container %>
-    <div class="search-cards-container">
-      <% @repairs.each do |repair| %>
-        <div class= "repairs">
-          <%= form.label repair, repair %>
-          <%= form.radio_button "repair", repair %>
+        <%# reapair container %>
+        <h5 class="search-sub">Type of alteration or repair:</h5>
+        <div class="repair-wrapper">
+          <% @repairs.each do |repair| %>
+            <div class= "repairs">
+              <%= image_tag("#{repair}.png", class:"repair-icons") %>
+              <%= form.radio_button "repair", repair, class:"repair-selector" %>
+              <%= form.label repair, repair, for:"repair_#{repair.underscore.gsub(/ /, "_")}"  %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
-      <%# Materials Container %>
-    <div class="search-cards-container">
-      <% @materials.each do |material| %>
-        <div class= "materials">
-          <%= form.label material, material %>
-          <%= form.radio_button "material", material %>
+        <%# Materials Container %>
+        <h5 class="search-sub">Type of material:</h5>
+        <div class="material-container">
+          <% @materials.each do |material| %>
+            <div class= "materials">
+              <%= form.radio_button "material", material, class:"material-selector" %>
+              <%= form.label material, material, for:"material_#{material.underscore.gsub(/ /, "_")}"  %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
       <%= form.submit "Find a Seamstress near you...", class: "search-btn"%>
-  <% end %>
+    <% end %>
+  </div>
 </div>

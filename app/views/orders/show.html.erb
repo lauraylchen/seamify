@@ -1,5 +1,14 @@
+<% if @order.confirmed %>
+  <%= render "order_confirmation_banner", order: @order %>
+<% end %>
+
 <% if @order.client == current_user || @seamstress == current_user %>
   <div class="container">
+
+    <%= link_to request.referer.present? ? request.referer : users_path do%>
+    <p class="link-back"><i class="fas fa-arrow-left"></i> BACK </p>
+  <% end %>
+
     <div class="row justify-content-center my-4">
       <div class="card-format order-summary col-6">
         <div class="p-4">
