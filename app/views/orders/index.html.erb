@@ -1,0 +1,24 @@
+<h1>All Orders For <%= current_user.first_name %></h1>
+
+<% if @orders != nil %>
+    <p> Total Orders: <%= @orders.size%> </p>
+    <% @orders.reverse.each do |order| %>
+        <p> Order Id: <%= order.id %> </p>
+        <p> Seamstress: <%= link_to user_path(order.seamstress) do %> 
+            <%= order.seamstress.first_name %> <%= order.seamstress.last_name %>
+            <% end %>
+        </p>
+        <p> Drop Time: <%= order.drop_time %> </p>
+
+        <% order.order_items.each do |order_item|%>
+            <p> Total Price: <%= order_item.service.price%></p>
+        <%end%>
+
+        <%= link_to "View Order ", order_path(order), class: "seamify-button" %>
+        
+    <% end %>
+    
+<% else %>
+   <p> No Orders for current client </p> 
+<% end %>
+
