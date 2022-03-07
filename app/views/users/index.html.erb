@@ -10,9 +10,13 @@
 
   <div class="seamstress-cards-container">   
     <div class="seamstress-index">  
+      <% if @users == nil || @users == [] %>
+        <%= render "shared/blank_card"%>
+      <% else %>
         <% @users.each do |user|%>
           <%= render "shared/seamstress_card", user: user %>
         <%end%>
+      <% end %>
     </div>  
   
   <div id="map-position" style="width: 100%; height: 85vh;"
