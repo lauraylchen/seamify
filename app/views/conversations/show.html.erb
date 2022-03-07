@@ -12,4 +12,15 @@
       </div>
     <% end %>
   </div>
+  <%= simple_form_for [@conversation, @message],
+    remote: true,
+    html: {class: "d-flex"} do |f|
+  %>
+    <%= f.input :content,
+      label: false,
+      placeholder: "Message #{@seamstress.first_name}",
+      wrapper_html: {class: "flex-grow-1"}
+    %>
+    <%= f.submit "Send", class: "seamify-button" %>
+  <% end %>
 </div>

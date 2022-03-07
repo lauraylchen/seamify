@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   get '/my-orders', to: 'orders#index', as: 'my_orders'
 
   # Conversation
-  resources :conversations, only: %i[show]
+  resources :conversations, only: :show do
+    resources :messages, only: :create
+  end
   get '/contact/:seamstress_id', to: 'conversations#contact', as: 'contact'
 
   # Create a new user profile
