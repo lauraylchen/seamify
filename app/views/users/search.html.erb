@@ -16,7 +16,7 @@
       <% @repairs.each do |repair| %>
         <div class= "repairs">
           <%= form.label repair, repair %>
-          <%= form.check_box repair, class:"repair-selector" %>
+          <%= form.radio_button "repair", repair, class:"repair-selector" %>
         </div>
       <% end %>
     </div>
@@ -26,7 +26,7 @@
       <% @materials.each do |material| %>
         <div class= "materials">
           <%= form.label material, material, for:"material" %>
-          <%= form.check_box material, class:"repair-selector", id:" material"%>
+          <%= form.radio_button "material", material, class:"material-selector", id:"material"%>
         </div>
       <% end %>
     </div>
