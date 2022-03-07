@@ -4,11 +4,15 @@
 
     <div class="seamstress-index">
 
-      <% @users.each do |user|%>
-        <%= render "shared/seamstress_card", user: user %>
-      <%end%>
+      <% if @users == nil || @users == [] %>
+        <p> No seamstress found near <%= params[:query]%> </p>
+      <% else %>  
+        <p> Found <%= @users.size %> seamstress near you! </p>
+        <% @users.each do |user|%>
+          <%= render "shared/seamstress_card", user: user %>
+        <%end%>
+      <% end %>  
     </div>
-
 
     <%# <div class="cards-map"> %>
       <div id="map-position" style="width: 100%; height: 85vh;"
