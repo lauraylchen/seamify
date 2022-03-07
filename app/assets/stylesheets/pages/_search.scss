@@ -16,8 +16,10 @@
   position: absolute;
   transform: scale(0);
 }
-.clothing-selector:checked + .label[for="clothing"]{
-  background-color: $seamify-brown;
+.clothing-selector:checked + label {
+  background-color: $seamify-red;
+  color: $seamify-white;
+  box-shadow: 10px 5px 5px $seamify-brown;
 }
 
 .clothings {
@@ -60,6 +62,11 @@
     background-color: $seamify-cream;
   }
 }
+.repair-selector:checked + label {
+  background-color: $seamify-red;
+  color: $seamify-white;
+  box-shadow: 10px 5px 5px $seamify-brown;
+}
 //#Material//
 .material-container {
   margin-bottom: 15px;
@@ -86,6 +93,11 @@
     color: $seamify-brown;
     margin-bottom: 8px;
   }
+}
+.material-selector:checked + label {
+  background-color: $seamify-red;
+  color: $seamify-white;
+  box-shadow: 10px 5px 5px $seamify-brown;
 }
 
 // Search Button//

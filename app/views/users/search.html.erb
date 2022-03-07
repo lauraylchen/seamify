@@ -5,8 +5,8 @@
       <div class="clothing-wrapper">
       <% @clothings.each do |clothing| %>
         <div class="clothings">
-          <%= form.label clothing, for:"clothing_#{clothing.underscore.gsub(/ /, "_")}" %>
           <%= form.radio_button "clothing", clothing, class: "clothing-selector" %>
+          <%= form.label clothing, for:"clothing_#{clothing.underscore.gsub(/( )/, "_")}" %>
         </div>
       <% end %>
     </div>
@@ -15,8 +15,8 @@
     <div class="repair-wrapper">
       <% @repairs.each do |repair| %>
         <div class= "repairs">
-          <%= form.label repair, repair, for:"repair_#{repair.underscore.gsub(/ /, "_")}"  %>
           <%= form.radio_button "repair", repair, class:"repair-selector" %>
+          <%= form.label repair, repair, for:"repair_#{repair.underscore.gsub(/ /, "_")}"  %>
         </div>
       <% end %>
     </div>
@@ -25,8 +25,8 @@
     <div class="material-container">
       <% @materials.each do |material| %>
         <div class= "materials">
-          <%= form.label material, material, for:"material_#{material.underscore.gsub(/ /, "_")}"  %>
           <%= form.radio_button "material", material, class:"material-selector" %>
+          <%= form.label material, material, for:"material_#{material.underscore.gsub(/ /, "_")}"  %>
         </div>
       <% end %>
     </div>
