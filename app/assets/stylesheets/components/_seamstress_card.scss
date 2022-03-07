@@ -1,7 +1,25 @@
 .seamstress-index{
-  margin-top: 70px;
   margin-right: 20px;
+  height:60vh;
+  overflow:scroll;
+  overflow-x:hidden;
 }
+
+.seamstress-index::-webkit-scrollbar {
+  width: 10px; /* Mostly for vertical scrollbars */
+  // height: 10px;
+}
+
+.seamstress-index::-webkit-scrollbar-track {
+  background: $seamify-white;        /* color of the tracking area */
+}
+
+.seamstress-index::-webkit-scrollbar-thumb {
+  background-color: $seamify-brown;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid $seamify-cream;  /* creates padding around scroll thumb */
+}
+
 
 .seamstress-card {
   background-size: cover;
@@ -37,6 +55,28 @@
   margin-left: 12px;
 }
 
+.seamstress-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.results-display {
+  display: flex;
+  margin-top: 30px;
+  padding-bottom: 12px;
+
+}
+
+.results-display h5 {
+  display: inline-block;
+  align-self: flex-end;
+}
+
+.seamstress-cards-container .cards {
+  flex-grow: 1;
+  padding: 16px;
+}
+
 #bio {
   font-family: $body-font;
   font-size: 13px;
@@ -55,3 +95,5 @@
   font-size: 24px;
   margin: 8px 0px 8px 12px;
 }
+
+
