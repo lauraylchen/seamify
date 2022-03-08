@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     @clothings = Service.clothings
     @repairs = Service.repairs
     @materials = Service.materials
-    users = User.all
+    users = User.where(seamstress: true)
 
     if params[:query].present?
         if params[:query] =~ /[0-9]+/
