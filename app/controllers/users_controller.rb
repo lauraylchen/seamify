@@ -25,6 +25,10 @@ class UsersController < ApplicationController
     @order.order_items.build
   end
 
+  def profile
+    @user = current_user
+  end
+
   def search
     # If you start by search bar, only filter by locatiom
     # If you start in start journey, filter by location and services!
