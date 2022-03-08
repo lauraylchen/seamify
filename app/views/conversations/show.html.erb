@@ -1,20 +1,17 @@
-<div class="container conversation">
+<div class="container conversation"
+  data-controller="conversation-subscription"
+  data-conversation-subscription-conversation-id-value="<%= @conversation.id %>"
+>
   <h1><%= @seamstress.first_name %> <%= @seamstress.last_name %></h1>
 
-  <div class="messages">
+  <div class="messages" data-conversation-subscription-target="messages">
     <% @conversation.messages.each do |message| %>
-      <div id="message-<%= message.id %>">
-        <small>
-          <strong><%= message.sender.first_name %></strong>
-          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        </small>
-        <p><%= message.content %></p>
-      </div>
+      <%= render "messages/message", message: message %>
     <% end %>
   </div>
   <%= simple_form_for [@conversation, @message],
     remote: true,
-    html: {class: "d-flex"} do |f|
+    html: {data: {conversation_subscription_target: "form"}, class: "d-flex"} do |f|
   %>
     <%= f.input :content,
       label: false,
