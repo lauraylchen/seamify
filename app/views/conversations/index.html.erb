@@ -1,15 +1,27 @@
-<div class="container">
-  <h1>Messages</h1>
+<div class="container index-messages col-4">
+  <div class="header-index">
+    <h1>Messages</h1>
+  </div>
 
-  <% if @conversations.nil? %>
-    <h2>No conversations yet.</h2>
-  <% else %>
-    <% @conversations.each do |conversation| %>
-      <div class="card-format">
-        <%= link_to conversation_path(conversation) do %>
-          <h3 class="p-0 m-0"><%= conversation.seamstress.first_name %> <%= conversation.seamstress.last_name %></h3>
-        <% end %>
-      </div>
+  <div class="conversations">
+    <% if @conversations.nil? %>
+      <h2>No conversations yet.</h2>
+    <% else %>
+      <% @conversations.each do |conversation| %>
+        <div class="card-format">
+          <%= link_to conversation_path(conversation) do %>
+            <div class="d-flex">
+              <div class="round-profile">
+                <%= cl_image_tag conversation.seamstress.photo.key %>
+              </div>
+              <div class="conversation-summary">
+                <h5 class="p-0 m-0 flex-grow-1"><%= conversation.seamstress.first_name %> <%= conversation.seamstress.last_name %></h5>
+                <p><em><%= conversation.messages.last.sender.first_name %>: <%= conversation.messages.last.content %></em></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
