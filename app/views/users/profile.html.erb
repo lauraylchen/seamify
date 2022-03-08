@@ -11,6 +11,11 @@
         <h1><%= @user.last_name %></h1>
 
         <div class="user-text-profile">
+            <% if @user.seamstress == true %>
+                <p> Accepting Work </p>
+            <% else %>
+                <p> Seamify Client </p>
+            <% end%>
             <i class="fa fa-envelope" aria-hidden="true"> <%= @user.email%></i>
             <i class="fas fa-map-marker-alt"> <%= @user.address%></i>
         </div>
