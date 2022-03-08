@@ -1,7 +1,11 @@
-<div id="message-<%= message.id %>">
-  <small>
-    <strong><%= message.sender.first_name %></strong>
-    <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-  </small>
-  <p><%= message.content %></p>
+<div class="d-flex <%= "justify-content-end" if message.sender == current_user %>">
+  <div class="message-bubble <%= "sender" if message.sender == current_user %>">
+    <div id="message-<%= message.id %>">
+      <small>
+        <strong><%= message.sender.first_name %></strong>
+        <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+      </small>
+      <p><%= message.content %></p>
+    </div>
+  </div>
 </div>

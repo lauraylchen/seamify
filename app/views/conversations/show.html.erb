@@ -1,8 +1,12 @@
-<div class="container conversation"
+<div class="container conversation col-8"
   data-controller="conversation-subscription"
   data-conversation-subscription-conversation-id-value="<%= @conversation.id %>"
->
-  <h1><%= @seamstress.first_name %> <%= @seamstress.last_name %></h1>
+> <div class="header-message d-flex">
+    <div class="round-profile">
+      <%= cl_image_tag @seamstress.photo.key %>
+    </div>
+    <h1 class="flex-grow-1"><%= @seamstress.first_name %> <%= @seamstress.last_name %></h1>
+  </div>
 
   <div class="messages" data-conversation-subscription-target="messages">
     <% @conversation.messages.each do |message| %>

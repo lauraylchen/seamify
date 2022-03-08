@@ -6,12 +6,7 @@
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
-
-  h1 {
-    border-bottom: 1px solid $gray-200;
-    margin-bottom: 0;
-    padding: 1rem;
-  }
+  padding: 0;
 
   .messages {
     height: 100%;
@@ -20,11 +15,75 @@
   }
 
   #new_message {
-    border-top: 1px solid $gray-200;
     padding: 1rem;
+    background-color: $seamify-brown;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 
     .form-group {
       margin-bottom: 0;
     }
+
+    .seamify-button {
+      font-size: 16px;
+      box-shadow: 4px 4px 10px $seamify-shadow;
+      border: none;
+      width: auto;
+      margin-left: 10px;
+    }
   }
+
+  #message_content {
+    border-radius: 8px;
+    height: 50px;
+    background-color: $seamify-white;
+    &::placeholder {
+      color: $seamify-brown;
+    }
+  }
+}
+
+.header-message {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: $seamify-brown;
+
+  .round-profile {
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+    img {
+      margin-left: -20px;
+    }
+  }
+
+  h1 {
+    margin-bottom: 0;
+    padding: 1rem;
+    color: $seamify-cream;
+    align-self: center;
+  }
+
+}
+
+.message-bubble {
+  height: auto;
+  width: 400px;
+  margin: 5px;
+  padding: 10px;
+  background-color: $seamify-white;
+  color: $seamify-brown;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  p {
+    white-space: normal;
+    word-wrap: break-word;
+  }
+}
+
+.sender {
+  background-color: $seamify-red-chat;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 8px;
 }
