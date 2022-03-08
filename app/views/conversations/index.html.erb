@@ -1,27 +1,37 @@
-<div class="container index-messages col-4">
-  <div class="header-index">
-    <h1>Messages</h1>
+<div class="container d-flex" data-controller="insert-conversation">
+  <div class="index-messages col-4">
+    <div class="header-index">
+      <h1>Messages</h1>
+    </div>
+
+    <div class="conversations">
+      <% if @conversations.nil? %>
+        <h2>No conversations yet.</h2>
+      <% else %>
+        <% @conversations.each do |conversation| %>
+          <div class="card-format"
+            data-insert-conversation-target="conversation"
+            data-action="click->insert-conversation#display"
+            data-insert-conversation-cvid-param="<%= conversation.id %>"
+          >
+            <%= link_to "#" do %>
+              <div class="d-flex">
+                <div class="round-profile">
+                  <%= cl_image_tag conversation.seamstress.photo.key %>
+                </div>
+                <div class="conversation-summary">
+                  <h5 class="p-0 m-0 flex-grow-1"><%= conversation.seamstress.first_name %> <%= conversation.seamstress.last_name %></h5>
+                  <p><em><%= conversation.messages.last.sender.first_name %>: <%= conversation.messages.last.content %></em></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
-  <div class="conversations">
-    <% if @conversations.nil? %>
-      <h2>No conversations yet.</h2>
-    <% else %>
-      <% @conversations.each do |conversation| %>
-        <div class="card-format">
-          <%= link_to conversation_path(conversation) do %>
-            <div class="d-flex">
-              <div class="round-profile">
-                <%= cl_image_tag conversation.seamstress.photo.key %>
-              </div>
-              <div class="conversation-summary">
-                <h5 class="p-0 m-0 flex-grow-1"><%= conversation.seamstress.first_name %> <%= conversation.seamstress.last_name %></h5>
-                <p><em><%= conversation.messages.last.sender.first_name %>: <%= conversation.messages.last.content %></em></p>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    <% end %>
+  <div class="col-8 conversation-show" data-insert-conversation-target="messages">
+
   </div>
 </div>

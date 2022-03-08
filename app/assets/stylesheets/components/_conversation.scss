@@ -147,3 +147,9 @@
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 8px;
 }
+
+.conversation-show {
+  border: 1px solid red;
+  height: calc(100vh - 150px);
+  margin-top: 9px;
+}
