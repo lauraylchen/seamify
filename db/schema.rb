@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_07_173249) do
+ActiveRecord::Schema.define(version: 2022_03_08_184339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,17 @@ ActiveRecord::Schema.define(version: 2022_03_07_173249) do
     t.index ["seamstress_id"], name: "index_orders_on_seamstress_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.string "content"
+    t.bigint "seamstress_id", null: false
+    t.bigint "client_id", null: false
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_reviews_on_client_id"
+    t.index ["seamstress_id"], name: "index_reviews_on_seamstress_id"
+  end
+
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.string "clothing"
@@ -126,5 +137,7 @@ ActiveRecord::Schema.define(version: 2022_03_07_173249) do
   add_foreign_key "order_items", "services"
   add_foreign_key "orders", "users", column: "client_id"
   add_foreign_key "orders", "users", column: "seamstress_id"
+  add_foreign_key "reviews", "users", column: "client_id"
+  add_foreign_key "reviews", "users", column: "seamstress_id"
   add_foreign_key "services", "users", column: "seamstress_id"
 end
