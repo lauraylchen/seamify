@@ -5,10 +5,10 @@
   <div class="order-index">
 
     <h1>My Jobs</h1>
-   
+
     <% if @orders != nil %>
 
-    
+
       <table class = "order-table">
         <tr>
             <th>Order #</th>
@@ -29,9 +29,9 @@
             </td>
 
             <td class="seamstress-link">
-              
+
               <p><%= User.find(order.client_id).first_name%> <%= User.find(order.client_id).last_name %></p>
-  
+
             </td>
 
             <td class="right-content">
@@ -56,7 +56,7 @@
 
     <% if @orders != nil %>
 
-    
+
       <table class = "order-table">
         <tr>
             <th>Order #</th>
@@ -84,7 +84,7 @@
 
             <td class="right-content">
               <% order.order_items.each do |order_item|%>
-                <%= order_item.service.price%>$
+                <%= order_item.service.formatted_price%>$
               <%end%>
             </td>
 
@@ -100,4 +100,3 @@
 <%end%>
 
 </div>
-

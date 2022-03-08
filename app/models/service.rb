@@ -13,4 +13,8 @@ class Service < ApplicationRecord
   def self.materials
     return ['Lace', 'Suede', 'Leather', 'Satin', "Chiffon", "Cotton", "Crêpe", "Denim", "Linen", "Polyester"]
   end
+
+  def formatted_price
+    return sprintf('%05.2f', self.price)
+  end
 end
