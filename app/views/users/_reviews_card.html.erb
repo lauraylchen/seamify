@@ -25,6 +25,7 @@
       </div>
     </div>
 
+    <% if Review.all != nil || Review.all != [] %>
     <% Review.all.each do |review| %>
     <div class="review carousel-item">
       <!--Title -->
@@ -51,6 +52,9 @@
       <!---->
 
     </div>
+    <% end %>
+    <% else %>
+      <p> No Reviews Yet <p>
     <% end %>
 
   </div>
