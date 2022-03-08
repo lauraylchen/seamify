@@ -1,8 +1,17 @@
 <div class="container">
+
   <div class="order-index">
+
+
+    <% if current_user.seamstress == true %>
+    <h1>My Jobs</h1>
+    <% else %>
     <h1>My Orders</h1>
+    <% end %>
 
     <% if @orders != nil %>
+
+    
       <table class = "order-table">
         <tr>
             <th>Order #</th>

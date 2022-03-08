@@ -16,6 +16,7 @@
       <div class="card-format order-summary col-6">
         <div class="p-4">
           <h1 class="h-red bottom-line">Order Summary</h1>
+          <p> For <%= @client.first_name%> <%= @client.last_name%> </p>
           <h2>Services:</h2>
           <% @services.each do |service| %>
             <div class="d-flex justify-content-between">

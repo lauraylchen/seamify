@@ -2,12 +2,16 @@ class OrdersController < ApplicationController
   
   def index
     # Show all orders for the current user
-    @orders = Order.where(client_id: current_user.id)
-    
+    if current_user.seamstress == true
+      @orders = Order.where(seamstress_id: current_user.id)
+    else
+      @orders = Order.where(client_id: current_user.id)
+    end
   end
   
   def show
     @order = Order.find(params[:id])
+    @client = User.find(@order.client_id)
     @seamstress = @order.seamstress
     @services = @order.order_items.map(&:service)
     @total = 0
