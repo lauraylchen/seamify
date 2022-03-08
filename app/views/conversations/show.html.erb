@@ -1,6 +1,7 @@
 <div class="container conversation col-8"
   data-controller="conversation-subscription"
   data-conversation-subscription-conversation-id-value="<%= @conversation.id %>"
+  data-conversation-subscription-user-id-value="<%= current_user.id %>"
 > <div class="header-message d-flex">
     <div class="round-profile">
       <%= cl_image_tag @seamstress.photo.key %>

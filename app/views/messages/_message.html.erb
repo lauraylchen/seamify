@@ -1,4 +1,4 @@
-<div class="d-flex <%= "justify-content-end" if message.sender == current_user %>">
+<div class="d-flex <%= "justify-content-end" if message.sender == current_user %>" id="<%= message.sender.id %>">
   <div class="message-bubble <%= "sender" if message.sender == current_user %>">
     <div id="message-<%= message.id %>">
       <p><%= message.content %></p>
