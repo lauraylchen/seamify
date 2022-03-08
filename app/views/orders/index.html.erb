@@ -1,8 +1,62 @@
 <div class="container">
+
+<% if current_user.seamstress == true %>
+
   <div class="order-index">
+
+    <h1>My Jobs</h1>
+   
+    <% if @orders != nil %>
+
+    
+      <table class = "order-table">
+        <tr>
+            <th>Order #</th>
+            <th>Drop Time</th>
+            <th>Client</th>
+            <th class="right-content">Total Price</th>
+            <th></th>
+        </tr>
+        <% @orders.reverse.each do |order| %>
+          <tr>
+            <td class="td">7326439<%= order.id %></td>
+            <td>
+              <% if order.drop_time.nil? %>
+                Pending
+              <% else %>
+                <%= order.drop_time.strftime("%a %b %e, %Y at %l:%M %p") %>
+              <% end %>
+            </td>
+
+            <td class="seamstress-link">
+              
+              <p><%= User.find(order.client_id).first_name%> <%= User.find(order.client_id).last_name %></p>
+  
+            </td>
+
+            <td class="right-content">
+              <% order.order_items.each do |order_item|%>
+                <%= order_item.service.price%>$
+              <%end%>
+            </td>
+
+            <td class="right-content"><%= link_to "View Order ", order_path(order), class: "seamify-button" %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% else %>
+      <p> No Orders for current client </p>
+    <% end %>
+  </div>
+
+<% else %>
+ <div class="order-index">
+
     <h1>My Orders</h1>
 
     <% if @orders != nil %>
+
+    
       <table class = "order-table">
         <tr>
             <th>Order #</th>
@@ -43,3 +97,7 @@
     <% end %>
   </div>
 </div>
+<%end%>
+
+</div>
+
