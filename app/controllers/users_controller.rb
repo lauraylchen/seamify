@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         lat: user.latitude,
         lng: user.longitude,
         info_window: render_to_string(partial: "info_window", locals: { user: user }),
-        image_url: helpers.asset_url("needle.png")
+        image_url: helpers.asset_url("needle-red.png")
       }
     end
   end
@@ -34,11 +34,11 @@ class UsersController < ApplicationController
     @repairs = Service.repairs
     @materials = Service.materials
 
-    if params[:query].present? 
+    if params[:query].present?
         if params[:query] =~ /[0-9]+/
           users = User.near(params[:query], 2)
         else
-          users = User.near(params[:query], 20)      
+          users = User.near(params[:query], 20)
         end
     else
       # Logic for search form!
