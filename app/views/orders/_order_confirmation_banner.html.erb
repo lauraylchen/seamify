@@ -1,11 +1,9 @@
-<div class="container">
-  <div class="row justify-content-center my-4">
-    <div class="card-format order-summary col-6">
-      <div class="order-confirmation">
-        <p>Order # 7326439<%= @order.id %></p>
-        <p>Thank you for using Seamify! You will find a summary of your order.</p>
-        <p><%= @order.seamstress.first_name %>’s Address : <span class="address-color"><%= @order.seamstress.address %></span></p>
-      </div>
+<div class="row justify-content-center">
+  <div class="card-format order-summary col-6">
+    <div class="order-confirmation">
+      <p>Order # 7326439<%= @order.id %></p>
+      <p>Thank you for using Seamify! You will find a summary of your order.</p>
+      <p><%= @order.seamstress.first_name %>’s Address : <span class="address-color"><%= @order.seamstress.address %></span></p>
     </div>
   </div>
 </div>
