@@ -25,9 +25,31 @@
       </div>
     </div>
 
-    <% 5.times do %>
+    <% Review.all.each do |review| %>
     <div class="review carousel-item">
-        <p> Muahaha </p>
+      <!--Title -->
+      <div class="review-title">
+        <p><strong>A Review</strong></p>
+        <div class="d-flex stars">
+          <% (review.rating).times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+        </div>
+      </div>
+      <!---->
+
+      <!-- Client Avatar-->
+      <div class="review-img">
+       <%= cl_image_tag  User.all.find(review.client_id).photo.key %>
+      </div>
+      <!---->
+
+      <!-- Content -->
+      <div class="review-text">
+        <p> <%= review.content %></p>
+      </div>
+      <!---->
+
     </div>
     <% end %>
 
