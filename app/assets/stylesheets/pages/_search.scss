@@ -40,14 +40,14 @@
     padding: 100px 15px 10px;
     border-radius: 8px;
     background-color: $seamify-cream;
-    }
+  }
 }
 .clothing-icons {
-    width: 150px;
-    margin-left: 9px;
-    padding: 40px 50px;
-    position: absolute;
-    pointer-events: none;
+  width: 150px;
+  margin-left: 9px;
+  padding: 40px 50px;
+  position: absolute;
+  pointer-events: none;
 }
 //#Repairs
 .repair-wrapper {
@@ -79,11 +79,11 @@
   box-shadow: 4px 4px 12px $seamify-brown;
 }
 .repair-icons {
-    width: 150px;
-    margin-left: 9px;
-    padding: 40px 50px;
-    position: absolute;
-    pointer-events: none;
+  width: 150px;
+  margin-left: 9px;
+  padding: 40px 50px;
+  position: absolute;
+  pointer-events: none;
 }
 //#Material//
 .material-container {
@@ -101,7 +101,7 @@
 }
 
 .materials {
-    label {
+  label {
     cursor: pointer;
     display: inline-block;
     font-size: 20px;
@@ -119,53 +119,53 @@
 }
 //Postal Code//
 .postal-code {
-    // width: auto;
-    margin-top: 45px;
-    // margin-left: auto;
-    // margin-right: auto;
-    margin-bottom: 70px;
-    background-clip: padding-box;
-    background-color: $seamify-cream;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    box-sizing: border-box;
-    display: inline;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.25;
-    min-height: 3rem;
-    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-    // position: relative;
-    &::placeholder {
-      color: $seamify-brown;
-    }
+  // width: auto;
+  margin-top: 45px;
+  // margin-left: auto;
+  // margin-right: auto;
+  margin-bottom: 70px;
+  background-clip: padding-box;
+  background-color: $seamify-cream;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-sizing: border-box;
+  display: inline;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  // position: relative;
+  &::placeholder {
+    color: $seamify-brown;
+  }
 }
 // Search Button//
   .search-btn {
-    background-color: $seamify-red;
-    color: $seamify-white;
-    // width: auto;
-    margin-top: 45px;
-    // margin-left: auto;
-    // margin-right: auto;
-    // margin-bottom: 30px;
-    background-clip: padding-box;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    box-sizing: border-box;
-    display: inline;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.25;
-    min-height: 3rem;
-    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-    text-decoration: none;
-    transition: all 250ms;
-    touch-action: manipulation;
-    &:hover {
-      background-color: $seamify-cream;
-      color: $seamify-brown;
-      box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-      transform: translateY(-1px);
-    }
+  background-color: $seamify-red;
+  color: $seamify-white;
+  // width: auto;
+  margin-top: 45px;
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-bottom: 30px;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-sizing: border-box;
+  display: inline;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  text-decoration: none;
+  transition: all 250ms;
+  touch-action: manipulation;
+  &:hover {
+    background-color: $seamify-cream;
+    color: $seamify-brown;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    transform: translateY(-1px);
+  }
 }
