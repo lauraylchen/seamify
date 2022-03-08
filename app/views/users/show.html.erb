@@ -38,16 +38,16 @@
           <p><strong>PORTFOLIO</strong></p>
           <div class="d-flex justify-content-between">
             <div class="squared-img">
-              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232147/portfoliopictures/zipweddingdress.jpg"/>
+              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232147/portfoliopictures/zipweddingdress.jpg" data-bs-toggle="modal" data-bs-target="#picture-one">
             </div>
             <div class="squared-img">
-              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232462/portfoliopictures/sewingbutton.jpg"/>
+              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232462/portfoliopictures/sewingbutton.jpg" data-bs-toggle="modal" data-bs-target="#picture-two"/>
             </div>
             <div class="squared-img">
-              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646231923/portfoliopictures/zipdenim.jpg"/>
+              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646231923/portfoliopictures/zipdenim.jpg" data-bs-toggle="modal" data-bs-target="#picture-three"/>
             </div>
             <div class="squared-img">
-              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646235342/portfoliopictures/lacerepair.jpg"/>
+              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646235342/portfoliopictures/lacerepair.jpg" data-bs-toggle="modal" data-bs-target="#picture-four"/>
             </div>
           </div>
         </div>
@@ -101,6 +101,43 @@
             <% end %>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<%# Images POP OUT %>
+<div class="modal fade" id="picture-one" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-one" aria-label="Close">
+    </button>
+    <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232147/portfoliopictures/zipweddingdress.jpg" class="pop-out" />
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="picture-two" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-two" aria-label="Close">
+          </button>
+        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232462/portfoliopictures/sewingbutton.jpg" class="pop-out" />
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="picture-three" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-three" aria-label="Close">
+        </button>
+        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646231923/portfoliopictures/zipdenim.jpg" class="pop-out"/>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="picture-four" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-four" aria-label="Close">
+        </button>
+        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646235342/portfoliopictures/lacerepair.jpg" class="pop-out" />
     </div>
   </div>
 </div>
