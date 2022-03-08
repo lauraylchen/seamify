@@ -51,6 +51,10 @@
       </div>
       <!---->
 
+      <div class="date">
+        <p><em><%= review.client.first_name %> <%= review.created_at.strftime('%Y-%m-%d')%></em></p>
+      </div>
+
     </div>
     <% end %>
     <% else %>
