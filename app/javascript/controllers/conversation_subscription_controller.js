@@ -6,6 +6,7 @@ export default class extends Controller {
   static targets = ["messages", "form"]
 
   connect() {
+    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
     this.channel = consumer.subscriptions.create(
       { channel: "ConversationChannel", id: this.conversationIdValue },
       { received: data => this.#insertMessageScrollDownAndResetForm(data) }
