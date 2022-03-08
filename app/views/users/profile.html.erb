@@ -1,0 +1,23 @@
+
+<div class="container" align="center">
+
+    <div class = "user-profile" align="center">
+      <h5> About Me </h5>
+      <div class="user-profile-card">
+        <div class="user-round-profile">
+          <%= cl_image_tag @user.photo.key %>
+        </div>
+        <h1><%= @user.first_name %></h1>
+        <h1><%= @user.last_name %></h1>
+
+        <div class="user-text-profile">
+            <i class="fa fa-envelope" aria-hidden="true"> <%= @user.email%></i>
+            <i class="fas fa-map-marker-alt"> <%= @user.address%></i>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+</div>

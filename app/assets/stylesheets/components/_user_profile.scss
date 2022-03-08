@@ -1,0 +1,39 @@
+
+.user-profile {
+    width: 50%;
+    background-color: $seamify-cream;
+    border-radius: 8px;
+    color: $seamify-brown;
+    padding: 20px;
+    margin: 10px 5px;
+}
+
+
+  // Left card
+  .user-profile-card {
+    p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+  }
+  
+  .user-round-profile {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .user-text-profile {
+    display: flex;
+    flex-direction: column;
+    i {
+       margin:8px;     
+    }
+  }
