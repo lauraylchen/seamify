@@ -1,20 +1,61 @@
-.order-table {
-    border-collapse: separate;
-    border-spacing: 0 15px;
-    width: 100%;
+.order-index {
+  margin-top: 50px;
+  h1 {
+    margin-bottom: 20px;
   }
-  
-.order-table th {
-    background-color: $seamify-cream;
-    color: $seamify-red;
-    text-align: center;
-    padding: 5px;
+  .seamify-button {
+    font-size: 16px;
+    width: auto;
+    height: auto;
+    box-shadow: 4px 4px 10px $seamify-shadow;
   }
-  
-.order-table td {
-    text-align: center;
-    padding: 5px;
-    background-color: $seamify-cream;
-    color: $seamify-brown;
-  }
+}
 
+.order-table {
+  width: 100%;
+}
+
+.order-table th {
+  background-color: $seamify-cream;
+  color: $seamify-red;
+  padding: 10px 0;
+}
+
+.order-table td {
+  padding: 15px 0;
+  background-color: $seamify-cream;
+  color: $seamify-brown;
+  border-top: 2px solid $seamify-white;
+}
+
+.right-content {
+  text-align: right;
+}
+
+td:first-of-type, th:first-of-type {
+  padding-left: 50px;
+}
+
+td:last-of-type, th:last-of-type {
+  padding-right: 50px;
+}
+
+th:first-of-type {
+  border-top-left-radius: 8px;
+}
+
+th:last-of-type {
+  border-top-right-radius: 8px;
+}
+
+tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 8px;
+}
+
+tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 8px;
+}
+
+.seamstress-link a:hover {
+  color: $seamify-red;
+}
