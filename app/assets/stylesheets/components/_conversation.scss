@@ -1,3 +1,60 @@
+.index-messages {
+  background: $seamify-cream;
+  margin-top: 9px;
+  height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+  .conversations {
+    height: 100%;
+    overflow: scroll;
+    padding: 10px 0;
+    .card-format {
+      background-color: $seamify-white;
+      padding: 10px;
+      border-radius: 0;
+    }
+    a:hover {
+      color: $seamify-red;
+    }
+  }
+  .round-profile {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    margin-right: 10px;
+    img {
+      margin-left: -10px;
+    }
+  }
+}
+
+.header-index {
+  background-color: $seamify-white;
+  border: 5px solid $seamify-cream;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+  h1 {
+    margin: 10px 10px;
+    text-align: center;
+    color: $seamify-brown;
+  }
+}
+
+.conversation-summary {
+  p {
+    font-size: 16px;
+    color: $seamify-shadow;
+    margin: 0;
+  }
+}
+
 .conversation {
   background: $seamify-cream;
   margin-top: 9px;
