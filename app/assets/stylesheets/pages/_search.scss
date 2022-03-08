@@ -24,7 +24,7 @@
 .clothing-selector:checked + label {
   background-color: $seamify-red;
   color: $seamify-white;
-  box-shadow: 4px 4px 12px $seamify-brown;
+  box-shadow: 3px 3px 10px $seamify-shadow;
 }
 
 .clothings {
@@ -76,7 +76,7 @@
 .repair-selector:checked + label {
   background-color: $seamify-red;
   color: $seamify-white;
-  box-shadow: 4px 4px 12px $seamify-brown;
+  box-shadow: 3px 3px 10px $seamify-shadow;
 }
 .repair-icons {
   width: 150px;
@@ -115,7 +115,7 @@
 .material-selector:checked + label {
   background-color: $seamify-red;
   color: $seamify-white;
-  box-shadow: 10px 5px 5px $seamify-brown;
+  box-shadow: 2px 2px 10px $seamify-shadow;
 }
 //Postal Code//
 .postal-code {
@@ -165,7 +165,7 @@
   &:hover {
     background-color: $seamify-cream;
     color: $seamify-brown;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    // box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     transform: translateY(-1px);
   }
 }
