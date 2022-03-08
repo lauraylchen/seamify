@@ -111,3 +111,20 @@
   object-fit: cover;
   border-radius: 8px;
 }
+//Image Pop Outs//
+.modal {
+  margin-top: 8%;
+  padding-right: 30%;
+}
+.modal-content {
+  background-color: transparent !important;
+  border-radius: 0;
+  border: 0;
+}
+img.pop-out {
+  border-radius: 8px;
+}
+.btn-close {
+  background-color: $seamify-cream;
+  align-self: end;
+}
