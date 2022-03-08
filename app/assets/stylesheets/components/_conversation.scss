@@ -70,7 +70,7 @@
   height: auto;
   width: 400px;
   margin: 5px;
-  padding: 10px;
+  padding: 15px;
   background-color: $seamify-white;
   color: $seamify-brown;
   border-top-left-radius: 8px;
@@ -79,6 +79,10 @@
   p {
     white-space: normal;
     word-wrap: break-word;
+  }
+
+  small {
+    color: $seamify-shadow;
   }
 }
 
