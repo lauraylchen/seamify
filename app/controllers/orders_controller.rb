@@ -36,6 +36,7 @@ class OrdersController < ApplicationController
 
   def update
     @order = Order.find(params[:id])
+    @order.confirmed = true
     if @order.update(drop_time_params)
       redirect_to order_path(@order)
     else
