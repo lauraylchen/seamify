@@ -33,19 +33,22 @@ class UsersController < ApplicationController
     @clothings = Service.clothings
     @repairs = Service.repairs
     @materials = Service.materials
+    users = User.all
 
-    if params[:query].present? 
+    if params[:query].present?
         if params[:query] =~ /[0-9]+/
           users = User.near(params[:query], 2)
         else
-          users = User.near(params[:query], 20)      
+          users = User.near(params[:query], 20)
         end
-    else
+    end
       # Logic for search form!
+    if params[:clothing].present? && params[:repair].present? && params[:material].present?
       @services = Service.where(clothing: params[:clothing], repair: params[:repair], material: params[:material])
       ids = @services.pluck(:seamstress_id).uniq
-      users = User.where(id: ids)
+      users = users.where(id: ids)
     end
+
     return users
   end
 end

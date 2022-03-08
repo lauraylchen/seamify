@@ -13,7 +13,7 @@
             </div>
           <% end %>
         </div>
-        <%# reapair container %>
+        <%# Reapair Container %>
         <h5 class="search-sub">Type of alteration or repair:</h5>
         <div class="repair-wrapper">
           <% @repairs.each do |repair| %>
@@ -34,7 +34,9 @@
             </div>
           <% end %>
         </div>
-      <%= form.submit "Find a Seamstress near you...", class: "search-btn"%>
+        <%# Postal Code %>
+        <%= form.text_field :query, placeholder:"H2X 2S8", class:"postal-code"%>
+      <%= form.submit "Search", class: "search-btn"%>
     <% end %>
   </div>
 </div>
