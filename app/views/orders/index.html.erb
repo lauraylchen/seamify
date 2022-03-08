@@ -1,45 +1,45 @@
 <div class="container">
-<h1>My Orders</h1>
-<table class = "order-table">
-    <tr>
-        <th>Order #:</th>
-        <th>Drop Time</th>
-        <th>Seamstress</th>
-        <th>Total Price</th>
-        <th> View Order</th>
-    </tr>
-      
-    <tr>
-        <% if @orders != nil %> 
-        <% @orders.reverse.each do |order| %>     
-        <td class="td"><%= order.id %></td>
-        <td> 
-            <% if order.drop_time == nil || order.drop_time == []%>
-            <p> Pending </p>
-            <% else %>
-            <%= order.drop_time %>
-            <% end %>
-        </td>
-        
-        <td>
-            <%= link_to user_path(order.seamstress) do %> 
-            <%= order.seamstress.first_name %> <%= order.seamstress.last_name %>
-            <% end %>
-        </td>
+  <div class="order-index">
+    <h1>My Orders</h1>
 
-        <td>
-            <% order.order_items.each do |order_item|%>
-            <p> Total Price: <%= order_item.service.price%></p>
-            <%end%>       
-        </td>
+    <% if @orders != nil %>
+      <table class = "order-table">
+        <tr>
+            <th>Order #</th>
+            <th>Drop Time</th>
+            <th>Seamstress</th>
+            <th class="right-content">Total Price</th>
+            <th></th>
+        </tr>
+        <% @orders.reverse.each do |order| %>
+          <tr>
+            <td class="td">7326439<%= order.id %></td>
+            <td>
+              <% if order.drop_time.nil? %>
+                Pending
+              <% else %>
+                <%= order.drop_time.strftime("%a %b %e, %Y at %l:%M %p") %>
+              <% end %>
+            </td>
 
-        <td> <%= link_to "View Order ", order_path(order), class: "seamify-button" %></td>
-    </tr>
-    <% end %>
+            <td class="seamstress-link">
+              <%= link_to user_path(order.seamstress) do %>
+                <%= order.seamstress.first_name %> <%= order.seamstress.last_name %>
+              <% end %>
+            </td>
 
+            <td class="right-content">
+              <% order.order_items.each do |order_item|%>
+                <%= order_item.service.price%>$
+              <%end%>
+            </td>
+
+            <td class="right-content"><%= link_to "View Order ", order_path(order), class: "seamify-button" %></td>
+          </tr>
+        <% end %>
+      </table>
     <% else %>
-        <p> No Orders for current client </p> 
+      <p> No Orders for current client </p>
     <% end %>
-</table>
-
+  </div>
 </div>
