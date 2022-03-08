@@ -23,8 +23,6 @@ export default class extends Controller {
     var htmlObject = document.createElement('div');
     htmlObject.innerHTML = data;
     var firstDiv = htmlObject.firstChild;
-    console.log(firstDiv.id);
-    console.log(this.userIdValue);
     if (firstDiv.id != this.userIdValue) {
       var lines = data.split("\n")
       lines[0] = "  <div>"
@@ -34,6 +32,8 @@ export default class extends Controller {
 
     this.messagesTarget.insertAdjacentHTML("beforeend", data)
     this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
-    this.formTarget.reset()
+    if (firstDiv.id == this.userIdValue) {
+      this.formTarget.reset()
+    }
   }
 }
