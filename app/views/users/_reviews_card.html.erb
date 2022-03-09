@@ -5,10 +5,10 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
-    
     <div class="review carousel-item active">
-      <% if @reviews_first != nil && @reviews_first != [] %>  
-      <div class="review-title">
+     
+      <!--Title -->
+     <div class="review-title">
         <p><strong>A Review</strong></p>
         <div class="d-flex stars">
           <% (@reviews_first.rating).times do %>
@@ -16,37 +16,32 @@
           <% end %>
         </div>
       </div>
+      <!--Title -->
 
-        <!-- Client Avatar-->
+      <!-- Client Avatar-->
       <div class="review-img">
        <%= cl_image_tag  User.all.find(@reviews_first.client_id).photo.key %>
       </div>
       <!---->
 
-      <!-- Content -->
+       <!-- Content -->
       <div class="review-text">
         <p> <%= @reviews_first.content %></p>
       </div>
       <!---->
 
-      
+       <!-- Date -->
       <div class="date">
         <p><em><%= @reviews_first.client.first_name %> <%= @reviews_first.created_at.strftime('%Y-%m-%d')%></em></p>
-      </div>    
-    </div>
-    <%else%>
-      <div class="review carousel-item active">
-        <div class="review-title">
-         <p><strong>No reviews yet </strong></p>
-        
-        </div>
       </div>
-    <%end%>
+      <!-- -->
 
-    <% if @reviews != nil && @reviews != [] %>
-    <% @reviews.each do |review| %>
+
+    </div>
+
+    <%@reviews.each do |review| %>
     <div class="review carousel-item">
-      <!--Title -->
+       <!--Title -->
       <div class="review-title">
         <p><strong>A Review</strong></p>
         <div class="d-flex stars">
@@ -57,7 +52,7 @@
       </div>
       <!---->
 
-      <!-- Client Avatar-->
+       <!-- Client Avatar-->
       <div class="review-img">
        <%= cl_image_tag  User.all.find(review.client_id).photo.key %>
       </div>
@@ -69,20 +64,15 @@
       </div>
       <!---->
 
+      <!-- Date -->
       <div class="date">
         <p><em><%= review.client.first_name %> <%= review.created_at.strftime('%Y-%m-%d')%></em></p>
       </div>
+      <!-- -->
+
 
     </div>
-    <% end %>
-      <% else %>
-     <div class="review carousel-item">
-      <div class="review-title">
-         <p><strong>No reviews yet </strong></p>
-        
-        </div>
-      </div>
-    <% end %>
-
+    <%end%>
+    
   </div>
 </div>
