@@ -97,6 +97,12 @@
 }
 .form-select {
   border-radius: 4px;
+  color: $seamify-brown;
+}
+
+.form-select:focus {
+  border-color: $seamify-cream;
+  box-shadow: 0 0 0 0.25rem $seamify-red-chat;
 }
 
 .error {
