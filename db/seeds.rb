@@ -146,9 +146,9 @@ puts seam8.first_name
 # Services
 puts "Creating Services..."
 
+materials = ['Lace', 'Suede', 'Leather', 'Satin']
 clothings = ['Wedding Dress', 'Suit', 'Dress', 'Skirt']
 repairs = ['Fitting', 'Button', 'Zipper']
-materials = ['Lace', 'Suede', 'Leather', 'Satin']
 
 # Ray's services
 service1 = Service.new(
@@ -214,10 +214,25 @@ service5 = Service.new(
   price: 15,
   estimated_time: 1
 )
-
 service5.seamstress = seam3
 service5.save
 puts service5.name
+
+#Suit for G
+service6= Service.new(
+  name: "#{materials[3]} #{clothings[1]} - #{repairs[0]}",
+  material: materials[3],
+  clothing: clothings[1],
+  repair: repairs[0],
+  description: "Suit fitting for men",
+  price: 15,
+  estimated_time: 1
+)
+
+service6.seamstress = seam2
+service6.save
+puts service6.name
+
 
 # Orders
 puts "Creating Orders..."
@@ -266,3 +281,28 @@ order_item4 = OrderItem.new
 order_item4.service = service5
 order_item4.order = order4
 order_item4.save
+
+# Reviews Seed
+
+# Reviews for Rey
+review1 = Review.create(content: "Thanks Rey!", 
+  service: service1.name,
+  seamstress_id: seam1.id, 
+  client_id: client1.id, 
+  rating: 4)
+
+review2 = Review.create(content: "Great Job!", 
+    service: service2.name,
+    seamstress_id: seam1.id, 
+    client_id: client2.id, 
+    rating: 4)
+
+review3 = Review.create(content: "Salut!", 
+  service: service3.name,
+  seamstress_id: seam1.id, 
+  client_id: client2.id, 
+  rating: 4)
+
+
+
+
