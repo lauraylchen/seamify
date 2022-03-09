@@ -41,6 +41,7 @@
   font-size: 24px;
   font-weight: bold;
   padding: 10px 20px;
+  padding-bottom: 5px;
   margin: 10px 0;
 }
 
@@ -62,4 +63,12 @@
 
 .meet-card-button {
   text-align: center;
+}
+
+.card-divider {
+  display:blockl;
+  width: 48px;
+  height: 4px;
+  background-color: $seamify-brown;
+  margin: 0px 0px 20px 20px;
 }
