@@ -1,9 +1,9 @@
 class ConversationsController < ApplicationController
   def index
     if current_user.seamstress
-      @conversations = Conversation.where(seamstress_id: current_user.id)
+      @conversations = Conversation.where(seamstress_id: current_user.id).reverse
     else
-      @conversations = Conversation.where(client_id: current_user.id)
+      @conversations = Conversation.where(client_id: current_user.id).reverse
     end
   end
 
@@ -23,7 +23,7 @@ class ConversationsController < ApplicationController
     @client = current_user
     @conversation = Conversation.where(["seamstress_id = ? and client_id = ?", @seamstress.id, @client.id]).first
     if @conversation.present?
-      redirect_to conversations_path
+      redirect_to conversations_path(param: @conversation.id)
     else
       create
     end
