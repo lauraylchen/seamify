@@ -1,7 +1,8 @@
 .seamify-button {
   background: #d63900;
   border-radius: 4px;
-  box-shadow: 2px 2px 10px $seamify-shadow;
+  border: 2px solid transparent !important;
+  // box-shadow: 2px 2px 10px $seamify-shadow;
   width: 170px;
   height: 50px;
   color: #f4e5cf;
