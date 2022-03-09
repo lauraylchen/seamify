@@ -1,6 +1,7 @@
 .index-messages {
   background: $seamify-cream;
   margin-top: 9px;
+  margin-right: 10px;
   height: calc(100vh - 150px);
   display: flex;
   flex-direction: column;
@@ -40,17 +41,24 @@
   border-top-right-radius: 8px;
 
   h1 {
-    margin: 10px 10px;
+    margin: 23.5px 10px;
+    font-weight: bolder;
     text-align: center;
     color: $seamify-brown;
   }
 }
 
 .conversation-summary {
+  width: 80%;
   p {
-    font-size: 16px;
+    font-size: 12px;
     color: $seamify-shadow;
     margin: 0;
+    margin-top: 5px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 }
 
@@ -63,6 +71,7 @@
   justify-content: space-between;
   flex-grow: 1;
   padding: 0;
+  border-radius: 8px;
 
   .messages {
     height: 100%;
@@ -139,6 +148,7 @@
 
   small {
     color: $seamify-shadow;
+    font-size: 12px;
   }
 }
 
