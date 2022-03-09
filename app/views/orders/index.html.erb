@@ -64,6 +64,7 @@
             <th>Seamstress</th>
             <th class="right-content">Total Price</th>
             <th></th>
+            <th></th>
         </tr>
         <% @orders.reverse.each do |order| %>
           <tr>
@@ -89,6 +90,13 @@
             </td>
 
             <td class="right-content"><%= link_to "View Order ", order_path(order), class: "seamify-button" %></td>
+            
+            <% if order.confirmed == true%>
+              <td class="right-content"><%= link_to "Leave Review ", new_order_review_path(order), class: "seamify-button" %></td>
+            <% else %>
+              <td></td>
+            <%end %>
+
           </tr>
         <% end %>
       </table>
