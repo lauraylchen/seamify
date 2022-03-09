@@ -10,13 +10,8 @@ class ReviewsController < ApplicationController
     @review.client = current_user
     @review.seamstress = Order.find(params[:order_id]).seamstress
     @review.service = define_service
-<<<<<<< HEAD
     
       if @review.save
-=======
-    # raise
-    if @review.save
->>>>>>> validations
       redirect_to user_path(@review.seamstress)
       else
         render :new
