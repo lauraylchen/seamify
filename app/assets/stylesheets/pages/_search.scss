@@ -151,7 +151,7 @@
   // margin-right: auto;
   // margin-bottom: 30px;
   background-clip: padding-box;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: .25rem;
   box-sizing: border-box;
   display: inline;
@@ -165,7 +165,7 @@
   touch-action: manipulation;
   &:hover {
     background-color: $seamify-cream;
-    color: $seamify-brown;
+    color: $seamify-red;
     border: 2px solid $seamify-red;
     transform: translateY(-1px);
   }

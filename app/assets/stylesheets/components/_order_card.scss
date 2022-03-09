@@ -1,14 +1,15 @@
 .drop-time {
   .seamify-button {
+    border: 2px solid transparent;
     font-size: 16px;
     width: auto;
     height: auto;
     box-shadow: 4px 4px 10px $seamify-shadow;
-    border: none;
+    // border: none;
     &:hover {
     background: #f4e5cf;
     color: #d63900;
-    border: 2px solid transparent;
+    border: 2px solid $seamify-red;
   }
   }
 }
