@@ -1,4 +1,4 @@
 meta_product_name: "Seamify"
 meta_title: "Seamify - Alterations and repairs made for you."
 meta_description: "An application for alterations and repairs for the people."
-meta_image: "seamify-logo.png" # should exist in `app/assets/images/`
+meta_image: "seamify-og.png" # should exist in `app/assets/images/`

@@ -108,6 +108,12 @@
   }
 }
 
+.form-control:focus {
+  border-color: $seamify-white;
+  box-shadow: 0 0 0 0.25rem $seamify-red-chat;
+  color: $seamify-brown;
+}
+
 .header-message {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;

@@ -1,4 +1,5 @@
 puts "Deleting..."
+Review.destroy_all
 OrderItem.destroy_all
 Order.destroy_all
 Service.destroy_all
