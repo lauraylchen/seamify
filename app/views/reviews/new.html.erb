@@ -2,7 +2,7 @@
 
 <p>Please let us know about your experience with <%= @order.seamstress.first_name %></p>
 
-
+<p> Service: <%= @service.name %>
 <%= simple_form_for([@order, @review]) do |f| %>
   <%= f.input :rating %>
   <%= f.input :content %>

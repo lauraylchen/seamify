@@ -1,3 +1,6 @@
+
+
+<% if @reviews_first != nil && @reviews_first != []%>
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -6,61 +9,77 @@
   </div>
   <div class="carousel-inner">
     <div class="review carousel-item active">
-      <div class="review-title">
-        <p><strong>Skirt Repair</strong></p>
+     
+      <!--Title -->
+     <div class="review-title">
+        <p><strong> <%= @reviews_first.service %></strong></p>
         <div class="d-flex stars">
-          <% 5.times do %>
+          <% (@reviews_first.rating).times do %>
             <i class="fas fa-star"></i>
           <% end %>
         </div>
       </div>
+      <!--Title -->
+
+      <!-- Client Avatar-->
       <div class="review-img">
-        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1645738596/profile/isabelle.jpg"/>
+       <%= cl_image_tag  User.all.find(@reviews_first.client_id).photo.key %>
       </div>
+      <!---->
+
+       <!-- Content -->
       <div class="review-text">
-        <p>Rey is the best! She repaired the zipper on my favorite skirt. She made my skirt like new, I didn't have to spend money to buy a new skirt. I'll definitely do business with her again. Thanks Rey!</p>
+        <p> <%= @reviews_first.content %></p>
       </div>
+      <!---->
+
+       <!-- Date -->
       <div class="date">
-        <p><em>Isabelle, 2022-01-28</em></p>
+        <p><em><%= @reviews_first.client.first_name %> <%= @reviews_first.created_at.strftime('%Y-%m-%d')%></em></p>
       </div>
+      <!-- -->
+
+
     </div>
+
+    <%if @reviews != nil && @reviews != []%>
+    <%@reviews.each do |review| %>
     <div class="review carousel-item">
+       <!--Title -->
       <div class="review-title">
-        <p><strong>Trousers Repair</strong></p>
+        <p><strong><%= review.service %></strong></p>
         <div class="d-flex stars">
-          <% 5.times do %>
+          <% (review.rating).times do %>
             <i class="fas fa-star"></i>
           <% end %>
         </div>
       </div>
+      <!---->
+
+       <!-- Client Avatar-->
       <div class="review-img">
-        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1645738592/profile/cameron.jpg"/>
+       <%= cl_image_tag  User.all.find(review.client_id).photo.key %>
       </div>
+      <!---->
+
+      <!-- Content -->
       <div class="review-text">
-        <p>She fixed the waist of my trousers and was ready to pick up 2 days later, Rey is efficient and oriented on the details.</p>
+        <p> <%= review.content %></p>
       </div>
+      <!---->
+
+      <!-- Date -->
       <div class="date">
-        <p><em>Cameron, 2022-03-07</em></p>
+        <p><em><%= review.client.first_name %> <%= review.created_at.strftime('%Y-%m-%d')%></em></p>
       </div>
+      <!-- -->
     </div>
-    <div class="review carousel-item">
-      <div class="review-title">
-        <p><strong>Wedding Dress Repair</strong></p>
-        <div class="d-flex stars">
-          <% 5.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
-        </div>
-      </div>
-      <div class="review-img">
-        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1645738587/profile/laura.jpg"/>
-      </div>
-      <div class="review-text">
-        <p>Rey repaired all the buttons on my wedding dress, I couldn't find anyone near me, thank you Rey!</p>
-      </div>
-      <div class="date">
-        <p><em>Kathy, 2022-02-25</em></p>
-      </div>
-    </div>
+    <%end%>
+    <%end%>
+    
   </div>
 </div>
+
+<%else%>
+<p> No reviews yet </p>
+<%end%>
