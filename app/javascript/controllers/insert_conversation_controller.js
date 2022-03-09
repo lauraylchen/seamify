@@ -8,7 +8,7 @@ export default class extends Controller {
 
   connect() {
     // console.log(this.urlTargets)
-    console.log(this.conversationTarget)
+    // console.log(this.conversationTargets)
     // console.log(this.messagesTarget)
     this.defaultClick()
   }
@@ -32,6 +32,18 @@ export default class extends Controller {
   }
 
   defaultClick () {
-    this.conversationTarget.click()
+    const params = Array.from(new URLSearchParams(window.location.search))[0]
+    const targets = Array.from(this.conversationTargets)
+    if (params == undefined) {
+      this.conversationTarget.click()
+    }
+    else {
+      targets.forEach(target => {
+        const conversation_id = target.dataset.insertConversationCvidParam
+        if (params[1] == conversation_id) {
+          target.click()
+        }
+      })
+    }
   }
 }
