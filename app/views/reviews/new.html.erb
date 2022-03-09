@@ -1,13 +1,13 @@
-<div class = "review-form-main">
+<div class = "review-form-main" align="center">
 <h1>Write your review!</h1>
 
-<p>Please let us know about your experience with <%= @order.seamstress.first_name %></p>
+<p>Please let us know about your experience with <strong><%= @order.seamstress.first_name %></strong></p>
 
 <p> Service: <%= @service.name %>
 <%= simple_form_for([@order, @review]) do |f| %>
   <%= f.input :rating %>
-  <%= f.input :content %>
-  <%= f.submit %>
+  <%= f.input :content, as: :text, :input_html => {:style=> 'height: 200px'} %>
+  <%= f.button :submit, "Review", class: "seamify-button" %>
 <% end %>
 
 </div>
