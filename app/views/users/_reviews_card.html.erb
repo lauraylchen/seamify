@@ -12,7 +12,7 @@
      
       <!--Title -->
      <div class="review-title">
-        <p><strong> <%= @reviews_first.seamstress %></strong></p>
+        <p><strong> <%= @reviews_first.service %></strong></p>
         <div class="d-flex stars">
           <% (@reviews_first.rating).times do %>
             <i class="fas fa-star"></i>
@@ -47,7 +47,7 @@
     <div class="review carousel-item">
        <!--Title -->
       <div class="review-title">
-        <p><strong>A Review</strong></p>
+        <p><strong><%= review.service %></strong></p>
         <div class="d-flex stars">
           <% (review.rating).times do %>
             <i class="fas fa-star"></i>
