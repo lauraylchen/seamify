@@ -1,5 +1,6 @@
-<h1>Add your review!</h1>
-<p>Please let us know about your Seamify experience.</p>
+<h1>Write your review!</h1>
+
+<p>Please let us know about your experience with <%= @order.seamstress.first_name %></p>
 
 
 <%= simple_form_for([@order, @review]) do |f| %>
