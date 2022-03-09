@@ -11,6 +11,11 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
     @seamstress = @conversation.seamstress
     @message = Message.new
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'conversations/conversation', locals: { conversation: @conversation }, formats: [:html] }
+    end
   end
 
   def contact
