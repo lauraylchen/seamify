@@ -21,7 +21,11 @@
                 </div>
                 <div class="conversation-summary">
                   <h5 class="p-0 m-0 flex-grow-1"><%= conversation.seamstress.first_name %> <%= conversation.seamstress.last_name %></h5>
-                  <p><em><%= conversation.messages.last.sender.first_name %>: <%= conversation.messages.last.content %></em></p>
+                  <% if conversation.messages.last.nil? %>
+                    <p><em>No messages yet.</em></p>
+                  <% else %>
+                    <p><em><%= conversation.messages.last.sender.first_name %>: <%= conversation.messages.last.content %></em></p>
+                  <% end %>
                 </div>
               </div>
             <% end %>
