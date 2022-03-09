@@ -5,11 +5,18 @@
 
 <p> Service: <%= @service.name %>
 <%= simple_form_for([@order, @review]) do |f| %>
-  <%= f.input :rating %>
+  <% count = 1%>
+  <p> Rating:<%= f.collection_radio_buttons :rating, [[1], [2], [3], [4], [5]], :first, :last, item_wrapper_tag: false, boolean_style: :inline do |b| %>
+  <%= b.radio_button + b.label {"#{count}"} %>
+  <% count = count + 1%>
+  <% end %> </p>
   <%= f.input :content, as: :text, :input_html => {:style=> 'height: 200px'} %>
+  
   <%= f.button :submit, "Review", class: "seamify-button" %>
 <% end %>
 
 </div>
+
+
 
 
