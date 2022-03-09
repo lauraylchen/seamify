@@ -26,7 +26,7 @@
           <% end %>
           <div class="d-flex justify-content-between mb-4">
             <h2>Order Total:</h2>
-            <h2><%= sprintf('%05.2f', @total) %>$</h2>
+            <h2><%= sprintf('%.2f', @total) %>$</h2>
           </div>
           <h2 class="bottom-line">Seamstress</h2>
           <h3><%= @seamstress.first_name %> <%= @seamstress.last_name %></h3>

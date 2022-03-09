@@ -15,6 +15,6 @@ class Service < ApplicationRecord
   end
 
   def formatted_price
-    return sprintf('%05.2f', self.price)
+    return format('%.2f', price)
   end
 end
