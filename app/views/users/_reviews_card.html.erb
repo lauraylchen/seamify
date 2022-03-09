@@ -5,28 +5,46 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
+    
     <div class="review carousel-item active">
+      <% if @reviews_first != nil && @reviews_first != [] %>  
       <div class="review-title">
-        <p><strong>Skirt Repair</strong></p>
+        <p><strong>A Review</strong></p>
         <div class="d-flex stars">
-          <% 5.times do %>
+          <% (@reviews_first.rating).times do %>
             <i class="fas fa-star"></i>
           <% end %>
         </div>
       </div>
-      <div class="review-img">
-        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1645738596/profile/isabelle.jpg"/>
-      </div>
-      <div class="review-text">
-        <p>Rey is the best! She repaired the zipper on my favorite skirt. She made my skirt like new, I didn't have to spend money to buy a new skirt. I'll definitely do business with her again. Thanks Rey!</p>
-      </div>
-      <div class="date">
-        <p><em>Isabelle, 2022-01-28</em></p>
-      </div>
-    </div>
 
-    <% if Review.all != nil || Review.all != [] %>
-    <% Review.all.each do |review| %>
+        <!-- Client Avatar-->
+      <div class="review-img">
+       <%= cl_image_tag  User.all.find(@reviews_first.client_id).photo.key %>
+      </div>
+      <!---->
+
+      <!-- Content -->
+      <div class="review-text">
+        <p> <%= @reviews_first.content %></p>
+      </div>
+      <!---->
+
+      
+      <div class="date">
+        <p><em><%= @reviews_first.client.first_name %> <%= @reviews_first.created_at.strftime('%Y-%m-%d')%></em></p>
+      </div>    
+    </div>
+    <%else%>
+      <div class="review carousel-item active">
+        <div class="review-title">
+         <p><strong>No reviews yet </strong></p>
+        
+        </div>
+      </div>
+    <%end%>
+
+    <% if @reviews != nil && @reviews != [] %>
+    <% @reviews.each do |review| %>
     <div class="review carousel-item">
       <!--Title -->
       <div class="review-title">
@@ -57,9 +75,12 @@
 
     </div>
     <% end %>
-    <% else %>
+      <% else %>
      <div class="review carousel-item">
-      <p> No Reviews Yet <p>
+      <div class="review-title">
+         <p><strong>No reviews yet </strong></p>
+        
+        </div>
       </div>
     <% end %>
 
