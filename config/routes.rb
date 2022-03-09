@@ -25,4 +25,9 @@ Rails.application.routes.draw do
   # Create a new user profile
   # get '/new', to: 'users#new'
   # post '/user', to: 'users#create'
+
+  # Create a review for the seamstress
+  resources :orders, only: [] do
+    resources :reviews, only: [:new, :create]
+  end
 end
