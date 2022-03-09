@@ -20,7 +20,9 @@
     color: $seamify-red;
   }
 }
-
+.titles {
+  font-size: 20px;
+}
 // Left card
 .profile {
   width: 280px;
@@ -80,6 +82,7 @@
     padding: 20px 0 ;
     .seamify-button {
       font-size: 16px;
+      border: 2px solid transparent;
       width: auto;
       height: auto;
       box-shadow: 4px 4px 10px $seamify-shadow;
@@ -91,6 +94,9 @@
   }
     }
   }
+}
+.form-select {
+  border-radius: 4px;
 }
 
 .error {
