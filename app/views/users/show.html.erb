@@ -10,15 +10,36 @@
         </div>
         <h1><%= @seamstress.first_name %></h1>
         <h1><%= @seamstress.last_name %></h1>
+         <% if @seamstress.first_name == "Rey"%>
         <div class ="d-flex stars">
           <% 5.times do%>
               <i class="fas fa-star"></i>
           <%end%>
         </div>
+         <% elsif @seamstress.first_name == "Giuseppe" %>
+         <div class ="d-flex stars">
+          <% 5.times do%>
+              <i class="fas fa-star"></i>
+          <%end%>
+        </div>
+        <% else %>
+        <% end %>
+        
         <div class="text-profile">
-          <p><i class="fas fa-trophy"></i> Hired 38 times</p>
-          <p><i class="far fa-comment-dots"></i> Responds within a day</p>
-          <p><i class="far fa-clock"></i> Turn around time: 3-4 days</p>
+          <% if @seamstress.first_name == "Rey"%>
+            <p><i class="fas fa-trophy"></i> Hired 25 times</p>
+            <p><i class="far fa-comment-dots"></i> Responds within a day</p>
+            <p><i class="far fa-clock"></i> Turn around time: 3-4 days</p>
+          <% elsif @seamstress.first_name == "Giuseppe" %>
+            <p><i class="fas fa-trophy"></i> Hired 41 times</p>
+            <p><i class="far fa-comment-dots"></i> Responds within 2 days</p>
+            <p><i class="far fa-clock"></i> Turn around time: 4-5 days</p>          
+          <% else %>
+            <p><i class="fas fa-trophy"></i> No jobs yet! </p>
+            <p><i class="far fa-comment-dots"></i> Responds within TBA</p>
+            <p><i class="far fa-clock"></i> Turn around time: TBA</p>
+          <% end %>
+
         </div>
         <div class="center-button">
           <%= link_to "Contact #{@seamstress.first_name}", contact_path(@seamstress), class: "seamify-button" %>
@@ -37,6 +58,8 @@
         <div class="portfolio">
           <p><strong>PORTFOLIO</strong></p>
           <div class="d-flex justify-content-between">
+            
+            <% if @seamstress.first_name == "Rey"%>
             <div class="squared-img">
               <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232147/portfoliopictures/zipweddingdress.jpg" data-bs-toggle="modal" data-bs-target="#picture-one">
             </div>
@@ -49,6 +72,25 @@
             <div class="squared-img">
               <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646235342/portfoliopictures/lacerepair.jpg" data-bs-toggle="modal" data-bs-target="#picture-four"/>
             </div>
+            
+            <% elsif @seamstress.first_name == "Giuseppe" %>
+              <div class="squared-img">
+                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/ruthson-zimmerman-Ws4wd-vJ9M0-unsplash_k7odp0.jpg" data-bs-toggle="modal" data-bs-target="#picture-one">
+                </div>
+              <div class="squared-img">
+                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/jeremy-beadle-qnU-UR0o5X8-unsplash_gtk6ew.jpg" data-bs-toggle="modal" data-bs-target="#picture-two"/>
+              </div>
+              <div class="squared-img">
+                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/maria-orlova-BruuboWUC_U-unsplash_vyvvzj.jpg" data-bs-toggle="modal" data-bs-target="#picture-three"/>
+              </div>
+              <div class="squared-img">
+                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646234326/portfoliopictures/furjacketfix.jpg" data-bs-toggle="modal" data-bs-target="#picture-four"/>
+              </div>
+            
+            <% else %>
+              <p> No photos available </p>
+            <% end %>
+
           </div>
         </div>
       </div>
