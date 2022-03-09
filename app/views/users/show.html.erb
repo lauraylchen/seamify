@@ -68,13 +68,15 @@
             <p>clothing:</p>
             <div class="d-flex">
               <% @clothings.uniq.each do |clothing| %>
-                <p class="box-shaped"><%= clothing %></p>
+                <p class="box-icon"><%= image_tag("#{clothing}.png", class:"clothing-service") %></p>
+                <p><%= clothing %></p>
               <% end %>
             </div>
             <p>repair:</p>
             <div class="d-flex">
               <% @repairs.uniq.each do |repair| %>
-                <p class="box-shaped"><%= repair %></p>
+                <p class="box-icon"><%= image_tag("#{repair}.png", class:"repair-service") %></p>
+                  <p><%= repair %></p>
               <% end %>
             </div>
             <p>material:</p>

@@ -67,14 +67,34 @@
 }
 
 .fields p {
-  margin: 5px 10px 5px 0;
+  margin: 4px -114px 3px 0;
 }
-
+// ICONS//
 .box-shaped {
   background-color: $seamify-white;
   border-radius: 4px;
   padding: 10px 15px;
+  margin: 13px 11px -8px 0;
+
 }
+.box-icon {
+  background-color: $seamify-white;
+  border-radius: 4px;
+  padding: 23px 2px 21px;
+}
+.clothing-service {
+  width: 150px;
+  padding: 0px 61px;
+  margin: -36px;
+  margin-bottom: -30px;
+  pointer-events: none;
+}
+.repair-service {
+    pointer-events: none;
+    width: 150px;
+    padding: 0px 61px;
+}
+//Icons end//
 
 .order-form {
   .center-button {
