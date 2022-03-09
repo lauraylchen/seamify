@@ -8,8 +8,9 @@ export default class extends Controller {
 
   connect() {
     // console.log(this.urlTargets)
-    console.log(this.conversationTargets)
+    console.log(this.conversationTarget)
     // console.log(this.messagesTarget)
+    this.defaultClick()
   }
 
   display (event) {
@@ -28,5 +29,9 @@ export default class extends Controller {
       this.messagesTarget.outerHTML = data
     })
 
+  }
+
+  defaultClick () {
+    this.conversationTarget.click()
   }
 }
