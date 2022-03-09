@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  .rails-default-error-page {
+  <head>
+    <title>The page you were looking for doesn't exist (404)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      /* .rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
@@ -50,18 +50,59 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
-</head>
+  } */
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+      * {
+        transition: all 0.6s;
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        font-family: "merriweather", serif;
+        color: #d63900;
+        margin: 0;
+      }
+
+      #main {
+        display: table;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+      }
+
+      .fof {
+        background-color: #f4e5cf;
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .fof h1 {
+        font-size: 50px;
+        display: inline-block;
+        padding-right: 12px;
+        animation: type 0.5s alternate infinite;
+      }
+
+      @keyframes type {
+        from {
+          box-shadow: inset -3px 0px 0px #d63900;
+        }
+        to {
+          box-shadow: inset -3px 0px 0px transparent;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- This file lives in public/404.html -->
+    <div id="main">
+      <div class="fof">
+        <h1>Error 404</h1>
+      </div>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
-</body>
+  </body>
 </html>
