@@ -12,7 +12,7 @@
      
       <!--Title -->
      <div class="review-title">
-        <p><strong>A Review</strong></p>
+        <p><strong> <%= @reviews_first.seamstress %></strong></p>
         <div class="d-flex stars">
           <% (@reviews_first.rating).times do %>
             <i class="fas fa-star"></i>
@@ -42,6 +42,7 @@
 
     </div>
 
+    <%if @reviews != nil && @reviews != []%>
     <%@reviews.each do |review| %>
     <div class="review carousel-item">
        <!--Title -->
@@ -72,9 +73,8 @@
         <p><em><%= review.client.first_name %> <%= review.created_at.strftime('%Y-%m-%d')%></em></p>
       </div>
       <!-- -->
-
-
     </div>
+    <%end%>
     <%end%>
     
   </div>

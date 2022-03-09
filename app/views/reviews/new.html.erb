@@ -1,7 +1,7 @@
 <h1>Add your review!</h1>
 <p>Please let us know about your Seamify experience.</p>
 
-
+<p> Item <%= @service.name%>
 <%= simple_form_for([@order, @review]) do |f| %>
   <%= f.input :rating %>
   <%= f.input :content %>
