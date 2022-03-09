@@ -14,6 +14,11 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
   
+   # Create a review for the seamstress
+  resources :orders, only: [] do
+    resources :reviews, only: [:new, :create]
+  end
+  
   # Custom routes
   # Contact a seamstress for chat
   get '/contact/:seamstress_id', to: 'conversations#contact', as: 'contact'

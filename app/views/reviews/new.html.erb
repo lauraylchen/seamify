@@ -1,0 +1,11 @@
+<h1>Add your review!</h1>
+<p>Please let us know about your Seamify experience.</p>
+
+
+<%= simple_form_for([@order, @review]) do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>
+
+<p><%= link_to 'Go back to reviews', my_orders_path %></p>
