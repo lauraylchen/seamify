@@ -191,7 +191,36 @@ service3.seamstress = seam1
 service3.save
 puts service3.name
 
-# Other services
+# Guiseppe Services
+service7 = Service.new(
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
+  clothing: clothings[0],
+  repair: repairs[0],
+  material: materials[0],
+  description: "Doing drop off need to take about 30mins",
+  price: 200,
+  estimated_time: 3
+)
+
+service7.seamstress = seam2
+service7.save
+puts service7.name
+
+
+service6= Service.new(
+  name: "#{materials[3]} #{clothings[1]} - #{repairs[0]}",
+  material: materials[3],
+  clothing: clothings[1],
+  repair: repairs[0],
+  description: "Suit fitting for men",
+  price: 15,
+  estimated_time: 1
+)
+
+service6.seamstress = seam2
+service6.save
+puts service6.name
+
 service4 = Service.new(
   name: "#{materials[0]} #{clothings[0]} - #{repairs[1]}",
   clothing: clothings[0],
@@ -204,6 +233,8 @@ service4 = Service.new(
 service4.seamstress = seam2
 service4.save
 puts service4.name
+
+# Other services
 
 service5 = Service.new(
   name: "#{materials[0]} #{clothings[0]} - #{repairs[1]}",
@@ -218,20 +249,6 @@ service5.seamstress = seam3
 service5.save
 puts service5.name
 
-#Suit for G
-service6= Service.new(
-  name: "#{materials[3]} #{clothings[1]} - #{repairs[0]}",
-  material: materials[3],
-  clothing: clothings[1],
-  repair: repairs[0],
-  description: "Suit fitting for men",
-  price: 15,
-  estimated_time: 1
-)
-
-service6.seamstress = seam2
-service6.save
-puts service6.name
 
 
 # Orders
