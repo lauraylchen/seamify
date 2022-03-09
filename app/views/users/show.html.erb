@@ -29,13 +29,13 @@
     <div class="details d-flex flex-column">
       <div class="card-format">
         <div class="about">
-          <p><strong>ABOUT <%= @seamstress.first_name.upcase %></strong></p>
+          <p class="titles"><strong>ABOUT <%= @seamstress.first_name.upcase %></strong></p>
           <p><%= @seamstress.bio %></p>
         </div>
       </div>
       <div class="card-format flex-grow-1 my-0">
         <div class="portfolio">
-          <p><strong>PORTFOLIO</strong></p>
+          <p class="titles"><strong>PORTFOLIO</strong></p>
           <div class="d-flex justify-content-between">
             <div class="squared-img">
               <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232147/portfoliopictures/zipweddingdress.jpg" data-bs-toggle="modal" data-bs-target="#picture-one">
@@ -54,7 +54,7 @@
       </div>
       <div class="card-format">
         <div class="reviews">
-          <p><strong>REVIEWS</strong></p>
+          <p class="titles"><strong>REVIEWS</strong></p>
           <%= render "users/reviews_card" %>
         </div>
       </div>
@@ -63,7 +63,7 @@
     <div class="offers d-flex flex-column">
       <div class="card-format flex-grow-1 mb-0">
         <div class="services">
-          <p><strong>SERVICES</strong></p>
+          <p class="titles"><strong>SERVICES</strong></p>
           <div class="fields">
             <p>clothing:</p>
             <div class="d-flex">
@@ -88,7 +88,7 @@
       </div>
       <div class="card-format">
         <div class="order-form">
-          <p><strong>ORDER FORM</strong></p>
+          <p class="titles"><strong>ORDER FORM</strong></p>
             <%= simple_form_for [@seamstress, @order] do |f| %>
               <%= f.simple_fields_for :order_items do |oi| %>
                 <p class="error"><%= "Service #{@message}" if @order.errors.messages.any? %></p>
