@@ -4,13 +4,14 @@
     <title>The page you were looking for doesn't exist (404)</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <style>
-      .rails-default-error-page {
-        background-color: #f4e5cf;
-        color: #d63900;
-        text-align: center;
-        font-family: "merriweather", serif;
-        margin: 0;
-      }
+      
+      /* .rails-default-error-page {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
 
       .rails-default-error-page div.dialog {
         width: 95%;
@@ -37,33 +38,105 @@
         line-height: 1.5em;
       }
 
-      .rails-default-error-page div.dialog > p {
-        margin: 0 0 1em;
-        padding: 1em;
-        background-color: #f7f7f7;
-        border: 1px solid #ccc;
-        border-right-color: #999;
-        border-left-color: #999;
-        border-bottom-color: #999;
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-        border-top-color: #dadada;
-        color: #666;
-        box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  .rails-default-error-page div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  } */
+
+      * {
+        transition: all 0.6s;
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        font-family: "merriweather", serif;
+        color: #d63900;
+        margin: 0;
+      }
+
+      #main {
+        display: table;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+      }
+
+      .fof {
+        background-color: #f4e5cf;
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .fof h1 {
+        font-size: 50px;
+        display: inline-block;
+        padding-right: 12px;
+        animation: type 0.5s alternate infinite;
+      }
+      .fof p {
+        font-size: 24px;
+        line-height: 0.5;
+      }
+
+      @keyframes type {
+        from {
+          box-shadow: inset -3px 0px 0px #d63900;
+        }
+        to {
+          box-shadow: inset -3px 0px 0px transparent;
+        }
+      }
+
+      .seamify-button {
+        background: #d63900;
+        border-radius: 4px;
+        box-shadow: 2px 2px 10px rgba(74, 38, 30, 0.3);
+        width: 170px;
+        height: 50px;
+        color: #f4e5cf;
+        /* display: inline-block; */
+        font-family: "merriweather", sans-serif;
+        font-size: 18px;
+        text-align: center;
+        padding: 10px 20px;
+      }
+
+      .seamify-button:hover {
+        background: #f4e5cf;
+        color: #d63900;
+        border: 2px solid #d63900;
+      }
+
+      a {
+        text-decoration: none;
+
       }
     </style>
   </head>
 
-  <body class="rails-default-error-page">
+  <body>
     <!-- This file lives in public/404.html -->
-    <div class="dialog">
-      <div>
-        <h1>The page you were looking for doesn't exist.</h1>
-        <p>You may have mistyped the address or the page may have moved.</p>
+    <div id="main">
+      <div class="fof">
+        <h1>Error 404</h1>
+        <p>Oh no, you've found our junior developer's homepage!</p>
+        <p>Sorry, see you next time!</p>
+        <a href="/" class="seamify-button">Back to homepage</a>
       </div>
-      <p>
-        If you are the application owner check the logs for more information.
-      </p>
+
     </div>
   </body>
 </html>
