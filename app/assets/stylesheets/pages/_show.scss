@@ -20,7 +20,9 @@
     color: $seamify-red;
   }
 }
-
+.titles {
+  font-size: 20px;
+}
 // Left card
 .profile {
   width: 280px;
@@ -80,12 +82,27 @@
     padding: 20px 0 ;
     .seamify-button {
       font-size: 16px;
+      border: 2px solid transparent;
       width: auto;
       height: auto;
       box-shadow: 4px 4px 10px $seamify-shadow;
       border: none;
+      &:hover {
+    background: #f4e5cf;
+    color: #d63900;
+    border: 2px solid #D63900;
+  }
     }
   }
+}
+.form-select {
+  border-radius: 4px;
+  color: $seamify-brown;
+}
+
+.form-select:focus {
+  border-color: $seamify-cream;
+  box-shadow: 0 0 0 0.25rem $seamify-red-chat;
 }
 
 .error {
@@ -110,4 +127,21 @@
   display: block;
   object-fit: cover;
   border-radius: 8px;
+}
+//Image Pop Outs//
+.modal {
+  margin-top: 8%;
+  padding-right: 30%;
+}
+.modal-content {
+  background-color: transparent !important;
+  border-radius: 0;
+  border: 0;
+}
+img.pop-out {
+  border-radius: 8px;
+}
+.btn-close {
+  background-color: $seamify-cream;
+  align-self: end;
 }

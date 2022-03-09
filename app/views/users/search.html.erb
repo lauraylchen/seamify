@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container search-container">
     <h1 class="search-header"> Tell us about your items</h1>
     <br>
     <%= form_with url:"/users", method: :get do |form| %>
@@ -13,7 +13,7 @@
             </div>
           <% end %>
         </div>
-        <%# Reapair Container %>
+        <%# Repair Container %>
         <h5 class="search-sub">Type of alteration or repair:</h5>
         <div class="repair-wrapper">
           <% @repairs.each do |repair| %>

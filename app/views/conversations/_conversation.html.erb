@@ -1,0 +1,29 @@
+<div class="container conversation col-8"
+  data-insert-conversation-target="messages"
+  data-controller="conversation-subscription"
+  data-conversation-subscription-conversation-id-value="<%= @conversation.id %>"
+  data-conversation-subscription-user-id-value="<%= current_user.id %>"
+> <div class="header-message d-flex">
+    <div class="round-profile">
+      <%= cl_image_tag @seamstress.photo.key %>
+    </div>
+    <h1 class="flex-grow-1"><%= @seamstress.first_name %> <%= @seamstress.last_name %></h1>
+  </div>
+
+  <div class="messages" data-conversation-subscription-target="messages">
+    <% @conversation.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
+  <%= simple_form_for [@conversation, @message],
+    remote: true,
+    html: {data: {conversation_subscription_target: "form"}, class: "d-flex"} do |f|
+  %>
+    <%= f.input :content,
+      label: false,
+      placeholder: "Message #{@seamstress.first_name}",
+      wrapper_html: {class: "flex-grow-1"}
+    %>
+    <%= f.submit "Send", class: "seamify-button" %>
+  <% end %>
+</div>

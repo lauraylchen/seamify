@@ -10,15 +10,36 @@
         </div>
         <h1><%= @seamstress.first_name %></h1>
         <h1><%= @seamstress.last_name %></h1>
+         <% if @seamstress.first_name == "Rey"%>
         <div class ="d-flex stars">
           <% 5.times do%>
               <i class="fas fa-star"></i>
           <%end%>
         </div>
+         <% elsif @seamstress.first_name == "Giuseppe" %>
+         <div class ="d-flex stars">
+          <% 5.times do%>
+              <i class="fas fa-star"></i>
+          <%end%>
+        </div>
+        <% else %>
+        <% end %>
+        
         <div class="text-profile">
-          <p><i class="fas fa-trophy"></i> Hired 38 times</p>
-          <p><i class="far fa-comment-dots"></i> Responds within a day</p>
-          <p><i class="far fa-clock"></i> Turn around time: 3-4 days</p>
+          <% if @seamstress.first_name == "Rey"%>
+            <p><i class="fas fa-trophy"></i> Hired 25 times</p>
+            <p><i class="far fa-comment-dots"></i> Responds within a day</p>
+            <p><i class="far fa-clock"></i> Turn around time: 3-4 days</p>
+          <% elsif @seamstress.first_name == "Giuseppe" %>
+            <p><i class="fas fa-trophy"></i> Hired 41 times</p>
+            <p><i class="far fa-comment-dots"></i> Responds within 2 days</p>
+            <p><i class="far fa-clock"></i> Turn around time: 4-5 days</p>          
+          <% else %>
+            <p><i class="fas fa-trophy"></i> No jobs yet! </p>
+            <p><i class="far fa-comment-dots"></i> Responds within TBA</p>
+            <p><i class="far fa-clock"></i> Turn around time: TBA</p>
+          <% end %>
+
         </div>
         <div class="center-button">
           <%= link_to "Contact #{@seamstress.first_name}", contact_path(@seamstress), class: "seamify-button" %>
@@ -29,33 +50,54 @@
     <div class="details d-flex flex-column">
       <div class="card-format">
         <div class="about">
-          <p><strong>ABOUT <%= @seamstress.first_name.upcase %></strong></p>
+          <p class="titles"><strong>ABOUT <%= @seamstress.first_name.upcase %></strong></p>
           <p><%= @seamstress.bio %></p>
         </div>
       </div>
       <div class="card-format flex-grow-1 my-0">
         <div class="portfolio">
-          <p><strong>PORTFOLIO</strong></p>
+          <p class="titles"><strong>PORTFOLIO</strong></p>
           <div class="d-flex justify-content-between">
+            
+            <% if @seamstress.first_name == "Rey"%>
             <div class="squared-img">
-              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232147/portfoliopictures/zipweddingdress.jpg"/>
+              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232147/portfoliopictures/zipweddingdress.jpg" data-bs-toggle="modal" data-bs-target="#picture-one">
             </div>
             <div class="squared-img">
-              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232462/portfoliopictures/sewingbutton.jpg"/>
+              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232462/portfoliopictures/sewingbutton.jpg" data-bs-toggle="modal" data-bs-target="#picture-two"/>
             </div>
             <div class="squared-img">
-              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646231923/portfoliopictures/zipdenim.jpg"/>
+              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646231923/portfoliopictures/zipdenim.jpg" data-bs-toggle="modal" data-bs-target="#picture-three"/>
             </div>
             <div class="squared-img">
-              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646235342/portfoliopictures/lacerepair.jpg"/>
+              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646235342/portfoliopictures/lacerepair.jpg" data-bs-toggle="modal" data-bs-target="#picture-four"/>
             </div>
+            
+            <% elsif @seamstress.first_name == "Giuseppe" %>
+              <div class="squared-img">
+                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/ruthson-zimmerman-Ws4wd-vJ9M0-unsplash_k7odp0.jpg" data-bs-toggle="modal" data-bs-target="#picture-one">
+                </div>
+              <div class="squared-img">
+                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/jeremy-beadle-qnU-UR0o5X8-unsplash_gtk6ew.jpg" data-bs-toggle="modal" data-bs-target="#picture-two"/>
+              </div>
+              <div class="squared-img">
+                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/maria-orlova-BruuboWUC_U-unsplash_vyvvzj.jpg" data-bs-toggle="modal" data-bs-target="#picture-three"/>
+              </div>
+              <div class="squared-img">
+                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646234326/portfoliopictures/furjacketfix.jpg" data-bs-toggle="modal" data-bs-target="#picture-four"/>
+              </div>
+            
+            <% else %>
+              <p> No photos available </p>
+            <% end %>
+
           </div>
         </div>
       </div>
       <div class="card-format">
         <div class="reviews">
-          <p><strong>REVIEWS</strong></p>
-          <%= render "reviews_card" %>
+          <p class="titles"><strong>REVIEWS</strong></p>
+          <%= render "users/reviews_card" %>
         </div>
       </div>
     </div>
@@ -63,7 +105,7 @@
     <div class="offers d-flex flex-column">
       <div class="card-format flex-grow-1 mb-0">
         <div class="services">
-          <p><strong>SERVICES</strong></p>
+          <p class="titles"><strong>SERVICES</strong></p>
           <div class="fields">
             <p>clothing:</p>
             <div class="d-flex">
@@ -88,7 +130,7 @@
       </div>
       <div class="card-format">
         <div class="order-form">
-          <p><strong>ORDER FORM</strong></p>
+          <p class="titles"><strong>ORDER FORM</strong></p>
             <%= simple_form_for [@seamstress, @order] do |f| %>
               <%= f.simple_fields_for :order_items do |oi| %>
                 <p class="error"><%= "Service #{@message}" if @order.errors.messages.any? %></p>
@@ -101,6 +143,43 @@
             <% end %>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<%# Images POP OUT %>
+<div class="modal fade" id="picture-one" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-one" aria-label="Close">
+    </button>
+    <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232147/portfoliopictures/zipweddingdress.jpg" class="pop-out" />
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="picture-two" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-two" aria-label="Close">
+          </button>
+        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232462/portfoliopictures/sewingbutton.jpg" class="pop-out" />
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="picture-three" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-three" aria-label="Close">
+        </button>
+        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646231923/portfoliopictures/zipdenim.jpg" class="pop-out"/>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="picture-four" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-four" aria-label="Close">
+        </button>
+        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646235342/portfoliopictures/lacerepair.jpg" class="pop-out" />
     </div>
   </div>
 </div>

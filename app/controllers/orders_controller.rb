@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  
+
   def index
     # Show all orders for the current user
     if current_user.seamstress == true
@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
       @orders = Order.where(client_id: current_user.id)
     end
   end
-  
+
   def show
     @order = Order.find(params[:id])
     @client = User.find(@order.client_id)
@@ -25,6 +25,10 @@ class OrdersController < ApplicationController
     @seamstress = User.find(params[:user_id])
     @order.client = current_user
     @order.seamstress = @seamstress
+    services = @seamstress.services
+    @clothings = services.map(&:clothing)
+    @repairs = services.map(&:repair)
+    @materials = services.map(&:material)
     if @order.save
       redirect_to order_path(@order)
     else

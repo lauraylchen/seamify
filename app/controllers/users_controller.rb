@@ -23,6 +23,16 @@ class UsersController < ApplicationController
     # Order Form
     @order = Order.new
     @order.order_items.build
+
+    # Gets all reviews for the seamstress
+    @reviews_total = Review.where(seamstress_id: @seamstress.id)
+    @reviews_first = @reviews_total[0]
+    @reviews = @reviews_total.all[1..-1]
+    
+  end
+
+  def profile
+    @user = current_user
   end
 
   def search
