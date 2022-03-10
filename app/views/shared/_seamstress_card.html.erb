@@ -7,13 +7,25 @@
     </div>
     <div id = "bio">
       <% if user.first_name == "Rey" || user.first_name == "Giuseppe"%>
-        <div class ="d-flex">
+        <div class ="d-flex mb-2">
           <% 5.times do%>
               <i class="fas fa-star"></i>
           <%end%>
         </div>
+      <% elsif user.first_name == "Jenny" %>
+        <div class ="d-flex mb-2">
+          <% 3.times do%>
+              <i class="fas fa-star"></i>
+          <%end%>
+        </div>
+      <% elsif user.first_name == "Andrea" %>
+        <div class ="d-flex mb-2">
+          <% 4.times do%>
+              <i class="fas fa-star"></i>
+          <%end%>
+        </div>
       <% else %>
-        <div class ="d-flex">
+        <div class ="d-flex mb-2">
           <% range = rand(3..4)%>
           <% range.times do%>
               <i class="fas fa-star"></i>
