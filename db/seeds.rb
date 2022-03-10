@@ -1,5 +1,7 @@
 puts "Deleting..."
 Review.destroy_all
+Message.destroy_all
+Conversation.destroy_all
 OrderItem.destroy_all
 Order.destroy_all
 Service.destroy_all
@@ -27,6 +29,26 @@ client2 = User.create(
 client2_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645738592/profile/cameron.jpg')
 client2.photo.attach(io: client2_file, filename: 'cameron.jpg', content_type: 'image/jpg')
 puts client2.first_name
+
+client3 = User.create(
+  first_name: 'Akhyra',
+  last_name: 'Renomeron',
+  email: 'client3@gmail.com',
+  password: '123456'
+)
+client3_file = URI.open('')
+client3.photo.attach(io: client3_file, filename: 'akhyra.jpg', content_type: 'image/jpg')
+puts client3.first_name
+
+client4 = User.create(
+  first_name: 'Laura',
+  last_name: 'Chen',
+  email: 'client4@gmail.com',
+  password: '123456'
+)
+client4_file = URI.open('')
+client4.photo.attach(io: client4_file, filename: 'laura.jpg', content_type: 'image/jpg')
+puts client4.first_name
 
 seam1 = User.create(
   first_name: 'Rey',
@@ -192,14 +214,14 @@ service3.seamstress = seam1
 service3.save
 puts service3.name
 
-# Guiseppe Services
+# Giuseppe Services
 service7 = Service.new(
   name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
   clothing: clothings[0],
   repair: repairs[0],
   material: materials[0],
   description: "Doing drop off need to take about 30mins",
-  price: 200,
+  price: 500,
   estimated_time: 3
 )
 
@@ -207,15 +229,14 @@ service7.seamstress = seam2
 service7.save
 puts service7.name
 
-
-service6= Service.new(
+service6 = Service.new(
   name: "#{materials[3]} #{clothings[1]} - #{repairs[0]}",
   material: materials[3],
   clothing: clothings[1],
   repair: repairs[0],
   description: "Suit fitting for men",
-  price: 15,
-  estimated_time: 1
+  price: 200,
+  estimated_time: 3
 )
 
 service6.seamstress = seam2
@@ -238,30 +259,41 @@ puts service4.name
 # Other services
 
 service5 = Service.new(
-  name: "#{materials[0]} #{clothings[0]} - #{repairs[1]}",
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
   clothing: clothings[0],
-  repair: repairs[1],
+  repair: repairs[0],
   material: materials[0],
-  description: "5 buttons maximum",
-  price: 15,
-  estimated_time: 1
+  description: "Doing drop off need to take about 40mins",
+  price: 300,
+  estimated_time: 4
 )
 service5.seamstress = seam3
 service5.save
 puts service5.name
 
-
+service8 = Service.new(
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
+  clothing: clothings[0],
+  repair: repairs[0],
+  material: materials[0],
+  description: "Doing drop off need to take about 40mins",
+  price: 300,
+  estimated_time: 4
+)
+service8.seamstress = seam5
+service8.save
+puts service8.name
 
 # Orders
 puts "Creating Orders..."
 
 order1 = Order.new
-order1.client = client1
+order1.client = client2
 order1.seamstress = seam1
 order1.save
 
 order2 = Order.new
-order2.client = client1
+order2.client = client2
 order2.seamstress = seam2
 order2.drop_time = DateTime.now
 order2.confirmed = true
@@ -286,7 +318,7 @@ order_item1.order = order1
 order_item1.save
 
 order_item2 = OrderItem.new
-order_item2.service = service4
+order_item2.service = service6
 order_item2.order = order2
 order_item2.save
 
@@ -303,24 +335,32 @@ order_item4.save
 # Reviews Seed
 
 # Reviews for Rey
-review1 = Review.create(content: "Thanks Rey!", 
-  service: service1.name,
-  seamstress_id: seam1.id, 
-  client_id: client1.id, 
-  rating: 4)
+review1 = Review.create(content: "Thanks Rey! You are a lifesaver. She is so friendly and sweet.
+  She has such magic hands that will transform your dress.", rating: 5)
+review1.service = service1.name
+review1.seamstress = seam1
+review1.client = client4
 
-review2 = Review.create(content: "Great Job!", 
-    service: service2.name,
-    seamstress_id: seam1.id, 
-    client_id: client2.id, 
-    rating: 4)
+review2 = Review.create(content: "Amazing! The service was fast and affordable.
+  My wedding dress looks brand new and beautiful.", rating: 5)
+review2.service = service2.name
+review2.seamstress = seam1
+review2.client = client3
 
-review3 = Review.create(content: "Salut!", 
-  service: service3.name,
-  seamstress_id: seam1.id, 
-  client_id: client2.id, 
-  rating: 4)
+# Reviews for Giuseppe
 
+review3 = Review.create(content: "I was able to save my thousand dollar suit
+  that I have bought 5 years ago. Thank you Giuseppe!", rating: 5)
+review3.service = service6.name
+review3.seamstress = seam2
+review3.client = client2
 
+review4 = Review.create(content: "Giuseppe did a fantastic job, but I wish it was a little cheaper.", rating: 4)
+review4.service = service7.name
+review4.seamstress = seam2
+review4.client = client3
 
-
+review5 = Review.create(content: "It was a quick fix.", rating: 4)
+review5.service = service4.name
+review5.seamstress = seam2
+review5.client = client4
