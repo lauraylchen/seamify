@@ -6,11 +6,20 @@
         <p id = "sname"><%= user.first_name%> <%= user.last_name%></p>
     </div>
     <div id = "bio">
-      <div class ="d-flex">
+      <% if user.first_name == "Rey" || user.first_name == "Giuseppe"%>
+        <div class ="d-flex">
           <% 5.times do%>
               <i class="fas fa-star"></i>
           <%end%>
-      </div>
+        </div>
+      <% else %>
+        <div class ="d-flex">
+          <% range = rand(3..4)%>
+          <% range.times do%>
+              <i class="fas fa-star"></i>
+          <%end%>
+        </div>
+      <% end %>
       <p><%= user.bio%></p>
     </div>
   </div>
