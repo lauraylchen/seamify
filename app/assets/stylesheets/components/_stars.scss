@@ -8,6 +8,11 @@
   font-size: 24px;
 }
 
-.br-widget {
-  color: $seamify-red;
+.br-theme-css-stars {
+  .br-widget {
+    color: $seamify-red;
+    a.br-active:after {
+      color: $seamify-brown;
+    }
+  }
 }
