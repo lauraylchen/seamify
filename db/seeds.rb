@@ -36,7 +36,7 @@ client3 = User.create(
   email: 'client3@gmail.com',
   password: '123456'
 )
-client3_file = URI.open('')
+client3_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645738601/profile/akhyra.jpg')
 client3.photo.attach(io: client3_file, filename: 'akhyra.jpg', content_type: 'image/jpg')
 puts client3.first_name
 
@@ -46,7 +46,7 @@ client4 = User.create(
   email: 'client4@gmail.com',
   password: '123456'
 )
-client4_file = URI.open('')
+client4_file = URI.open('https://res.cloudinary.com/dq1xs22hk/image/upload/v1645738587/profile/laura.jpg')
 client4.photo.attach(io: client4_file, filename: 'laura.jpg', content_type: 'image/jpg')
 puts client4.first_name
 
@@ -169,13 +169,13 @@ puts seam8.first_name
 # Services
 puts "Creating Services..."
 
-materials = ['Lace', 'Suede', 'Leather', 'Satin']
+materials = ['Lace', 'Suede', 'Crepe', 'Satin']
 clothings = ['Wedding Dress', 'Suit', 'Dress', 'Skirt']
 repairs = ['Fitting', 'Button', 'Zipper']
 
-# Ray's services
+# Rey's services
 service1 = Service.new(
-  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]} (200.00$)",
   clothing: clothings[0],
   repair: repairs[0],
   material: materials[0],
@@ -188,20 +188,33 @@ service1.save
 puts service1.name
 
 service2 = Service.new(
-  name: "#{materials[3]} #{clothings[0]} - #{repairs[0]}",
+  name: "#{materials[3]} #{clothings[0]} - #{repairs[0]} (150.00$)",
   clothing: clothings[0],
   repair: repairs[0],
   material: materials[3],
   description: "Doing drop off need to take about 30mins",
-  price: 200,
-  estimated_time: 3
+  price: 150,
+  estimated_time: 2
 )
 service2.seamstress = seam1
 service2.save
 puts service2.name
 
+service9 = Service.new(
+  name: "#{materials[2]} #{clothings[0]} - #{repairs[0]} (175.00$)",
+  clothing: clothings[0],
+  repair: repairs[0],
+  material: materials[2],
+  description: "Doing drop off need to take about 30mins",
+  price: 175,
+  estimated_time: 2
+)
+service9.seamstress = seam1
+service9.save
+puts service9.name
+
 service3 = Service.new(
-  name: "#{materials[0]} #{clothings[0]} - #{repairs[1]}",
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[1]} (20.00$)",
   clothing: clothings[0],
   repair: repairs[1],
   material: materials[0],
@@ -214,9 +227,37 @@ service3.seamstress = seam1
 service3.save
 puts service3.name
 
+service10 = Service.new(
+  name: "#{materials[3]} #{clothings[0]} - #{repairs[1]} (20.00$)",
+  clothing: clothings[0],
+  repair: repairs[1],
+  material: materials[3],
+  description: "5 buttons maximum",
+  price: 20,
+  estimated_time: 1
+)
+
+service10.seamstress = seam1
+service10.save
+puts service10.name
+
+service11 = Service.new(
+  name: "#{materials[2]} #{clothings[0]} - #{repairs[1]} (20.00$)",
+  clothing: clothings[0],
+  repair: repairs[1],
+  material: materials[2],
+  description: "5 buttons maximum",
+  price: 20,
+  estimated_time: 1
+)
+
+service11.seamstress = seam1
+service11.save
+puts service11.name
+
 # Giuseppe Services
 service7 = Service.new(
-  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]} (500.00$)",
   clothing: clothings[0],
   repair: repairs[0],
   material: materials[0],
@@ -230,12 +271,12 @@ service7.save
 puts service7.name
 
 service6 = Service.new(
-  name: "#{materials[3]} #{clothings[1]} - #{repairs[0]}",
-  material: materials[3],
+  name: "#{materials[1]} #{clothings[1]} - #{repairs[0]} (250.00$)",
+  material: materials[1],
   clothing: clothings[1],
   repair: repairs[0],
   description: "Suit fitting for men",
-  price: 200,
+  price: 250,
   estimated_time: 3
 )
 
@@ -244,12 +285,12 @@ service6.save
 puts service6.name
 
 service4 = Service.new(
-  name: "#{materials[0]} #{clothings[0]} - #{repairs[1]}",
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[1]} (30.00$)",
   clothing: clothings[0],
   repair: repairs[1],
   material: materials[0],
   description: "5 buttons maximum",
-  price: 20,
+  price: 30,
   estimated_time: 1
 )
 service4.seamstress = seam2
@@ -259,7 +300,7 @@ puts service4.name
 # Other services
 
 service5 = Service.new(
-  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]} (300.00$)",
   clothing: clothings[0],
   repair: repairs[0],
   material: materials[0],
@@ -272,7 +313,7 @@ service5.save
 puts service5.name
 
 service8 = Service.new(
-  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]}",
+  name: "#{materials[0]} #{clothings[0]} - #{repairs[0]} (300.00$)",
   clothing: clothings[0],
   repair: repairs[0],
   material: materials[0],
@@ -336,7 +377,7 @@ order_item4.save
 
 # Reviews for Rey
 review1 = Review.create(content: "Thanks Rey! You are a lifesaver. She is so friendly and sweet.
-  She has such magic hands that will transform your dress.", rating: 5)
+  She has such magical hands that will transform your dress.", rating: 5)
 review1.service = service1.name
 review1.seamstress = seam1
 review1.client = client4
@@ -349,7 +390,7 @@ review2.client = client3
 
 # Reviews for Giuseppe
 
-review3 = Review.create(content: "I was able to save my thousand dollar suit
+review3 = Review.create(content: "I was able to save my ten thousand dollar suit
   that I have bought 5 years ago. Thank you Giuseppe!", rating: 5)
 review3.service = service6.name
 review3.seamstress = seam2
