@@ -1,12 +1,14 @@
+.review-container {
+  width: 500px;
+}
+
 .review-form-main {
   background-color: $seamify-cream;
-  width: 500px;
-  margin: 2em auto;
+  // margin: 2em auto;
   // padding: 8px;
   border-radius: 1.5em;
   box-shadow: 2px 2px 5px $seamify-shadow;
   // align-items: center;
-  // justify-content: center;
   padding: 20px;
   color: $seamify-brown;
   .new_review {
