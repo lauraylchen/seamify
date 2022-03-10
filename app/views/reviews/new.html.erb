@@ -1,20 +1,18 @@
 
 <div class="container">
- <%= link_to my_orders_path do%>
-          <p class="link-back"><i class="fas fa-arrow-left"></i> BACK </p>
-        <% end %>
-<div class = "review-form-main" align="center">
-<h1>Write your review!</h1>
+  <%= link_to my_orders_path do%>
+    <p class="link-back"><i class="fas fa-arrow-left"></i> BACK </p>
+  <% end %>
+  <div class = "review-form-main" align="center">
+    <h1>Write your review!</h1>
 
-<p>Please let us know about your experience with <strong><%= @order.seamstress.first_name %></strong></p>
+    <p>Please let us know about your experience with <strong><%= @order.seamstress.first_name %></strong></p>
 
-<p> Service: <%= @service.name %>
-<%= simple_form_for([@order, @review]) do |f| %>
-  <%= f.input :rating, collection: 1..5 %>
-  <%= f.input :content, as: :text, :input_html => {:style=> 'height: 200px'} %>
-  <%= f.button :submit, "Review", class: "seamify-button" %>
-<% end %>
-
-</div>
-
+    <p> Service: <%= @service.name %>
+    <%= simple_form_for([@order, @review]) do |f| %>
+      <%= f.input :rating, collection: 1..5 %>
+      <%= f.input :content, as: :text, :input_html => {:style=> 'height: 200px'} %>
+      <%= f.button :submit, "Review", class: "seamify-button" %>
+    <% end %>
+  </div>
 </div>
