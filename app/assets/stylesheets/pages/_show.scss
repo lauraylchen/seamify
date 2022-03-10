@@ -67,14 +67,53 @@
 }
 
 .fields p {
-  margin: 5px 10px 5px 0;
+  margin: 6px 10px 3px 0;
 }
-
+// ICONS//
 .box-shaped {
   background-color: $seamify-white;
-  border-radius: 4px;
-  padding: 10px 15px;
+  font-size: 15px;
+  border-radius: 50rem;
+  padding: 10px 25px;
+  color: $seamify-brown;
+  margin-bottom: 8px;
+  box-shadow: 0px 0px 10px $seamify-shadow;
 }
+.icon-p {
+  font-size: 10px;
+  padding-top: 7px;
+}
+.d-icon {
+  display: inline-flex;
+  margin: -15px;
+  padding: 7px 7px;
+}
+.box-icon {
+  background-color: $seamify-white;
+  border-radius: 4px;
+  padding: 22px 7px 10px;;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px $seamify-shadow;
+  p {
+    margin: 0 !important;
+  }
+}
+.clothing-service {
+  width: 150px;
+  padding: 0px 61px;
+  margin: -36px;
+  margin-bottom: -30px;
+  pointer-events: none;
+}
+.repair-service {
+    pointer-events: none;
+    width: 150px;
+    padding: 0px 61px;
+    margin: -36px;
+    margin-bottom: -30px;
+}
+//Icons end//
 
 .order-form {
   .center-button {
@@ -137,6 +176,7 @@
   background-color: transparent !important;
   border-radius: 0;
   border: 0;
+  left: 219px;
 }
 img.pop-out {
   border-radius: 8px;
@@ -144,4 +184,9 @@ img.pop-out {
 .btn-close {
   background-color: $seamify-cream;
   align-self: end;
+}
+img.pop-long {
+  border-radius: 8px;
+  margin: auto;
+  width: 40%;
 }
