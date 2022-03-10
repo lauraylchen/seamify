@@ -24,7 +24,7 @@
         </div>
         <% else %>
         <% end %>
-        
+
         <div class="text-profile">
           <% if @seamstress.first_name == "Rey"%>
             <p><i class="fas fa-trophy"></i> Hired 25 times</p>
@@ -33,7 +33,7 @@
           <% elsif @seamstress.first_name == "Giuseppe" %>
             <p><i class="fas fa-trophy"></i> Hired 41 times</p>
             <p><i class="far fa-comment-dots"></i> Responds within 2 days</p>
-            <p><i class="far fa-clock"></i> Turn around time: 4-5 days</p>          
+            <p><i class="far fa-clock"></i> Turn around time: 4-5 days</p>
           <% else %>
             <p><i class="fas fa-trophy"></i> No jobs yet! </p>
             <p><i class="far fa-comment-dots"></i> Responds within TBA</p>
@@ -58,21 +58,21 @@
         <div class="portfolio">
           <p class="titles"><strong>PORTFOLIO</strong></p>
           <div class="d-flex justify-content-between">
-            
+
             <% if @seamstress.first_name == "Rey"%>
             <div class="squared-img">
               <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232147/portfoliopictures/zipweddingdress.jpg" data-bs-toggle="modal" data-bs-target="#picture-one">
             </div>
             <div class="squared-img">
-              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232462/portfoliopictures/sewingbutton.jpg" data-bs-toggle="modal" data-bs-target="#picture-two"/>
+              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646926894/portfoliopictures/wedbuttons.jpg" data-bs-toggle="modal" data-bs-target="#picture-two"/>
             </div>
             <div class="squared-img">
-              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646231923/portfoliopictures/zipdenim.jpg" data-bs-toggle="modal" data-bs-target="#picture-three"/>
+              <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646927299/portfoliopictures/weddressback.jpg" data-bs-toggle="modal" data-bs-target="#picture-three"/>
             </div>
             <div class="squared-img">
               <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646235342/portfoliopictures/lacerepair.jpg" data-bs-toggle="modal" data-bs-target="#picture-four"/>
             </div>
-            
+
             <% elsif @seamstress.first_name == "Giuseppe" %>
               <div class="squared-img">
                 <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/ruthson-zimmerman-Ws4wd-vJ9M0-unsplash_k7odp0.jpg" data-bs-toggle="modal" data-bs-target="#picture-one">
@@ -86,7 +86,7 @@
               <div class="squared-img">
                 <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646234326/portfoliopictures/furjacketfix.jpg" data-bs-toggle="modal" data-bs-target="#picture-four"/>
               </div>
-            
+
             <% else %>
               <p> No photos available </p>
             <% end %>
@@ -161,7 +161,7 @@
     <div class="modal-content">
         <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-two" aria-label="Close">
           </button>
-        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232462/portfoliopictures/sewingbutton.jpg" class="pop-out" />
+        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646926894/portfoliopictures/wedbuttons.jpg" class="pop-out" />
     </div>
   </div>
 </div>
@@ -170,7 +170,7 @@
     <div class="modal-content">
         <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-three" aria-label="Close">
         </button>
-        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646231923/portfoliopictures/zipdenim.jpg" class="pop-out"/>
+        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646927299/portfoliopictures/weddressback.jpg" class="pop-out"/>
     </div>
   </div>
 </div>
