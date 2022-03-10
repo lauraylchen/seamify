@@ -24,7 +24,7 @@
         </div>
         <% else %>
         <% end %>
-        
+
         <div class="text-profile">
           <% if @seamstress.first_name == "Rey"%>
             <p><i class="fas fa-trophy"></i> Hired 25 times</p>
@@ -33,7 +33,7 @@
           <% elsif @seamstress.first_name == "Giuseppe" %>
             <p><i class="fas fa-trophy"></i> Hired 41 times</p>
             <p><i class="far fa-comment-dots"></i> Responds within 2 days</p>
-            <p><i class="far fa-clock"></i> Turn around time: 4-5 days</p>          
+            <p><i class="far fa-clock"></i> Turn around time: 4-5 days</p>
           <% else %>
             <p><i class="fas fa-trophy"></i> No jobs yet! </p>
             <p><i class="far fa-comment-dots"></i> Responds within TBA</p>
@@ -58,7 +58,7 @@
         <div class="portfolio">
           <p class="titles"><strong>PORTFOLIO</strong></p>
           <div class="d-flex justify-content-between">
-            
+
             <% if @seamstress.first_name == "Rey"%>
             <div class="squared-img">
               <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646232147/portfoliopictures/zipweddingdress.jpg" data-bs-toggle="modal" data-bs-target="#picture-one">
@@ -72,21 +72,21 @@
             <div class="squared-img">
               <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646235342/portfoliopictures/lacerepair.jpg" data-bs-toggle="modal" data-bs-target="#picture-four"/>
             </div>
-            
+
             <% elsif @seamstress.first_name == "Giuseppe" %>
               <div class="squared-img">
-                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/ruthson-zimmerman-Ws4wd-vJ9M0-unsplash_k7odp0.jpg" data-bs-toggle="modal" data-bs-target="#picture-one">
+                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/ruthson-zimmerman-Ws4wd-vJ9M0-unsplash_k7odp0.jpg" data-bs-toggle="modal" data-bs-target="#picture-five">
                 </div>
               <div class="squared-img">
-                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/jeremy-beadle-qnU-UR0o5X8-unsplash_gtk6ew.jpg" data-bs-toggle="modal" data-bs-target="#picture-two"/>
+                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/jeremy-beadle-qnU-UR0o5X8-unsplash_gtk6ew.jpg" data-bs-toggle="modal" data-bs-target="#picture-six"/>
               </div>
               <div class="squared-img">
-                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/maria-orlova-BruuboWUC_U-unsplash_vyvvzj.jpg" data-bs-toggle="modal" data-bs-target="#picture-three"/>
+                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/maria-orlova-BruuboWUC_U-unsplash_vyvvzj.jpg" data-bs-toggle="modal" data-bs-target="#picture-seven"/>
               </div>
               <div class="squared-img">
-                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646234326/portfoliopictures/furjacketfix.jpg" data-bs-toggle="modal" data-bs-target="#picture-four"/>
+                <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646234326/portfoliopictures/furjacketfix.jpg" data-bs-toggle="modal" data-bs-target="#picture-eight"/>
               </div>
-            
+
             <% else %>
               <p> No photos available </p>
             <% end %>
@@ -108,17 +108,21 @@
           <p class="titles"><strong>SERVICES</strong></p>
           <div class="fields">
             <p>clothing:</p>
-            <div class="d-flex">
+            <div class="d-icon">
               <% @clothings.uniq.each do |clothing| %>
-                <p class="box-icon"><%= image_tag("#{clothing}.png", class:"clothing-service") %></p>
-                <p><%= clothing %></p>
+              <div class="box-icon">
+              <p><%= image_tag("#{clothing}.png", class:"clothing-service") %></p>
+                <p class="icon-p"><%= clothing %></p>
+              </div>
               <% end %>
             </div>
             <p>repair:</p>
-            <div class="d-flex">
+            <div class="d-icon">
               <% @repairs.uniq.each do |repair| %>
-                <p class="box-icon"><%= image_tag("#{repair}.png", class:"repair-service") %></p>
-                  <p><%= repair %></p>
+              <div class="box-icon">
+                <p><%= image_tag("#{repair}.png", class:"repair-service") %></p>
+                  <p class="icon-p"><%= repair %></p>
+                  </div>
               <% end %>
             </div>
             <p>material:</p>
@@ -182,6 +186,43 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-four" aria-label="Close">
         </button>
         <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646235342/portfoliopictures/lacerepair.jpg" class="pop-out" />
+    </div>
+  </div>
+</div>
+<%# #Giuseppe %>
+  <div class="modal fade" id="picture-five" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-five" aria-label="Close">
+    </button>
+    <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/ruthson-zimmerman-Ws4wd-vJ9M0-unsplash_k7odp0.jpg" class="pop-out" />
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="picture-six" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-six" aria-label="Close">
+          </button>
+        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/jeremy-beadle-qnU-UR0o5X8-unsplash_gtk6ew.jpg" class="pop-long" />
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="picture-seven" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-seven" aria-label="Close">
+        </button>
+        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646860283/portfoliopictures/maria-orlova-BruuboWUC_U-unsplash_vyvvzj.jpg" class="pop-long"/>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="picture-eight" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#picture-eight" aria-label="Close">
+        </button>
+        <img src="https://res.cloudinary.com/dq1xs22hk/image/upload/v1646234326/portfoliopictures/furjacketfix.jpg" class="pop-out" />
     </div>
   </div>
 </div>
