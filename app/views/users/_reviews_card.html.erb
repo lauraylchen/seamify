@@ -9,7 +9,7 @@
   </div>
   <div class="carousel-inner">
     <div class="review carousel-item active">
-     
+
       <!--Title -->
      <div class="review-title">
         <p><strong> <%= @reviews_first.service %></strong></p>
@@ -35,7 +35,8 @@
 
        <!-- Date -->
       <div class="date">
-        <p><em><%= @reviews_first.client.first_name %> <%= @reviews_first.created_at.strftime('%Y-%m-%d')%></em></p>
+        <% dates = ["2021-06-27", "2021-04-25", "2022-02-14"] %>
+        <p><em><%= @reviews_first.client.first_name %> <%= dates.sample %></em></p>
       </div>
       <!-- -->
 
@@ -76,7 +77,7 @@
     </div>
     <%end%>
     <%end%>
-    
+
   </div>
 </div>
 
