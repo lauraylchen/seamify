@@ -11,7 +11,7 @@ class Service < ApplicationRecord
   end
 
   def self.materials
-    return ['Lace', 'Suede', 'Leather', 'Satin', "Chiffon", "Cotton", "Crêpe", "Denim", "Linen", "Polyester"]
+    return ['Lace', 'Suede', 'Leather', 'Satin', "Chiffon", "Cotton", "Crepe", "Denim", "Linen", "Polyester"]
   end
 
   def formatted_price
