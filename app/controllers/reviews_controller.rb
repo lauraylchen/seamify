@@ -9,11 +9,11 @@ class ReviewsController < ApplicationController
     @review.client = current_user
     @review.seamstress = Order.find(params[:order_id]).seamstress
     @review.service = define_service
-      if @review.save
-        redirect_to user_path(@review.seamstress)
-      else
-        render :new
-      end
+    if @review.save
+      redirect_to user_path(@review.seamstress)
+    else
+      render :new
+    end
   end
 
   private
@@ -24,8 +24,6 @@ class ReviewsController < ApplicationController
     @service = @item.service
     @service.name
   end
-
-  private
 
   def review_params
     params.require(:review).permit(:rating, :content)
