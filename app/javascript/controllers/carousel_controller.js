@@ -1,15 +1,13 @@
-// import { Controller } from "@hotwired/stimulus"
-// import {bootstrap, Carousel} from "bootstrap"
+import { Controller } from "@hotwired/stimulus"
+import { Carousel } from "bootstrap"
  
-// export default class extends Controller {
-//     // checkAll(event) {
-//     //   console.log(event)
-//     // }
-//     connect() {
-//         console.log("carousel!")
-//         var carousel = new bootstrap.Carousel(this.element, {
-//             interval: 2000,
-//             wrap: false
-//           })
-//     };
-//   }
+export default class extends Controller {
+
+    connect() {
+        const carousel = new Carousel(this.element, {
+            interval: 5000,
+            wrap: true
+        })
+        carousel.cycle();
+    };
+  }
