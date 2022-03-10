@@ -2,9 +2,9 @@
 
   <div class = "results-display">
       <% if @users == nil || @users == [] %>
-        <h5> No seamstress found near <%= params[:address] %> </h5>
+        <h5> Sorry, we didn't find any seamstresses that fit your specific request, try another search? </h5>
       <% else %>
-        <h5> Found <%= @users.size %> seamstresses near you! </h5>
+        <h5> Found <%= pluralize(@users.size, 'seamstress' ) %> near you! </h5>
       <% end %>
   </div>
 

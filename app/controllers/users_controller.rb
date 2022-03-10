@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index]
+  skip_before_action :authenticate_user!, only: %i[index show search]
 
   def index
     @users = search
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     @reviews_total = Review.where(seamstress_id: @seamstress.id)
     @reviews_first = @reviews_total[0]
     @reviews = @reviews_total.all[1..-1]
-    
+
   end
 
   def profile

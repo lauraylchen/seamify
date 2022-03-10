@@ -108,15 +108,21 @@
       box-shadow: 4px 4px 10px $seamify-shadow;
       border: none;
       &:hover {
-    background: #f4e5cf;
-    color: #d63900;
-    border: 2px solid #D63900;
-  }
+        background: #f4e5cf;
+        color: #d63900;
+        border: 2px solid #D63900;
+      }
     }
   }
 }
 .form-select {
   border-radius: 4px;
+  color: $seamify-brown;
+}
+
+.form-select:focus {
+  border-color: $seamify-cream;
+  box-shadow: 0 0 0 0.25rem $seamify-red-chat;
 }
 
 .error {

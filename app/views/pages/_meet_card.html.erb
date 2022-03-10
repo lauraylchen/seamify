@@ -2,6 +2,7 @@
   <%= cl_image_tag seamstress.photo.key %>
   <div class="meet-card-infos">
     <h3><%= seamstress.first_name %></h3>
+    <div class="card-divider"></div>
     <p><%= seamstress.bio %></p>
     <div class="meet-card-button">
       <%= link_to "View Profile", user_path(seamstress), class: "seamify-button" %>

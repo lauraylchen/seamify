@@ -5,7 +5,11 @@
       <h5> About Me </h5>
       <div class="user-profile-card">
         <div class="user-round-profile">
-          <%= cl_image_tag @user.photo.key %>
+          <% if @user.photo.attached? %>
+            <%= cl_image_tag @user.photo.key %>
+          <% else %>
+            <%= image_tag 'empty-avatar.png' %>
+          <% end %>
         </div>
         <h1><%= @user.first_name %></h1>
         <h1><%= @user.last_name %></h1>
@@ -18,11 +22,11 @@
             <% end%>
             <i class="fas fa-map-marker-alt"> <%= @user.address%></i>
             <i class="fa fa-envelope" aria-hidden="true"> <%= @user.email%></i>
-            
+
         </div>
       </div>
     </div>
-    
+
 
 
 

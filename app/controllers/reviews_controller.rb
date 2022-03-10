@@ -2,7 +2,6 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     define_service
-     # raise
   end
 
   def create
@@ -25,7 +24,7 @@ class ReviewsController < ApplicationController
     @service = @item.service
     @service.name
   end
- 
+
   def review_params
     params.require(:review).permit(:rating, :content)
   end

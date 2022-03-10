@@ -1,29 +1,23 @@
-
 <div class="container">
- <%= link_to my_orders_path do%>
-          <p class="link-back"><i class="fas fa-arrow-left"></i> BACK </p>
+  <div class="d-flex justify-content-center">
+    <div class="review-container">
+      <%= link_to my_orders_path do%>
+        <p class="link-back"><i class="fas fa-arrow-left"></i> BACK </p>
+      <% end %>
+      <div class = "review-form-main">
+        <h1>Write your review!</h1>
+
+        <p>Please let us know about your experience with <strong><%= @order.seamstress.first_name %></strong></p>
+
+        <p> Service: <%= @service.name %>
+        <%= simple_form_for([@order, @review]) do |f| %>
+          <%= f.input :rating, collection: (1..5).to_a %>
+          <%= f.input :content, as: :text, :input_html => {:style=> 'height: 200px'} %>
+          <div class="text-center">
+            <%= f.button :submit, "Review", class: "seamify-button" %>
+          </div>
         <% end %>
-<div class = "review-form-main" align="center">
-<h1>Write your review!</h1>
-
-<p>Please let us know about your experience with <strong><%= @order.seamstress.first_name %></strong></p>
-
-<p> Service: <%= @service.name %>
-<%= simple_form_for([@order, @review]) do |f| %>
-  <% count = 1%>
-  <p> Rating:<%= f.collection_radio_buttons :rating, [[1], [2], [3], [4], [5]], :first, :last, item_wrapper_tag: false, boolean_style: :inline do |b| %>
-  <%= b.radio_button + b.label {"#{count}"} %>
-  <% count = count + 1%>
-  <% end %> </p>
-  <%= f.input :content, as: :text, :input_html => {:style=> 'height: 200px'} %>
-  
-  <%= f.button :submit, "Review", class: "seamify-button" %>
-<% end %>
-
+      </div>
+    </div>
+  </div>
 </div>
-
-</div>
-
-
-
-
